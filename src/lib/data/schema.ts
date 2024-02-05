@@ -1,0 +1,102 @@
+import { z } from "zod";
+
+const projectSchema = z.object({
+  name: z.string(),
+  featured: z.boolean().or(z.undefined()),
+  type: z.string().or(z.undefined()),
+  url: z.string().url().or(z.null()),
+  icon: z.string().or(z.undefined()),
+  description: z.string(),
+  start: z.string().or(z.undefined()),
+  end: z.string().or(z.null()).or(z.undefined()),
+  tags: z.array(z.string()).or(z.undefined()),
+  stack: z.array(z.string()).or(z.undefined()),
+});
+
+const permanentSchema = z.object({
+  name: z.string(),
+  industry: z.string(),
+  employment: z.literal("permanent"),
+  url: z.string().url().or(z.null()),
+  level: z.string(),
+  time: z.string(),
+  description: z.string(),
+  start: z.string(),
+  end: z.string().or(z.null()),
+  reasonEnd: z.string().or(z.null()),
+  location: z.string(),
+  icon: z.string().or(z.undefined()),
+  projects: z.array(projectSchema).or(z.undefined()),
+  stack: z.array(z.string()),
+});
+
+const freelanceSchema = z.object({
+  name: z.string(),
+  employment: z.literal("freelance"),
+  start: z.string(),
+  end: z.string().or(z.null()),
+  clients: z.record(permanentSchema.omit({ employment: true })),
+});
+
+export const schema = z.object({
+  name: z.string(),
+  headline: z.string(),
+  description: z.string(),
+  social: z.object({
+    email: z.string(),
+    phone: z.string(),
+    links: z.record(
+      z.object({
+        name: z.string(),
+        url: z.string().url(),
+        icon: z.string().or(z.undefined()),
+      }),
+    ),
+  }),
+  education: z.object({
+    courses: z.record(
+      z.object({
+        name: z.string(),
+        description: z.string().or(z.null()),
+        asset: z.string().or(z.null()),
+        icon: z.string().or(z.undefined()),
+        start: z.string(),
+        end: z.string(),
+      }),
+    ),
+    school: z.record(
+      z.object({
+        name: z.string(),
+        location: z.string(),
+        degree: z.string().or(z.null()),
+        field: z.string(),
+        icon: z.string().or(z.undefined()),
+        start: z.string(),
+        end: z.string(),
+      }),
+    ),
+  }),
+  skills: z.object({
+    languages: z.record(
+      z.object({
+        name: z.string(),
+        icon: z.string().or(z.undefined()),
+        level: z.number(),
+      }),
+    ),
+    tech: z.record(
+      z.object({
+        name: z.string(),
+        featured: z.boolean().or(z.undefined()),
+        tags: z.array(z.string()),
+        icon: z.string().or(z.undefined()),
+      }),
+    ),
+  }),
+  work: z.object({
+    history: z.record(permanentSchema.or(freelanceSchema)),
+  }),
+  projects: z.record(projectSchema),
+});
+
+export type Data = z.infer<typeof schema>;
