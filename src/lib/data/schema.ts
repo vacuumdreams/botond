@@ -7,15 +7,17 @@ const projectSchema = z.object({
   url: z.string().url().or(z.null()),
   icon: z.string().or(z.undefined()),
   description: z.string(),
-  start: z.string().or(z.undefined()),
-  end: z.string().or(z.null()).or(z.undefined()),
+  start: z.string(),
+  end: z.string().or(z.null()),
   tags: z.array(z.string()).or(z.undefined()),
   stack: z.array(z.string()).or(z.undefined()),
 });
 
-const permanentSchema = z.object({
+export const permanentSchema = z.object({
+  id: z.string(),
   name: z.string(),
   industry: z.string(),
+  phase: z.string().or(z.undefined()),
   employment: z.literal("permanent"),
   url: z.string().url().or(z.null()),
   level: z.string(),
@@ -27,11 +29,14 @@ const permanentSchema = z.object({
   location: z.string(),
   icon: z.string().or(z.undefined()),
   projects: z.array(projectSchema).or(z.undefined()),
+  tags: z.array(z.string()).or(z.undefined()),
   stack: z.array(z.string()),
 });
 
-const freelanceSchema = z.object({
+export const freelanceSchema = z.object({
+  id: z.string(),
   name: z.string(),
+  description: z.string(),
   employment: z.literal("freelance"),
   start: z.string(),
   end: z.string().or(z.null()),
@@ -40,6 +45,7 @@ const freelanceSchema = z.object({
 
 export const schema = z.object({
   name: z.string(),
+  picture: z.string(),
   headline: z.string(),
   description: z.string(),
   social: z.object({
@@ -57,11 +63,12 @@ export const schema = z.object({
     courses: z.record(
       z.object({
         name: z.string(),
-        description: z.string().or(z.null()),
-        asset: z.string().or(z.null()),
+        description: z.string(),
+        issuer: z.string().or(z.null()),
+        date: z.string(),
         icon: z.string().or(z.undefined()),
-        start: z.string(),
-        end: z.string(),
+        link: z.string(),
+        tags: z.array(z.string()).or(z.undefined()),
       }),
     ),
     school: z.record(

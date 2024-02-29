@@ -6,15 +6,19 @@ import Lottie, {
 } from "lottie-react";
 import bang from "./src/bang.json";
 import zen from "./src/zen.json";
+import clouds from "./src/clouds.json";
+import transmission from "./src/transmission.json";
 
 const animationNames = {
   bang,
   zen,
+  clouds,
+  transmission,
 } as const;
 
 type AnimationName = keyof typeof animationNames;
 
-type AnimationProps = Omit<LottieComponentProps, "animationData"> & {
+export type AnimationProps = Omit<LottieComponentProps, "animationData"> & {
   name: AnimationName;
 };
 

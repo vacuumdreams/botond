@@ -1,63 +1,66 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
-import { Animation, AnimationRef } from "@/components/animation";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
-import type { ProcessedData } from "@/lib/data";
-import { cn, shuffle } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { Orbit } from "./orbit";
+import { useData } from "@/components/provider/data";
 
 type IntroProps = {
-  data: ProcessedData;
+  startTransition: boolean;
 };
 
-export const Intro = ({ data }: IntroProps) => {
-  const zenRef = useRef<AnimationRef>(null);
+export const Intro = ({ startTransition }: IntroProps) => {
+  const { intro } = useData();
   const [showZen, setZen] = useState(false);
-  const tech = shuffle(
-    Object.values(data.skills.tech).filter((t) => t.featured),
-  );
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setZen(true);
-    }, 0);
-
-    return () => {
-      clearTimeout(timeout);
-    };
+    setZen(true);
   }, []);
+
+  useEffect(() => {
+    if (startTransition) {
+    }
+  }, [startTransition]);
 
   return (
     <div className="relative">
-      <div
-        className={cn("transition delay-1000 duration-1000", {
-          "opacity-0": !showZen,
-          "opacity-100": showZen,
-        })}
-      >
-        {tech.map((t, i) => (
+      <div>
+        {intro.map((t, i) => (
           <div
             key={t.name}
             className={cn(
-              "mt-48",
-              "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform",
+              "mt-48 origin-center",
+              "absolute left-1/2 top-1/2",
               "rounded-full border border-dashed border-slate-800",
             )}
             style={{
-              width: `${250 + (tech.length - i) * 36}px`,
-              height: `${250 + (tech.length - i) * 36}px`,
+              opacity: showZen ? 1 : 0,
+              transform: showZen
+                ? "scale(1) translate(-50%, -50%)"
+                : "scale(0.75) translate(-50%, -50%)",
+              transition: `opacity 1000ms ease-in, transform 1000ms ease-in`,
+              transitionDelay: `${1000 + (intro.length - i) * 100}ms`,
+              width: `${250 + (intro.length - i) * 36}px`,
+              height: `${250 + (intro.length - i) * 36}px`,
             }}
           />
         ))}
-        {tech.map((t, i) => (
-          <Orbit
+        {intro.map((t, i) => (
+          <div
             key={t.name}
-            name={t.name}
-            icon={t.icon}
-            count={i}
-            total={tech.length}
-          />
+            className="absolute left-1/2 top-1/2 origin-center -translate-x-1/2 -translate-y-1/2 transition-all"
+            style={{
+              opacity: showZen ? 1 : 0,
+              transition: `opacity 1000ms ease-in, transform 1000ms ease-in`,
+              transitionDelay: `${1000 + (intro.length - i) * 100}ms`,
+              width: `${250 + (intro.length - i) * 36}px`,
+              height: `${250 + (intro.length - i) * 36}px`,
+            }}
+          >
+            <Orbit name={t.name} icon={t.icon} count={i} total={intro.length} />
+          </div>
         ))}
       </div>
       <div
@@ -69,8 +72,55 @@ export const Intro = ({ data }: IntroProps) => {
           },
         )}
       >
-        <div className="m-auto w-96">
-          <Animation lottieRef={zenRef} name="zen" />
+        <div className="relative m-auto mt-20 w-10/12 sm:w-80">
+          <div className="animate-float">
+            <Image
+              src="/images/figure.svg"
+              alt="Botond Fekete"
+              width={300}
+              height={300}
+            />
+          </div>
+          <div className="absolute -left-20 top-1 w-40 -rotate-12">
+            <Image
+              src="/images/vinyl-player.png"
+              alt="Vinyl player"
+              className="animate-float"
+              width={400}
+              height={400}
+              style={{ animationDelay: "0.95s" }}
+            />
+          </div>
+          <div className="absolute -right-40 -top-2 w-48 rotate-[24deg]">
+            <Image
+              src="/images/guitar.png"
+              alt="guitar"
+              className="animate-float"
+              width={400}
+              height={400}
+              style={{ animationDelay: "0.65s" }}
+            />
+          </div>
+          <div className="absolute -top-24 right-0 w-24 -rotate-[24deg]">
+            <Image
+              src="/images/moka.png"
+              alt="guitar"
+              className="animate-float"
+              width={400}
+              height={400}
+              style={{ animationDelay: "1.25s" }}
+            />
+          </div>
+          <div className="rotate absolute -left-8 top-44 w-40">
+            <Image
+              src="/images/laptop.png"
+              alt="guitar"
+              className="animate-float"
+              width={400}
+              height={400}
+              style={{ animationDelay: "2s" }}
+            />
+          </div>
         </div>
       </div>
     </div>

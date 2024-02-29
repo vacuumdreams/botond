@@ -1,7 +1,8 @@
 {
   "name": "Botond Fekete",
-  "headline": "hi human. I am Botond.",
-  "description": "",
+  "picture": "/images/botond.jpg",
+  "headline": "also eater of pineapples.",
+  "description": "engineer of software.",
   "social": {
     "phone": "+351926451663",
     "email": "fekbot@gmail.com",
@@ -19,7 +20,98 @@
     }
   },
   "education": {
-    "courses": {},
+    "courses": {
+      "cs:intro:python": {
+        "name": "Introduction to Computer Science and Programming Using Python",
+        "description": "",
+        "tags": ["python"],
+        "issuer": "edX",
+        "date": "02/2015",
+        "icon": "/images/education/courses/edx.jpeg",
+        "link": "https://s3.amazonaws.com/verify.edx.org/downloads/f91f713e6b9b45c8b4a5bf6f6bb3c4a2/Certificate.pdf"
+      },
+      "web:app:architecture": {
+        "name": "Web Application Architectures",
+        "description": "",
+        "tags": ["ruby"],
+        "issuer": "Coursera",
+        "date": "05/2015",
+        "icon": "/images/education/courses/coursera.jpeg",
+        "link": "https://www.coursera.org/account/accomplishments/verify/Y4Z53BJ6M4"
+      },
+      "angular": {
+        "name": "Learn and Understand AngularJS",
+        "description": "",
+        "tags": ["angular"],
+        "issuer": "Udemy",
+        "date": "11/2015",
+        "icon": "/images/education/courses/udemy.jpeg",
+        "link": "https://www.udemy.com/certificate/UC-0QJ3KWC3/"
+      },
+      "nodejs": {
+        "name": "Learn and Understand NodeJS",
+        "description": "",
+        "tags": ["node"],
+        "issuer": "Udemy",
+        "date": "12/2015",
+        "icon": "/images/education/courses/udemy.jpeg",
+        "link": "https://www.udemy.com/certificate/UC-1OSK751H/"
+      },
+      "neural:networks": {
+        "name": "Neural Networks and Deep Learning",
+        "description": "",
+        "tags": ["ai"],
+        "issuer": "Coursera",
+        "date": "11/2017",
+        "icon": "/images/education/courses/coursera.jpeg",
+        "link": "https://www.coursera.org/account/accomplishments/verify/9Z4SHMDERA9V"
+      },
+      "data:science:python": {
+        "name": "Python for Data Science, AI & Development",
+        "description": "",
+        "tags": ["ai", "python"],
+        "issuer": "Coursera",
+        "date": "05/2019",
+        "icon": "/images/education/courses/coursera.jpeg",
+        "link": "https://coursera.org/share/b7d658e31cae8685e1ca8b4743af89e7"
+      },
+      "data:science:db": {
+        "name": "Databases and SQL for Data Science with Python",
+        "description": "",
+        "tags": ["machine learning", "sql"],
+        "issuer": "Coursera",
+        "date": "06/2019",
+        "icon": "/images/education/courses/coursera.jpeg",
+        "link": "https://coursera.org/share/79438c018cd349aa33d19a5c4d14d5c1"
+      },
+      "data:analysis:python": {
+        "name": "Data Analysis with Python",
+        "description": "",
+        "tags": ["machine learning", "python"],
+        "issuer": "Coursera",
+        "date": "05/2019",
+        "icon": "/images/education/courses/coursera.jpeg",
+        "link": "https://coursera.org/share/0b70f1c07db757dfb9d5ce863f335af6"
+      },
+      "data:visualization:python": {
+        "name": "Data Visualization with Python",
+        "description": "",
+        "tags": ["machine learning", "python"],
+        "issuer": "Coursera",
+        "date": "05/2020",
+        "icon": "/images/education/courses/coursera.jpeg",
+        "link": "https://coursera.org/share/ce8a6b23551a8450a166607ec5c7a4a8"
+      },
+      "+:psych": {
+        "name": "Positive Psychology",
+        "tags": ["non-tech"],
+        "description": "",
+        "issuer": "Coursera",
+        "date": "01/2022",
+        "icon": "/images/education/courses/coursera.jpeg",
+        "link": "https://www.coursera.org/account/accomplishments/certificate/E9TAL2N49RH5"
+      }
+    },
     "school": {
       "university": {
         "name": "University of Debrecen",
@@ -72,512 +164,493 @@
       "python": {
         "name": "python",
         "tags": ["language"],
-        "icon": "/images/tech/python.jpg"
+        "icon": "python"
       },
       "javascript": {
         "name": "javascript",
         "tags": ["language"],
-        "icon": "/images/tech/javascript.webp"
+        "icon": "javascript"
       },
       "typescript": {
         "name": "typescript",
         "featured": true,
-        "tags": ["language"],
-        "icon": "/images/tech/typescript.jpg"
+        "tags": ["language", "javascript"],
+        "icon": "typescript"
       },
       "html": {
         "name": "html",
         "tags": ["language"],
-        "icon": "/images/tech/html.jpg"
+        "icon": "html5"
       },
       "css": {
         "name": "css",
         "tags": ["language"],
-        "icon": "/images/tech/css.jpg"
+        "icon": "css3"
       },
       "sql": {
         "name": "sql",
         "tags": ["language"],
-        "icon": "/images/tech/sql.jpg"
+        "icon": "azuresqldatabase"
       },
       "go": {
         "name": "go",
         "featured": true,
         "tags": ["language"],
-        "icon": "/images/tech/go.jpg"
+        "icon": "go"
       },
       "ruby": {
         "name": "ruby",
         "tags": ["language"],
-        "icon": "/images/tech/ruby.jpg"
+        "icon": "ruby"
       },
       "php": {
         "name": "php",
         "tags": ["language"],
-        "icon": "/images/tech/php.jpg"
+        "icon": "php"
       },
       "postgres": {
         "name": "postgres",
         "featured": true,
         "tags": ["database"],
-        "icon": "/images/tech/postgres.jpg"
+        "icon": "postgresql"
       },
       "postgis": {
         "name": "postgis",
         "tags": ["database"],
-        "icon": "/images/tech/postgis.jpg"
+        "icon": "postgresql"
       },
       "mysql": {
         "name": "mysql",
         "tags": ["database"],
-        "icon": "/images/tech/mysql.jpg"
+        "icon": "mysql"
       },
       "mongodb": {
         "name": "mongodb",
         "tags": ["database"],
-        "icon": "/images/tech/mongodb.webp"
+        "icon": "mongodb"
       },
       "cassandra": {
         "name": "cassandra",
         "tags": ["database"],
-        "icon": "/images/tech/cassandra.jpg"
+        "icon": "cassandra"
       },
       "dynamodb": {
         "name": "dynamodb",
         "tags": ["database", "cloud"],
-        "icon": "/images/tech/dynamodb.jpeg"
+        "icon": "dynamodb"
       },
       "firebase": {
         "name": "firebase",
         "tags": ["cloud", "hosting", "database"],
-        "icon": "/images/tech/firebase.webp"
+        "icon": "firebase"
       },
       "aws": {
         "name": "aws",
         "tags": ["cloud", "hosting"],
-        "icon": "/images/tech/aws.jpg"
+        "icon": "amazonwebservices"
       },
       "netlify": {
         "name": "netlify",
         "tags": ["cloud", "hosting"],
-        "icon": "/images/tech/netlify.webp"
+        "icon": "netlify"
       },
       "vercel": {
         "name": "vercel",
         "tags": ["cloud", "hosting"],
-        "icon": "/images/tech/vercel.jpg"
+        "icon": "vercel"
       },
       "gcloud": {
         "name": "gcloud",
         "tags": ["cloud", "hosting"],
-        "icon": "/images/tech/gcloud.jpg"
+        "icon": "googlecloud"
       },
       "algolia": {
         "name": "algolia",
         "tags": ["cloud", "search"],
-        "icon": "/images/tech/algolia.jpg"
-      },
-      "typesense": {
-        "name": "typesense",
-        "tags": ["search"],
-        "icon": "/images/tech/typesense.jpg"
+        "icon": "algolia"
       },
       "elasticsearch": {
         "name": "elasticsearch",
         "tags": ["search"],
-        "icon": "/images/tech/elasticsearch.jpg"
+        "icon": "elasticsearch"
       },
       "google-analytics": {
         "name": "google-analytics",
         "tags": ["monitoring"],
-        "icon": "/images/tech/google-analytics.webp"
+        "icon": "google"
       },
       "sentry": {
         "name": "sentry",
         "tags": ["monitoring"],
-        "icon": "/images/tech/sentry.jpg"
+        "icon": "sentry"
       },
       "grafana": {
         "name": "grafana",
         "tags": ["monitoring"],
-        "icon": "/images/tech/grafana.jpg"
+        "icon": "grafana"
       },
       "kibana": {
         "name": "kibana",
         "tags": ["monitoring"],
-        "icon": "/images/tech/kibana.jpg"
+        "icon": "kibana"
       },
       "docker": {
         "name": "docker",
         "featured": true,
         "tags": ["ops"],
-        "icon": "/images/tech/docker.jpg"
+        "icon": "docker"
       },
       "kubernetes": {
         "name": "kubernetes",
         "tags": ["ops"],
-        "icon": "/images/tech/kubernetes.webp"
+        "icon": "kubernetes"
       },
       "terraform": {
         "name": "terraform",
         "tags": ["ops"],
-        "icon": "/images/tech/terraform.jpg"
+        "icon": "terraform"
       },
       "okta": {
         "name": "okta",
         "tags": ["auth", "api", "cloud"],
-        "icon": "/images/tech/okta.jpg"
-      },
-      "supertokens": {
-        "name": "supertokens",
-        "tags": ["auth", "api", "cloud"],
-        "icon": "/images/tech/supertokens.webp"
+        "icon": "okta"
       },
       "keycloak": {
         "name": "keycloak",
         "tags": ["auth", "api"],
-        "icon": "/images/tech/keycloak.jpg"
+        "icon": "oauth"
       },
       "firebase-auth": {
         "name": "firebase-auth",
         "tags": ["cloud", "auth"],
-        "icon": "/images/tech/firebase-auth.jpg"
+        "icon": "firebase"
       },
       "lucia": {
         "name": "lucia",
-        "tags": ["javascript", "auth", "backend"],
-        "icon": "/images/tech/lucia.jpg"
+        "tags": ["javascript", "auth", "backend"]
       },
       "openapi": {
         "name": "openapi",
         "featured": true,
         "tags": ["api", "backend"],
-        "icon": "/images/tech/openapi.webp"
-      },
-      "protobuf": {
-        "name": "protobuf",
-        "tags": ["api", "backend"],
-        "icon": "/images/tech/protobuf.jpg"
+        "icon": "openapi"
       },
       "rest/http": {
         "name": "rest/http",
         "tags": ["architecture", "backend"],
-        "icon": "/images/tech/rest-http.jpg"
+        "icon": "firefox"
       },
       "grpc": {
         "name": "grpc",
         "tags": ["architecture", "backend"],
-        "icon": "/images/tech/grpc.jpg"
+        "icon": "grpc"
       },
       "graphql": {
         "name": "graphql",
         "tags": ["architecture", "backend", "frontend"],
-        "icon": "/images/tech/graphql.jpg"
+        "icon": "graphql"
       },
       "websockets": {
         "name": "websockets",
-        "tags": ["architecture", "backend", "frontend"],
-        "icon": "/images/tech/websockets.svg"
+        "tags": ["architecture", "backend", "frontend"]
       },
       "react": {
         "name": "react",
         "featured": true,
         "tags": ["javascript", "frontend"],
-        "icon": "/images/tech/react.webp"
+        "icon": "react"
       },
       "redux": {
         "name": "redux",
         "tags": ["javascript", "frontend"],
-        "icon": "/images/tech/redux.jpg"
+        "icon": "redux"
       },
       "react-query": {
         "name": "react-query",
-        "tags": ["javascript", "frontend"],
-        "icon": "/images/tech/react-query.jpg"
+        "tags": ["javascript", "frontend"]
       },
       "threejs": {
         "name": "threejs",
         "tags": ["javascript", "frontend"],
-        "icon": "/images/tech/threejs.jpg"
+        "icon": "threejs"
       },
       "node": {
         "name": "node",
         "featured": true,
         "tags": ["javascript", "runtime", "backend"],
-        "icon": "/images/tech/node.jpg"
+        "icon": "nodejs"
       },
       "bun": {
         "name": "bun",
         "featured": true,
         "tags": ["javascript", "typescript", "runtime", "backend"],
-        "icon": "/images/tech/bun.jpg"
+        "icon": "bun"
       },
       "npm": {
         "name": "npm",
         "tags": ["javascript", "tooling"],
-        "icon": "/images/tech/npm.jpg"
+        "icon": "npm"
       },
       "yarn": {
         "name": "yarn",
         "tags": ["javascript", "tooling"],
-        "icon": "/images/tech/yarn.jpg"
+        "icon": "yarn"
       },
       "pnpm": {
         "name": "pnpm",
         "tags": ["javascript", "tooling"],
-        "icon": "/images/tech/pnpm.jpeg"
+        "icon": "pnpm"
       },
       "express": {
         "name": "express",
         "tags": ["javascript", "api", "backend"],
-        "icon": "/images/tech/express.jpg"
+        "icon": "express"
       },
       "fastify": {
         "name": "fastify",
         "tags": ["javascript", "api", "backend"],
-        "icon": "/images/tech/fastify.jpg"
+        "icon": "fastify"
       },
       "hapi": {
         "name": "hapi",
-        "tags": ["javascript", "api", "backend"],
-        "icon": "/images/tech/hapi.svg"
+        "tags": ["javascript", "api", "backend"]
       },
       "elysia": {
         "name": "elysia",
-        "featured": true,
-        "tags": ["javascript", "bun", "api", "backend"],
-        "icon": "/images/tech/elysia.jpg"
+        "tags": ["javascript", "bun", "api", "backend"]
       },
       "nextjs": {
         "name": "nextjs",
         "featured": true,
         "tags": ["javascript", "frontend", "backend"],
-        "icon": "/images/tech/nextjs.jpg"
+        "icon": "nextjs"
       },
       "gatsby": {
         "name": "gatsby",
         "tags": ["javascript", "frontend", "backend"],
-        "icon": "/images/tech/gatsby.jpg"
+        "icon": "gatsby"
       },
       "prisma": {
         "name": "prisma",
+        "featured": true,
         "tags": ["javascript", "database", "orm", "backend"],
-        "icon": "/images/tech/prisma.jpg"
+        "icon": "prisma"
       },
       "drizzle": {
         "name": "drizzle",
-        "featured": true,
-        "tags": ["javascript", "database", "orm", "backend"],
-        "icon": "/images/tech/drizzle.jpg"
+        "tags": ["javascript", "database", "orm", "backend"]
       },
       "webpack": {
         "name": "webpack",
-        "tags": ["javascript", "build", "node", "frontend"],
-        "icon": "/images/tech/webpack.jpg"
+        "tags": ["javascript", "tooling"],
+        "icon": "webpack"
       },
       "vite": {
         "name": "vite",
-        "tags": ["javascript", "build", "node", "frontend"],
-        "icon": "/images/tech/vite.jpg"
+        "tags": ["javascript", "tooling"],
+        "icon": "vite"
       },
       "rollup": {
         "name": "rollup",
-        "tags": ["javascript", "build", "node", "frontend"],
-        "icon": "/images/tech/rollup.jpg"
+        "tags": ["javascript", "tooling"],
+        "icon": "rollup"
       },
       "esbuild": {
         "name": "esbuild",
-        "tags": ["javascript", "build", "node", "frontend"],
-        "icon": "/images/tech/esbuild.jpg"
+        "tags": ["javascript", "tooling"]
       },
       "browserify": {
         "name": "browserify",
-        "tags": ["javascript", "build", "node", "frontend"],
-        "icon": "/images/tech/browserify.jpg"
+        "tags": ["javascript", "tooling", "frontend"]
       },
       "gulp": {
         "name": "gulp",
-        "tags": ["javascript", "build", "node", "frontend"],
-        "icon": "/images/tech/gulp.jpg"
+        "tags": ["javascript", "tooling"],
+        "icon": "gulp"
       },
       "jest": {
         "name": "jest",
-        "tags": ["javascript", "testing", "frontend", "backend"],
-        "icon": "/images/tech/jest.jpg"
+        "tags": ["javascript", "testing"],
+        "icon": "jest"
       },
       "mocha": {
         "name": "mocha",
-        "tags": ["javascript", "testing", "frontend", "backend"],
-        "icon": "/images/tech/mocha.jpg"
+        "tags": ["javascript", "testing"],
+        "icon": "mocha"
       },
       "chai": {
         "name": "chai",
-        "tags": ["javascript", "testing", "frontend", "backend"],
-        "icon": "/images/tech/chai.jpg"
+        "tags": ["javascript", "testing"]
       },
       "playwright": {
         "name": "playwright",
         "featured": true,
-        "tags": ["javascript", "testing", "frontend"],
-        "icon": "/images/tech/playwright.jpg"
+        "tags": ["javascript", "testing"],
+        "icon": "playwright"
       },
       "cypress": {
         "name": "cypress",
-        "tags": ["javascript", "testing", "frontend"],
-        "icon": "/images/tech/cypress.jpg"
+        "tags": ["javascript", "testing"],
+        "icon": "cypressio"
+      },
+      "gradle": {
+        "name": "gradle",
+        "tags": ["testing"],
+        "icon": "gradle"
       },
       "storybook": {
         "name": "storybook",
-        "tags": ["javascript", "react", "testing", "frontend"],
-        "icon": "/images/tech/storybook.jpg"
+        "tags": ["javascript", "react", "testing"],
+        "icon": "storybook"
       },
       "tailwind": {
         "name": "tailwind",
         "featured": true,
         "tags": ["ui", "css", "frontend"],
-        "icon": "/images/tech/tailwind.jpg"
+        "icon": "tailwindcss"
       },
       "shadcn": {
         "name": "shadcn",
-        "tags": ["react", "frontend", "ui"],
-        "icon": "/images/tech/shadcn.jpg"
+        "tags": ["javascript", "react", "frontend", "ui"]
       },
       "material-ui": {
         "name": "material-ui",
-        "tags": ["ui"],
-        "icon": "/images/tech/material-ui.jpg"
+        "tags": ["javascript", "ui", "frontend"],
+        "icon": "materialui"
       },
       "radix-ui": {
         "name": "radix-ui",
-        "tags": ["ui"],
-        "icon": "/images/tech/radix-ui.jpg"
+        "tags": ["javascript", "ui", "frontend"]
       },
       "bulma": {
         "name": "bulma",
-        "tags": ["ui", "css"],
-        "icon": "/images/tech/bulma.jpg"
+        "tags": ["ui", "css", "frontend"],
+        "icon": "bulma"
       },
       "bootstrap": {
         "name": "bootstrap",
-        "tags": ["ui", "css"],
-        "icon": "/images/tech/bootstrap.jpg"
+        "tags": ["ui", "css", "frontend"],
+        "icon": "bootstrap"
       },
       "jquery": {
         "name": "jquery",
-        "tags": ["javascript"],
-        "icon": "/images/tech/jquery.webp"
+        "tags": ["javascript", "frontend"],
+        "icon": "jquery"
       },
       "nx": {
         "name": "nx",
-        "tags": ["tooling", "monorepo", "javascript"],
-        "icon": "/images/tech/nx.jpeg"
+        "tags": ["tooling", "monorepo", "javascript"]
       },
       "lerna": {
         "name": "lerna",
-        "tags": ["tooling", "monorepo", "javascript"],
-        "icon": "/images/tech/lerna.jpg"
+        "tags": ["tooling", "monorepo", "javascript"]
       },
       "turborepo": {
         "name": "turborepo",
-        "tags": ["tooling", "monorepo", "javascript"],
-        "icon": "/images/tech/turborepo.jpg"
+        "tags": ["tooling", "monorepo", "javascript"]
       },
       "django": {
         "name": "django",
         "tags": ["python", "api", "backend"],
-        "icon": "/images/tech/django.svg"
+        "icon": "django"
       },
       "fastapi": {
         "name": "fastapi",
         "tags": ["python", "api", "backend"],
-        "icon": "/images/tech/fastapi.jpg"
+        "icon": "fastapi"
       },
       "wails": {
         "name": "wails",
-        "tags": ["go", "app"],
-        "icon": "/images/tech/wails.jpg"
+        "tags": ["go", "app"]
       },
       "github": {
         "name": "github",
         "featured": true,
         "tags": ["repo", "ci"],
-        "icon": "/images/tech/github.webp"
+        "icon": "github"
       },
       "gitlab": {
         "name": "gitlab",
         "tags": ["repo", "ci"],
-        "icon": "/images/tech/gitlab.jpg"
+        "icon": "gitlab"
       },
       "bitbucket": {
         "name": "bitbucket",
         "tags": ["repo"],
-        "icon": "/images/tech/bitbucket.webp"
+        "icon": "bitbucket"
       },
       "jenkins": {
         "name": "jenkins",
         "tags": ["ci"],
-        "icon": "/images/tech/jenkins.jpg"
+        "icon": "jenkins"
       },
       "git": {
         "name": "git",
         "tags": ["version-control"],
-        "icon": "/images/tech/git.jpg"
+        "icon": "git"
       },
       "svn": {
         "name": "svn",
-        "tags": ["version-control"],
-        "icon": "/images/tech/svn.jpg"
+        "tags": ["version-control"]
       },
       "contentful": {
         "name": "contentful",
-        "tags": ["cms", "graphql"],
-        "icon": "/images/tech/contentful.jpg"
+        "tags": ["cms", "graphql"]
       },
       "wordpress": {
         "name": "wordpress",
         "tags": ["cms"],
-        "icon": "/images/tech/wordpress.jpg"
+        "icon": "wordpress"
       },
       "drupal": {
         "name": "drupal",
         "tags": ["cms"],
-        "icon": "/images/tech/drupal.jpg"
+        "icon": "drupal"
       },
       "magento": {
         "name": "magento",
         "tags": ["cms"],
-        "icon": "/images/tech/magento.webp"
+        "icon": "magento"
       },
       "shopify": {
         "name": "shopify",
-        "tags": ["cms"],
-        "icon": "/images/tech/shopify.webp"
+        "tags": ["cms"]
       }
     }
   },
   "work": {
     "history": {
       "freelance:2022": {
+        "id": "freelance:2022",
         "name": "Freelance",
+        "description": "",
         "employment": "freelance",
         "start": "01/2022",
         "end": null,
         "clients": {
           "solidstarts": {
+            "id": "solidstarts",
             "name": "Solid Starts",
-            "industry": "healthcare",
+            "industry": "health & wellness",
             "phase": "startup",
             "employment": "freelance",
             "url": "https://solidstarts.com",
             "level": "lead",
             "time": "part-time",
-            "description": "",
+            "description": "- Lead the development of the website, integrated new features \n- Implemented various performance optimizations",
             "start": "08/2023",
-            "end": null,
+            "end": "03/2024",
             "reasonEnd": null,
             "location": "remote",
             "icon": "/images/work/solidstarts.webp",
-            "tags": ["website", "design system", "serverless"],
+            "tags": [
+              "website",
+              "design system",
+              "serverless",
+              "cloud infrastructure",
+              "performance optimization",
+              "testing"
+            ],
             "stack": [
               "html",
               "css",
@@ -602,6 +675,7 @@
             ]
           },
           "vega": {
+            "id": "vega",
             "name": "Vega",
             "industry": "blockchain",
             "phase": "startup",
@@ -612,23 +686,29 @@
                 "name": "Desktop Wallet",
                 "featured": true,
                 "url": "https://vega.xyz/wallet",
+                "start": "08/2022",
+                "end": "05/2023",
                 "description": ""
               },
               {
                 "name": "Browser Wallet",
                 "url": "https://vega.xyz/wallet",
+                "start": "11/2022",
+                "end": "04/2023",
                 "description": ""
               },
               {
                 "name": "Node Discovery",
                 "featured": true,
                 "url": "https://vegaprotocol.eth.limo",
+                "start": "06/2022",
+                "end": "07/2023",
                 "description": ""
               }
             ],
             "level": "lead",
             "time": "full-time",
-            "description": "",
+            "description": "- Designed a node discovery feature for the frontend apps\n- Worked on features for the wallet desktop application\n- Worked on a web wallet as browser extension for Chrome and Firefox",
             "start": "05/2022",
             "end": "05/2023",
             "reasonEnd": "",
@@ -638,7 +718,10 @@
               "webapp",
               "desktop app",
               "design system",
-              "code generation"
+              "code generation",
+              "testing",
+              "integration",
+              "data visualization"
             ],
             "stack": [
               "html",
@@ -669,6 +752,7 @@
             ]
           },
           "create": {
+            "id": "create",
             "name": "Create",
             "industry": "digital agency",
             "phase": "startup",
@@ -680,12 +764,14 @@
                 "industry": "blockchain",
                 "icon": "/images/work/chainabuse.png",
                 "url": "https://chainabuse.com",
+                "start": "06/2022",
+                "end": "07/2022",
                 "description": ""
               }
             ],
             "level": "senior",
             "time": "part-time",
-            "description": "",
+            "description": "- Built reusable components for an internal UI library\n- Added features to their custom code generator\n- Implemented custom features for different client products (e.g., Chainabuse)",
             "start": "04/2022",
             "end": "08/2022",
             "reasonEnd": null,
@@ -696,7 +782,9 @@
               "design system",
               "code generation",
               "microservices",
-              "serverless"
+              "serverless",
+              "integration",
+              "testing"
             ],
             "stack": [
               "html",
@@ -720,6 +808,7 @@
             ]
           },
           "nexum": {
+            "id": "nexum",
             "name": "Nexum",
             "industry": "digital agency",
             "phase": "corporate",
@@ -731,12 +820,14 @@
                 "industry": "healthcare",
                 "icon": "/images/work/asklepios.png",
                 "url": "https://asklepios.com",
+                "start": "01/2022",
+                "end": "05/2022",
                 "description": ""
               }
             ],
             "level": "senior",
             "time": "full-time",
-            "description": "",
+            "description": "- Developed features for the user-facing website for Asklepios",
             "start": "01/2022",
             "end": "05/2022",
             "reasonEnd": "",
@@ -760,6 +851,7 @@
         }
       },
       "planet": {
+        "id": "planet",
         "name": "Planet Labs",
         "industry": "aerospace",
         "phase": "corporate",
@@ -767,13 +859,19 @@
         "url": "https://planet.com",
         "level": "senior",
         "time": "full-time",
-        "description": "",
+        "description": "- Worked on internal tools to support other teams\n- Developed an internal dashboard for data analysis\n- Mentoring",
         "start": "09/2021",
         "end": "01/2022",
         "reasonEnd": "",
         "location": "Berlin, DE",
         "icon": "/images/work/planet.png",
-        "tags": ["tooling", "webapp"],
+        "tags": [
+          "tooling",
+          "webapp",
+          "architecture",
+          "greenfield",
+          "data visualization"
+        ],
         "stack": [
           "html",
           "css",
@@ -787,6 +885,7 @@
           "node",
           "npm",
           "nextjs",
+          "sql",
           "aws",
           "rest/http",
           "openapi",
@@ -800,6 +899,7 @@
         ]
       },
       "prezi": {
+        "id": "prezi",
         "name": "Prezi",
         "industry": "media",
         "phase": "corporate",
@@ -811,30 +911,38 @@
             "featured": true,
             "icon": "/images/work/prezi-orge.png",
             "url": null,
+            "start": "11/2020",
+            "end": "04/2021",
             "description": ""
           },
           {
             "name": "Prezi Dashboard",
             "icon": "/images/work/prezi.png",
             "url": null,
+            "start": "03/2020",
+            "end": "06/2021",
             "description": ""
           },
           {
             "name": "Prezi Video",
             "icon": "/images/work/prezi-video.png",
             "url": null,
+            "start": "06/2021",
+            "end": "08/2021",
             "description": ""
           },
           {
             "name": "Monorepo health dashboard",
             "icon": "/images/work/prezi.png",
             "url": null,
+            "start": "04/2021",
+            "end": "05/2021",
             "description": ""
           }
         ],
         "level": "senior",
         "time": "full-time",
-        "description": "",
+        "description": "- Developed and maintained user dashboard and contributed to designing the internal UI library\n- Automated syncing API clients with internal tooling and code\n- Designed storybook deployments for test environments\n- Contributed to creating an internal dashboard for displaying analytics for all the frontend packages within the company\n- Developed features and maintained the user dashboard\n- Integrated react components into the Prezi Video desktop app\n- Held knowledge sharing sessions",
         "start": "03/2020",
         "end": "08/2021",
         "reasonEnd": "",
@@ -845,7 +953,8 @@
           "desktop app",
           "tooling",
           "design system",
-          "code generation"
+          "code generation",
+          "data visualization"
         ],
         "stack": [
           "html",
@@ -858,7 +967,9 @@
           "lerna",
           "node",
           "rest/http",
+          "sql",
           "openapi",
+          "jenkins",
           "aws",
           "dynamodb",
           "python",
@@ -868,28 +979,34 @@
         ]
       },
       "freelance:2017": {
+        "id": "freelance:2017",
         "name": "Freelance",
+        "description": "",
         "employment": "freelance",
-        "start": "01/2022",
-        "end": null,
+        "start": "09/2016",
+        "end": "03/2020",
         "clients": {
           "dcmn": {
+            "id": "dcmn",
             "name": "DCMN",
             "industry": "digital agency",
             "employment": "freelance",
             "url": "https://dcmn.com",
+            "icon": "/images/work/dcmn.png",
             "projects": [
               {
                 "name": "DCMN Website",
                 "featured": true,
                 "url": "https://dcmn.com",
                 "icon": "/images/work/dcmn.png",
+                "start": "10/2019",
+                "end": "11/2019",
                 "description": ""
               }
             ],
             "level": "lead",
             "time": "part-time",
-            "description": "",
+            "description": "- Developed and deployed the company's new website",
             "start": "10/2019",
             "end": "11/2019",
             "reasonEnd": null,
@@ -908,6 +1025,7 @@
             ]
           },
           "engagespark": {
+            "id": "engagespark",
             "name": "engageSPARK",
             "industry": "telecommunication",
             "phase": "startup",
@@ -919,18 +1037,20 @@
                 "featured": true,
                 "url": "https://app.engagespark.com",
                 "icon": "/images/work/engagespark.png",
+                "start": "03/2018",
+                "end": "09/2019",
                 "description": ""
               }
             ],
             "level": "lead",
             "time": "full-time",
-            "description": "",
+            "description": "- Designed the frontend architecture for a new webapp\n- Implemented various features enabling users to manage their campaigns online\n- Mentoring, knowledge sharing",
             "start": "03/2018",
             "end": "09/2019",
             "reasonEnd": "",
             "location": "remote",
             "icon": "/images/work/engagespark.png",
-            "tags": ["webapp", "design system"],
+            "tags": ["webapp", "design system", "greenfield", "architecture"],
             "stack": [
               "html",
               "css",
@@ -942,14 +1062,17 @@
               "python",
               "django",
               "docker",
+              "jenkins",
               "kubernetes",
               "gcloud",
               "rest/http",
+              "go",
               "git",
               "github"
             ]
           },
           "williamhill": {
+            "id": "williamhill",
             "name": "William Hill",
             "industry": "gambling",
             "phase": "corporate",
@@ -957,12 +1080,12 @@
             "url": "https://williamhill.com",
             "level": "senior",
             "time": "full-time",
-            "description": "",
+            "description": "- Developed a new site navigation\n- Took part in designing a new micro-frontend architecture\n- Built a microservice for custom SSR for react micro-frontends",
             "start": "05/2017",
             "end": "11/2017",
             "reasonEnd": "",
             "location": "Gibraltar",
-            "tags": ["website", "microservices"],
+            "tags": ["website", "microservices", "ssr", "testing"],
             "stack": [
               "html",
               "css",
@@ -976,32 +1099,34 @@
               "expressjs",
               "vagrant",
               "flow",
+              "typescript",
               "rest/http",
               "git",
               "github"
             ]
           },
           "piksel": {
+            "id": "piksel",
             "name": "Piksel",
             "industry": "media",
             "employment": "freelance",
             "url": "https://piksel.com",
             "level": "senior",
             "time": "full-time",
-            "description": "",
+            "description": "- Migrated a custom ORM from using Mongo to Cassandra\n- Implemented a general purpose circuit breaker for node microservices\n- Worked on new features for the authentication microservice",
             "start": "09/2016",
-            "end": "02/2017",
+            "end": "03/2017",
             "reasonEnd": "",
             "location": "York, UK",
             "icon": "/images/work/piksel.png",
-            "tags": ["microservices", "databases", "serverless"],
+            "tags": ["microservices", "databases", "serverless", "testing"],
             "stack": [
-              "html",
-              "css",
               "javascript",
               "node",
+              "ruby",
               "hapi",
               "docker",
+              "sql",
               "mongodb",
               "cassandra",
               "rest/http",
@@ -1015,6 +1140,7 @@
         }
       },
       "moneyhub": {
+        "id": "moneyhub",
         "name": "Moneyhub",
         "industry": "finance",
         "phase": "startup",
@@ -1022,13 +1148,20 @@
         "url": "https://moneyhub.com",
         "level": "mid",
         "time": "full-time",
-        "description": "",
+        "description": "- Integrated microservices with various bank APIs\n- Developed features and data visualisation charts for the mobile app-n- Implemented a subscription management microservice using Stripe and ChargeBee\n- Worked on their b2b web application",
         "start": "02/2016",
         "end": "08/2016",
         "reasonEnd": "Redundancy",
         "location": "Bristol, UK",
         "icon": "/images/work/moneyhub.png",
-        "tags": ["mobile app", "webapp", "microservices", "databases"],
+        "tags": [
+          "mobile app",
+          "webapp",
+          "microservices",
+          "databases",
+          "testing",
+          "architecture"
+        ],
         "stack": [
           "html",
           "css",
@@ -1044,6 +1177,7 @@
           "ramda",
           "docker",
           "rest/http",
+          "sql",
           "postgres",
           "mongodb",
           "git",
@@ -1051,19 +1185,25 @@
         ]
       },
       "vouchercloud": {
+        "id": "vouchercloud",
         "name": "Vouchercloud",
         "industry": "sales",
         "employment": "permanent",
         "url": "https://vouchercloud.com",
         "level": "mid",
         "time": "full-time",
-        "description": "",
+        "description": "- Developed map search feature to see deals around the user's currentl location\n- Integrated site search using Algolia\n- Implemented various performance improvements",
         "start": "04/2015",
         "end": "02/2016",
         "reasonEnd": "",
         "location": "Bristol, UK",
         "icon": "/images/work/vouchercloud.png",
-        "tags": ["website", "ecommerce"],
+        "tags": [
+          "website",
+          "ecommerce",
+          "architecture",
+          "performance optimization"
+        ],
         "stack": [
           "html",
           "css",
@@ -1078,6 +1218,7 @@
         ]
       },
       "ems-internet": {
+        "id": "ems-internet",
         "name": "EMS-Internet",
         "industry": "digital agency",
         "phase": "corporate",
@@ -1085,7 +1226,7 @@
         "url": null,
         "level": "junior",
         "time": "full-time",
-        "description": "",
+        "description": "- Designed and developed various website for smaller clients.",
         "start": "06/2014",
         "end": "04/2015",
         "reasonEnd": "",
@@ -1098,6 +1239,7 @@
           "javascript",
           "jquery",
           "php",
+          "sql",
           "drupal",
           "magento",
           "git",
@@ -1169,10 +1311,12 @@
         "javascript",
         "postgres",
         "postgis",
+        "sql",
         "node",
         "npm",
         "git",
-        "github"
+        "github",
+        "mysql"
       ]
     },
     "lrtt": {

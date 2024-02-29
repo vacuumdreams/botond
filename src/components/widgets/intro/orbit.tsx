@@ -1,4 +1,4 @@
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { cn, randomIntFromInterval } from "@/lib/utils";
 
 type OrbitProps = {
@@ -14,46 +14,45 @@ export const Orbit = ({ name, icon, count, total }: OrbitProps) => {
     7500 * (total - count + 1) + (total - count) * 500;
   const animationDurationItem = randomIntFromInterval(count, 750, 10000);
 
-  // console.log(name, animationName);
-
   return (
     <div
       className={cn(
         "mt-48",
         "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform",
-        "rounded-full",
+        "h-full w-full rounded-full",
       )}
-      style={{
-        width: `${250 + (total - count) * 36}px`,
-        height: `${250 + (total - count) * 36}px`,
-      }}
     >
       <div
         className={cn(
           "absolute -left-5 -top-5 z-20 rounded-full",
           "h-[calc(100%_+_2.5rem)] w-[calc(100%_+_2.5rem)]",
+          "will-change-transform",
         )}
         style={{
           animationName,
           animationDuration: `${animationDurationOrbit}ms`,
           animationTimingFunction: "linear",
           animationIterationCount: "infinite",
-          animationDirection: "forwards",
+          animationDirection: "normal",
+          animationFillMode: "both",
         }}
       >
         <div
-          className="flex justify-center"
+          className="absolute flex w-full justify-center will-change-transform"
           style={{
             animationName: "spin-0",
             animationDuration: `${animationDurationItem}ms`,
             animationTimingFunction: "linear",
             animationIterationCount: "infinite",
             animationDirection: "reverse",
+            animationFillMode: "both",
           }}
         >
-          <Avatar className="border border-white bg-white">
-            {icon && <AvatarImage src={icon} alt={name} />}
-            <AvatarFallback>{name[0].toUpperCase()}</AvatarFallback>
+          <Avatar className="border border-slate-500 bg-black text-white">
+            <div className="flex h-full w-full items-center justify-center overflow-hidden text-3xl">
+              {icon && <i className={`devicon-${icon}-plain`} />}
+              {!icon && <AvatarFallback>{name[0]}</AvatarFallback>}
+            </div>
           </Avatar>
         </div>
       </div>

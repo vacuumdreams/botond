@@ -1,21 +1,5 @@
 import type { Metadata } from "next";
-import { M_PLUS_Code_Latin, Cutive_Mono } from "next/font/google";
-import { cn } from "@/lib/utils";
 import "./globals.css";
-
-const bodyFont = M_PLUS_Code_Latin({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["100", "400", "700"],
-  variable: "--font-body",
-});
-
-const monoFont = Cutive_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400"],
-  variable: "--font-mono",
-});
 
 export const metadata: Metadata = {
   title: "Botond Fekete",
@@ -29,9 +13,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="print:light dark">
-      <body className={cn(bodyFont.variable, monoFont.variable)}>
-        {children}
-      </body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Protest+Guerrilla&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/devicon.min.css"
+        />
+      </head>
+      <body className="font-mono">{children}</body>
     </html>
   );
 }
