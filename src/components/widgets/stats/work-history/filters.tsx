@@ -160,6 +160,7 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
           selected={filters.stack}
           options={stackOptions}
           onChange={(v) => {
+            // @ts-ignore
             setFilters((f) => ({
               ...f,
               stack: v,

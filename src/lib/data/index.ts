@@ -147,6 +147,7 @@ const transformData = (raw: Data): ProcessedData => {
   return {
     data: processedData,
     normalisedTags: normaliseTags(raw),
+    // @ts-ignore
     intro: shuffle(Object.values(data.skills.tech).filter((t) => t.featured)),
   };
 };

@@ -100,6 +100,7 @@ export const IndustryChart = () => {
       tooltip={(e) => (
         <div className="flex items-center gap-2 bg-slate-500 p-2 text-sm text-white">
           <Avatar className="h-8 w-8">
+            {/* @ts-ignore */}
             {iconMapping[e.datum.label] || <FactoryIcon />}
           </Avatar>
           <div>
