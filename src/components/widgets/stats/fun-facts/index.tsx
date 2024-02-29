@@ -23,8 +23,9 @@ const brags: Array<ReactNode> = [
     about 20 seconds on a good day.
   </p>,
   <p key="8">
-    I've played more than 14.000 online chess games since January of 2022. Yes,
-    I know that's when Queen's Gambit came out. No, I haven't gotten good at it.
+    I{"'"}ve played more than 14.000 online chess games since January of 2022.
+    Yes, I know that{"'"}s when Queen{"'"}s Gambit came out. No, I haven{"'"}t
+    gotten good at it.
   </p>,
   <p key="9">I can juggle with 3 medium sized, round shaped objects. </p>,
 ];
