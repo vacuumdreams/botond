@@ -19,9 +19,9 @@ export const Roadmap = () => {
     <div>
       <div className="p-4">
         <p>
-          I've been doing software for a while, but I'm always trying to keep a
-          pace at learning new things. Here are some of the courses and
-          certifications I've completed or I'm currently working on.
+          I{"'"}ve been doing software for a while, but I{"'"}m always trying to
+          keep a pace at learning new things. Here are some of the courses and
+          certifications I{"'"}ve completed or I{"'"}m currently working on.
         </p>
       </div>
       <ul className="ml-8 border-l-2 border-slate-800 pl-6">
