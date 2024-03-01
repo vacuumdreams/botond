@@ -9,6 +9,7 @@ export type BubbleProps = {
   dialogue: {
     delay?: number;
     pos: "left" | "right";
+    decor?: boolean;
     Component: (props: {
       setStatsOpen: (open: boolean) => void;
       data: ReturnType<typeof useData>["data"];
@@ -21,6 +22,7 @@ export type BubbleProps = {
 export const Bubble = ({ dialogue, onEvents, onFinish }: BubbleProps) => {
   const { data } = useData();
   const [show, setShow] = useState(false);
+  const decor = dialogue.decor !== false;
 
   useEffect(() => setShow(true), [setShow]);
 
@@ -34,13 +36,11 @@ export const Bubble = ({ dialogue, onEvents, onFinish }: BubbleProps) => {
       <div
         className={cn(
           "mb-4 w-full rounded-md p-2",
-          "border border-dashed border-white text-slate-100",
           "transition-all duration-500",
           {
-            "bg-slate-800": dialogue.pos === "left",
-            "bg-slate-600": dialogue.pos === "right",
-            // "translate-y-12 opacity-0": !show,
-            // "opacity-1 translate-y-0": show,
+            "border border-dashed border-white text-slate-100": decor,
+            "bg-slate-800": decor && dialogue.pos === "left",
+            "bg-slate-600": decor && dialogue.pos === "right",
           },
         )}
       >

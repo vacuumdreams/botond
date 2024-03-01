@@ -1,13 +1,16 @@
-import {
-  useState,
-  useEffect,
-  useCallback,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTransition, animated } from "@react-spring/web";
 import Link from "next/link";
-import { GithubIcon, LinkedinIcon, RssIcon, PieChartIcon } from "lucide-react";
+import {
+  PhoneIcon,
+  MailIcon,
+  GithubIcon,
+  LinkedinIcon,
+  RssIcon,
+  PieChartIcon,
+  NotebookTabsIcon,
+} from "lucide-react";
+import { Avatar } from "@/components/ui/avatar";
 
 import { Bubble, BubbleProps } from "./bubble";
 import { Lines } from "./lines";
@@ -77,27 +80,9 @@ const DIALOGUE: BubbleItemProps[] = [
   },
   {
     id: "4",
-    delay: 3000,
-    pos: "right",
-    Component: ({ data, onFinish }) => {
-      useEffect(() => {
-        setTimeout(() => onFinish(), hasBeenSeen() ? 0 : 3000);
-      }, [onFinish]);
-      return (
-        <a
-          className="flex w-full gap-2"
-          target="_blank"
-          href={data.social.links.linkedin.url}
-        >
-          <LinkedinIcon /> Can I check you out on Linkedin?
-        </a>
-      );
-    },
-  },
-  {
-    id: "5",
     delay: 4000,
     pos: "right",
+    decor: false,
     Component: ({ data, onFinish }) => {
       useEffect(() => {
         setTimeout(
@@ -109,13 +94,44 @@ const DIALOGUE: BubbleItemProps[] = [
         );
       }, [onFinish]);
       return (
-        <a
-          className="flex w-full gap-2"
-          target="_blank"
-          href={data.social.links.github.url}
-        >
-          <GithubIcon /> Take me to your Github
-        </a>
+        <div className="flex justify-end gap-4">
+          <a
+            className="flex gap-2 rounded-full transition-colors hover:bg-slate-800"
+            target="_blank"
+            href={`tel:${data.social.phone}`}
+          >
+            <Avatar className="flex items-center justify-center border border-dashed border-white">
+              <PhoneIcon />
+            </Avatar>
+          </a>
+          <a
+            className="flex gap-2 rounded-full transition-colors hover:bg-slate-800"
+            target="_blank"
+            href={`mailto:${data.social.email}`}
+          >
+            <Avatar className="flex items-center justify-center border border-dashed border-white">
+              <MailIcon />
+            </Avatar>
+          </a>
+          <a
+            className="flex gap-2 rounded-full transition-colors hover:bg-slate-800"
+            target="_blank"
+            href={data.social.links.github.url}
+          >
+            <Avatar className="flex items-center justify-center border border-dashed border-white">
+              <GithubIcon />
+            </Avatar>
+          </a>
+          <a
+            className="flex gap-2 rounded-full transition-colors hover:bg-slate-800"
+            target="_blank"
+            href={data.social.links.linkedin.url}
+          >
+            <Avatar className="flex items-center justify-center border border-dashed border-white">
+              <LinkedinIcon />
+            </Avatar>
+          </a>
+        </div>
       );
     },
   },
@@ -173,17 +189,22 @@ export const Dialogue = ({ setStatsOpen }: DialogueProps) => {
     );
   }, []);
 
-  const handleFinish = useCallback(() => {
-    const nextIndex = queue.length;
-    if (nextIndex < DIALOGUE.length) {
-      setQueue((prevQueue) => {
-        if (!prevQueue.find((q) => q.id === DIALOGUE[nextIndex].id)) {
-          return [...prevQueue, DIALOGUE[nextIndex]];
-        }
-        return prevQueue;
-      });
-    }
-  }, [queue]);
+  const handleFinish = useCallback(
+    (id?: string) => {
+      const nextIndex = id
+        ? DIALOGUE.findIndex((d) => d.id === id)
+        : queue.length;
+      if (nextIndex < DIALOGUE.length) {
+        setQueue((prevQueue) => {
+          if (!prevQueue.find((q) => q.id === DIALOGUE[nextIndex].id)) {
+            return [...prevQueue, DIALOGUE[nextIndex]];
+          }
+          return prevQueue;
+        });
+      }
+    },
+    [queue],
+  );
 
   return (
     <div className="fixed bottom-4 left-0 w-full max-w-full px-4 md:bottom-12 md:left-auto md:right-4 md:w-[530px]">
