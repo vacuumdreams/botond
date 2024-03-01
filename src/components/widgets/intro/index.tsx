@@ -75,7 +75,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
         <div className="relative m-auto mt-20 w-10/12 sm:w-80">
           <div className="animate-float">
             <Image
-              src="/images/figure.svg"
+              src="/images/illustrations/figure.svg"
               alt="Botond Fekete"
               priority={true}
               width={300}
@@ -84,7 +84,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
           </div>
           <div className="absolute -left-20 top-1 w-40 -rotate-12">
             <Image
-              src="/images/vinyl-player.png"
+              src="/images/illustrations/vinyl-player.png"
               alt="Vinyl player"
               className="animate-float h-auto"
               width={300}
@@ -94,7 +94,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
           </div>
           <div className="absolute -right-40 -top-2 w-48 rotate-[24deg]">
             <Image
-              src="/images/guitar.png"
+              src="/images/illustrations/guitar.png"
               alt="guitar"
               className="animate-float"
               width={400}
@@ -104,7 +104,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
           </div>
           <div className="absolute -top-24 right-0 w-24 -rotate-[24deg]">
             <Image
-              src="/images/moka.png"
+              src="/images/illustrations/moka.png"
               alt="guitar"
               className="animate-float"
               width={400}
@@ -114,7 +114,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
           </div>
           <div className="rotate absolute -left-8 top-44 w-40">
             <Image
-              src="/images/laptop.png"
+              src="/images/illustrations/laptop.png"
               alt="guitar"
               className="animate-float"
               width={400}
