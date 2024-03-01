@@ -10,8 +10,9 @@ import {
 } from "@/components/ui/select";
 import { MultiSelect } from "@/components/ui/multi-select";
 import { useData } from "@/components/provider/data";
-import { WorkItem, TechItem } from "@/lib/data";
+import { WorkItem, FreelanceItem } from "@/lib/data";
 import { getDate } from "@/lib/utils";
+import { Wand2 } from "lucide-react";
 
 export type FilterType = {
   employment: "all" | "freelance" | "permanent";
@@ -30,34 +31,72 @@ const getStack = (w: WorkItem) => {
 
 export const filterFunctions: Record<
   keyof FilterType,
-  (f: FilterType, w: WorkItem) => boolean
+  (f: FilterType, w: WorkItem) => WorkItem | null
 > = {
   employment: (filters, w) => {
     if (filters.employment !== "all" && w.employment !== filters.employment) {
-      return false;
+      return null;
     }
-    return true;
+    return w;
   },
   minDuration: (filters, w) => {
+    if (filters.employment === "freelance" && w.employment === "freelance") {
+      const clients = Object.keys(w.clients).reduce<
+        Record<string, FreelanceItem["clients"][keyof FreelanceItem["clients"]]>
+      >((acc, key) => {
+        const c = w.clients[key];
+        const diff = differenceInMonths(getDate(c.end), getDate(c.start));
+        if (
+          filters.minDuration === "all" ||
+          (filters.minDuration === "6m" && diff >= 6) ||
+          (filters.minDuration === "1y" && diff >= 12)
+        ) {
+          acc[key] = c;
+        }
+        return acc;
+      }, {});
+
+      return { ...w, clients };
+    }
+
     if (
       filters.minDuration === "6m" &&
-      differenceInMonths(getDate(w.start), getDate(w.end)) < 6
+      differenceInMonths(getDate(w.end), getDate(w.start)) >= 6
     ) {
-      return false;
+      return w;
     }
     if (
       filters.minDuration === "1y" &&
-      differenceInMonths(getDate(w.start), getDate(w.end)) < 12
+      differenceInMonths(getDate(w.end), getDate(w.start)) >= 12
     ) {
-      return false;
+      return w;
     }
-    return true;
+    return null;
   },
   stack: (filters, w) => {
+    if (w.employment === "freelance") {
+      const clients = Object.keys(w.clients).reduce<
+        Record<string, FreelanceItem["clients"][keyof FreelanceItem["clients"]]>
+      >((acc, key) => {
+        const c = w.clients[key];
+        const qualifies = filters.stack.reduce((a, s) => {
+          return a && c.stack.includes(s);
+        }, true);
+        if (qualifies) {
+          acc[key] = c;
+        }
+        return acc;
+      }, {});
+      return { ...w, clients };
+    }
     const stack = getStack(w);
-    return filters.stack.reduce((acc, s) => {
-      return acc && stack.includes(s);
+    const qualifies = filters.stack.reduce((a, s) => {
+      return a && stack.includes(s);
     }, true);
+    if (qualifies) {
+      return w;
+    }
+    return null;
   },
 };
 
@@ -86,7 +125,7 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
   }, [data]);
 
   return (
-    <div className="flex gap-2 border-b border-slate-800 px-4 py-4">
+    <div className="flex flex-wrap gap-2 border-b border-slate-800 px-4 py-4">
       <div className="w-40">
         <p className="mb-1 text-xs text-slate-400">Employment</p>
         <Select
@@ -153,7 +192,7 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
           </SelectContent>
         </Select>
       </div>
-      <div className="min-w-36">
+      <div className="w-full md:w-auto md:min-w-36">
         <p className="mb-1 text-xs text-slate-400">Stack</p>
         <MultiSelect
           placeholder="All"

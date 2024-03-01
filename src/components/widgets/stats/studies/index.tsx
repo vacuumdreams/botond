@@ -25,12 +25,12 @@ export const Roadmap = () => {
         </p>
       </div>
       <ul className="ml-8 border-l-2 border-slate-800 pl-6">
-        <li className="relative my-8 flex items-center justify-between gap-4 pr-4">
+        <li className="relative my-8 items-center justify-between gap-4 pr-4 md:flex">
           <div>
             <p className="text-slate-500">Started recently</p>
             <p>Threejs Journey</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="my-4 flex items-center gap-2 md:my-0">
             <Badge className="whitespace-nowrap break-keep bg-slate-800 text-white hover:bg-slate-800">
               ui
             </Badge>
@@ -49,12 +49,12 @@ export const Roadmap = () => {
             />
           </Avatar>
         </li>
-        <li className="relative my-8 flex items-center justify-between gap-4 pr-4">
+        <li className="relative my-8 items-center justify-between gap-4 pr-4 md:flex">
           <div>
             <p className="text-slate-500">Ongoing</p>
             <p>Try Hack Me</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="my-4 flex items-center gap-2 md:my-0">
             <Badge className="whitespace-nowrap break-keep bg-slate-800 text-white hover:bg-slate-800">
               cybersecurity
             </Badge>
@@ -76,13 +76,13 @@ export const Roadmap = () => {
         {certs.map((c, i) => (
           <li
             key={i}
-            className="relative my-8 flex items-center justify-between gap-4 pr-4"
+            className="relative my-8 items-center justify-between gap-4 pr-4 md:flex"
           >
             <div>
               <p className="text-slate-500">{c.date}</p>
               <p>{c.name}</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="my-4 flex items-center gap-2 md:my-0">
               {c.tags?.map((tag) => (
                 <Badge
                   className="whitespace-nowrap break-keep bg-slate-800 text-white hover:bg-slate-800"

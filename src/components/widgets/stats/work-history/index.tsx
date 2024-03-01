@@ -6,10 +6,18 @@ import { WorkItem } from "@/lib/data";
 import { PermanentItem, FreelanceItem } from "./item";
 import { Filters, FilterType, filterFunctions } from "./filters";
 
-const doFilter = (filters: FilterType) => (w: WorkItem) => {
-  return Object.values(filterFunctions).reduce((acc, fn) => {
-    return acc && fn(filters, w);
-  }, true);
+const doFilter = (filters: FilterType) => (items: WorkItem[], w: WorkItem) => {
+  const workItem = Object.values(filterFunctions).reduce<WorkItem | null>(
+    (acc, fn) => {
+      return acc && fn(filters, acc);
+    },
+    w,
+  );
+
+  if (workItem !== null) {
+    items.push(workItem);
+  }
+  return items;
 };
 
 export const WorkHistory = () => {
@@ -21,7 +29,10 @@ export const WorkHistory = () => {
   });
 
   const list = useMemo(() => {
-    return Object.values(data.work.history).filter(doFilter(filters));
+    return Object.values(data.work.history).reduce<WorkItem[]>(
+      doFilter(filters),
+      [],
+    );
   }, [data, filters]);
 
   return (

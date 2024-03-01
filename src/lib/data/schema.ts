@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const projectSchema = z.object({
+export const projectSchema = z.object({
   name: z.string(),
   featured: z.boolean().or(z.undefined()),
   type: z.string().or(z.undefined()),

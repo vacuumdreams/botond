@@ -186,7 +186,7 @@ export const Dialogue = ({ setStatsOpen }: DialogueProps) => {
   }, [queue]);
 
   return (
-    <div className="fixed bottom-12 right-4 w-[530px] max-w-full">
+    <div className="fixed bottom-4 left-0 w-full max-w-full px-4 md:bottom-12 md:left-auto md:right-4 md:w-[530px]">
       <DialogueList
         queue={queue}
         setStatsOpen={setStatsOpen}

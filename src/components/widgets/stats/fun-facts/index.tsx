@@ -6,7 +6,11 @@ const brags: Array<ReactNode> = [
     Arguably the most boring week of my life was when I was stuck on the
     Trans-Siberian train with some Kirkegaard e-books.
   </p>,
-  <p key="3">I was pretty drunk on the profile photo on the left.</p>,
+  <p key="3">
+    I was pretty drunk on the profile photo{" "}
+    <span className="hidden md:inline">on the left</span>
+    <span className="md:hidden">above</span>.
+  </p>,
   <p key="4">
     I learned basic HTML, CSS, Javascript, PHP and jQuery in about three month,
     during which I spent around 16 hours a day on projects, and zero time with

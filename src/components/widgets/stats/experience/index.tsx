@@ -13,7 +13,7 @@ import { LocationChart } from "./location";
 
 export const Experience = () => {
   return (
-    <div className="mt-12 px-14">
+    <div className="mt-12">
       <div className="grid grid-cols-12">
         <div className="col-span-12 mb-12 aspect-video xl:col-span-8 xl:aspect-square">
           <LanguageChart />
@@ -29,54 +29,56 @@ export const Experience = () => {
           </div>
         </div>
       </div>
-      <Carousel className="w-full" opts={{ loop: true }}>
-        <CarouselContent>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <div className="aspect-square">
-              <p className="text-center text-sm text-slate-300">JavaScript</p>
-              <JavascriptChart />
-            </div>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <div className="aspect-square">
-              <p className="text-center text-sm text-slate-300">Frontend</p>
-              <TagChart tag="frontend" />
-            </div>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <div className="aspect-square">
-              <p className="text-center text-sm text-slate-300">Backend</p>
-              <TagChart tag="backend" />
-            </div>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <div className="aspect-square">
-              <p className="text-center text-sm text-slate-300">Databases</p>
-              <TagChart tag="database" />
-            </div>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <div className="aspect-square">
-              <p className="text-center text-sm text-slate-300">Cloud</p>
-              <TagChart tag="cloud" />
-            </div>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <div className="aspect-square">
-              <p className="text-center text-sm text-slate-300">CI/CD</p>
-              <TagChart tag="ci" />
-            </div>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <div className="aspect-square">
-              <p className="text-center text-sm text-slate-300">Testing</p>
-              <TagChart tag="testing" />
-            </div>
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <div className="px-14">
+        <Carousel className="w-full" opts={{ loop: true }}>
+          <CarouselContent>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="aspect-square">
+                <p className="text-center text-sm text-slate-300">JavaScript</p>
+                <JavascriptChart />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="aspect-square">
+                <p className="text-center text-sm text-slate-300">Frontend</p>
+                <TagChart tag="frontend" />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="aspect-square">
+                <p className="text-center text-sm text-slate-300">Backend</p>
+                <TagChart tag="backend" />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="aspect-square">
+                <p className="text-center text-sm text-slate-300">Databases</p>
+                <TagChart tag="database" />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="aspect-square">
+                <p className="text-center text-sm text-slate-300">Cloud</p>
+                <TagChart tag="cloud" />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="aspect-square">
+                <p className="text-center text-sm text-slate-300">CI/CD</p>
+                <TagChart tag="ci" />
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <div className="aspect-square">
+                <p className="text-center text-sm text-slate-300">Testing</p>
+                <TagChart tag="testing" />
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,13 @@
+import { z } from "zod";
 import { uniq } from "ramda";
 import data from "@/data.json";
-import { schema, Data } from "./schema";
+import {
+  schema,
+  Data,
+  freelanceSchema,
+  permanentSchema,
+  projectSchema,
+} from "./schema";
 import {
   getStartDate,
   getEndDate,
@@ -68,6 +75,10 @@ export type TechItem = Data["skills"]["tech"][keyof Data["skills"]["tech"]] & {
 
 export type WorkItem =
   ProcessedData["data"]["work"]["history"][keyof ProcessedData["data"]["work"]["history"]];
+
+export type PermanentItem = z.infer<typeof permanentSchema>;
+export type FreelanceItem = z.infer<typeof freelanceSchema>;
+export type ProjectItem = z.infer<typeof projectSchema>;
 
 function monthDiff(dateFrom: Date, dateTo: Date): number {
   return (

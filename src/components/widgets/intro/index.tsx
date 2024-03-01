@@ -77,6 +77,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
             <Image
               src="/images/figure.svg"
               alt="Botond Fekete"
+              priority={true}
               width={300}
               height={300}
             />
@@ -85,9 +86,9 @@ export const Intro = ({ startTransition }: IntroProps) => {
             <Image
               src="/images/vinyl-player.png"
               alt="Vinyl player"
-              className="animate-float"
-              width={400}
-              height={400}
+              className="animate-float h-auto"
+              width={300}
+              height={300}
               style={{ animationDelay: "0.95s" }}
             />
           </div>

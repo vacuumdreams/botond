@@ -3,7 +3,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 import { Check, X, ChevronsUpDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -48,11 +48,14 @@ function MultiSelect({
   return (
     <Popover open={open} onOpenChange={setOpen} {...props}>
       <PopoverTrigger asChild>
-        <Button
-          variant="outline"
+        <div
           role="combobox"
+          aria-controls="listbox"
           aria-expanded={open}
-          className={`h-10 w-full justify-between hover:bg-transparent`}
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            `h-10 w-full justify-between hover:bg-transparent`,
+          )}
           onClick={() => setOpen(!open)}
         >
           <div className="flex flex-nowrap gap-1">
@@ -84,7 +87,7 @@ function MultiSelect({
             ))}
           </div>
           <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
-        </Button>
+        </div>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">
         <Command className={className}>

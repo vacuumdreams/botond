@@ -188,7 +188,7 @@ export const FreelanceItem = ({
             <AccordionTrigger className="p-4">
               <div className="flex w-full items-center justify-between pr-4">
                 <h4 className="flex items-center gap-2">
-                  <Avatar>
+                  <Avatar className="border-2 border-slate-500">
                     <AvatarImage src={c.icon || ""} alt={c.name} />
                     <AvatarFallback>
                       {work.name
@@ -200,7 +200,7 @@ export const FreelanceItem = ({
                   </Avatar>
                   <span>{c.name}</span>
                 </h4>
-                <div className="text-slate-500">
+                <div className="hidden text-slate-500 md:block">
                   {c.start}-{c.end || "Present"}
                 </div>
               </div>
@@ -243,7 +243,7 @@ export const FreelanceItem = ({
             </Avatar>
             <span>{work.name}</span>
           </h4>
-          <div className="text-slate-500">
+          <div className="hidden text-slate-500 md:block">
             {work.start}-{work.end || "Present"}
           </div>
         </div>
@@ -309,7 +309,7 @@ export const PermanentItem = ({
             </Avatar>
             <span>{work.name}</span>
           </h4>
-          <div className="text-slate-500">
+          <div className="hidden text-slate-500 md:block">
             {work.start}-{work.end || "Present"}
           </div>
         </div>
