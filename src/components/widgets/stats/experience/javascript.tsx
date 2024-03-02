@@ -104,7 +104,7 @@ export const JavascriptChart = () => {
       tooltip={(e) => {
         if (e.data.children) {
           return (
-            <div className="bg-slate-500 p-2 text-sm text-white">
+            <div className="bg-muted text-foreground p-2 text-sm">
               {e.data.name}
             </div>
           );
@@ -120,7 +120,7 @@ export const JavascriptChart = () => {
             xp: number;
           };
           return (
-            <div className="flex items-center gap-2 bg-slate-500 p-2 text-sm text-white">
+            <div className="bg-muted text-foreground flex items-center gap-2 p-2 text-sm">
               <Avatar className="h-8 w-8">
                 <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
                   {icon && <i className={`devicon-${icon}-plain`} />}
@@ -131,7 +131,7 @@ export const JavascriptChart = () => {
                 <h6 className="">
                   <span>{name}</span>
                 </h6>
-                <p className="text-slate-300">
+                <p className="text-muted-foreground">
                   xp:{" "}
                   {formatDuration({
                     years: Math.floor(xp / 12),

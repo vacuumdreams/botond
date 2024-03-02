@@ -10,14 +10,14 @@ export const TagCloud = () => {
     <div className="px-4 pb-4">
       <h3 className="mb-4 flex gap-2">
         <HammerIcon />
-        <span className="text-slate-400">Toolbox</span>
+        <span className="text-muted-foreground">Toolbox</span>
       </h3>
       <div className="-m-1">
         {normalisedTags.map(({ tag, size }) => {
           return (
             <Badge
               className={cn(
-                "m-1 bg-slate-800 text-white hover:bg-slate-800",
+                "bg-muted text-foreground hover:bg-muted m-1",
                 size,
               )}
               key={tag}

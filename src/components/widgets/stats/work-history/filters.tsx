@@ -12,7 +12,6 @@ import { MultiSelect } from "@/components/ui/multi-select";
 import { useData } from "@/components/provider/data";
 import { WorkItem, FreelanceItem } from "@/lib/data";
 import { getDate } from "@/lib/utils";
-import { Wand2 } from "lucide-react";
 
 export type FilterType = {
   employment: "all" | "freelance" | "permanent";
@@ -125,9 +124,9 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
   }, [data]);
 
   return (
-    <div className="flex flex-wrap gap-2 border-b border-slate-800 px-4 py-4">
+    <div className="flex flex-wrap gap-2 border-b px-4 py-4 print:hidden">
       <div className="w-40">
-        <p className="mb-1 text-xs text-slate-400">Employment</p>
+        <p className="text-muted-foreground mb-1 text-xs">Employment</p>
         <Select
           value={filters.employment}
           onValueChange={(value) =>
@@ -160,7 +159,7 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
         </Select>
       </div>
       <div className="w-36">
-        <p className="mb-1 text-xs text-slate-400">Duration</p>
+        <p className="text-muted-foreground mb-1 text-xs">Duration</p>
         <Select
           value={filters.minDuration}
           onValueChange={(value) =>
@@ -193,7 +192,7 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
         </Select>
       </div>
       <div className="w-full md:w-auto md:min-w-36">
-        <p className="mb-1 text-xs text-slate-400">Stack</p>
+        <p className="text-muted-foreground mb-1 text-xs">Stack</p>
         <MultiSelect
           placeholder="All"
           selected={filters.stack}

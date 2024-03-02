@@ -34,43 +34,57 @@ export const Experience = () => {
           <CarouselContent>
             <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <div className="aspect-square">
-                <p className="text-center text-sm text-slate-300">JavaScript</p>
+                <p className="text-muted-foreground text-center text-sm">
+                  JavaScript
+                </p>
                 <JavascriptChart />
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <div className="aspect-square">
-                <p className="text-center text-sm text-slate-300">Frontend</p>
+                <p className="text-muted-foreground text-center text-sm">
+                  Frontend
+                </p>
                 <TagChart tag="frontend" />
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <div className="aspect-square">
-                <p className="text-center text-sm text-slate-300">Backend</p>
+                <p className="text-muted-foreground text-center text-sm">
+                  Backend
+                </p>
                 <TagChart tag="backend" />
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <div className="aspect-square">
-                <p className="text-center text-sm text-slate-300">Databases</p>
+                <p className="text-muted-foreground text-center text-sm">
+                  Databases
+                </p>
                 <TagChart tag="database" />
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <div className="aspect-square">
-                <p className="text-center text-sm text-slate-300">Cloud</p>
+                <p className="text-muted-foreground text-center text-sm">
+                  Cloud
+                </p>
                 <TagChart tag="cloud" />
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <div className="aspect-square">
-                <p className="text-center text-sm text-slate-300">CI/CD</p>
+                <p className="text-muted-foreground text-center text-sm">
+                  CI/CD
+                </p>
                 <TagChart tag="ci" />
               </div>
             </CarouselItem>
             <CarouselItem className="md:basis-1/2 lg:basis-1/3">
               <div className="aspect-square">
-                <p className="text-center text-sm text-slate-300">Testing</p>
+                <p className="text-muted-foreground text-center text-sm">
+                  Testing
+                </p>
                 <TagChart tag="testing" />
               </div>
             </CarouselItem>

@@ -43,7 +43,7 @@ export const FunFacts = () => {
       </p>
       <ol>
         {brags.map((item, i) => (
-          <li key={i} className="px-4 py-2 odd:bg-slate-900">
+          <li key={i} className="odd:bg-muted px-4 py-2">
             <div className="flex gap-2">
               <span>{i + 1}.</span>
               {item}

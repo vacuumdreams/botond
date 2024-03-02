@@ -20,20 +20,55 @@ const doFilter = (filters: FilterType) => (items: WorkItem[], w: WorkItem) => {
   return items;
 };
 
-export const WorkHistory = () => {
+type WorkHistoryProps = {
+  mode?: "normal" | "print";
+};
+
+export const WorkHistory = ({ mode }: WorkHistoryProps) => {
   const { data } = useData();
   const [filters, setFilters] = useState<FilterType>({
-    employment: "freelance",
+    employment: mode === "print" ? "all" : "freelance",
     minDuration: "all",
     stack: [],
   });
 
   const list = useMemo(() => {
+    if (mode === "print") {
+      return Object.values(data.work.history);
+    }
     return Object.values(data.work.history).reduce<WorkItem[]>(
       doFilter(filters),
       [],
     );
-  }, [data, filters]);
+  }, [mode, data, filters]);
+
+  if (mode === "print") {
+    return (
+      <div className="w-full">
+        {list.map((w) => {
+          if (w.employment === "freelance") {
+            return (
+              <FreelanceItem
+                key={w.id}
+                work={w}
+                tech={data.skills.tech}
+                flattenClients={filters.employment === "freelance"}
+                mode={mode}
+              />
+            );
+          }
+          return (
+            <PermanentItem
+              key={w.name}
+              work={w}
+              tech={data.skills.tech}
+              mode={mode}
+            />
+          );
+        })}
+      </div>
+    );
+  }
 
   return (
     <div>

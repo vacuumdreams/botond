@@ -48,7 +48,7 @@ export const Orbit = ({ name, icon, count, total }: OrbitProps) => {
             animationFillMode: "both",
           }}
         >
-          <Avatar className="border border-slate-500 bg-black text-white">
+          <Avatar className="border-foreground border bg-black text-white">
             <div className="flex h-full w-full items-center justify-center overflow-hidden text-3xl">
               {icon && <i className={`devicon-${icon}-plain`} />}
               {!icon && <AvatarFallback>{name[0]}</AvatarFallback>}

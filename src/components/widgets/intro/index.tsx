@@ -33,7 +33,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
             className={cn(
               "mt-48 origin-center",
               "absolute left-1/2 top-1/2",
-              "rounded-full border border-dashed border-slate-800",
+              "border-foreground rounded-full border border-dashed",
             )}
             style={{
               opacity: showZen ? 1 : 0,

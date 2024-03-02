@@ -35,12 +35,12 @@ export const Bubble = ({ dialogue, onEvents, onFinish }: BubbleProps) => {
     >
       <div
         className={cn(
-          "mb-4 w-full rounded-md p-2",
+          "text-foreground mb-4 w-full rounded-md p-2",
           "transition-all duration-500",
           {
-            "border border-dashed border-white text-slate-100": decor,
-            "bg-slate-800": decor && dialogue.pos === "left",
-            "bg-slate-600": decor && dialogue.pos === "right",
+            "border-foreground border border-dashed": decor,
+            "bg-slate-100 dark:bg-slate-800": decor && dialogue.pos === "left",
+            "bg-slate-300 dark:bg-slate-600": decor && dialogue.pos === "right",
           },
         )}
       >

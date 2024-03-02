@@ -8,7 +8,6 @@ import {
   LinkedinIcon,
   RssIcon,
   PieChartIcon,
-  NotebookTabsIcon,
 } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
 
@@ -96,38 +95,38 @@ const DIALOGUE: BubbleItemProps[] = [
       return (
         <div className="flex justify-end gap-4">
           <a
-            className="flex gap-2 rounded-full transition-colors hover:bg-slate-800"
+            className="flex gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
             target="_blank"
             href={`tel:${data.social.phone}`}
           >
-            <Avatar className="flex items-center justify-center border border-dashed border-white">
+            <Avatar className="border-foreground flex items-center justify-center border border-dashed">
               <PhoneIcon />
             </Avatar>
           </a>
           <a
-            className="flex gap-2 rounded-full transition-colors hover:bg-slate-800"
+            className="flex gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
             target="_blank"
-            href={`mailto:${data.social.email}`}
+            href={`mailto:${data.social.email}?subject=${encodeURIComponent("Hey Botond!")}`}
           >
-            <Avatar className="flex items-center justify-center border border-dashed border-white">
+            <Avatar className="border-foreground flex items-center justify-center border border-dashed">
               <MailIcon />
             </Avatar>
           </a>
           <a
-            className="flex gap-2 rounded-full transition-colors hover:bg-slate-800"
+            className="flex gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
             target="_blank"
             href={data.social.links.github.url}
           >
-            <Avatar className="flex items-center justify-center border border-dashed border-white">
+            <Avatar className="border-foreground flex items-center justify-center border border-dashed">
               <GithubIcon />
             </Avatar>
           </a>
           <a
-            className="flex gap-2 rounded-full transition-colors hover:bg-slate-800"
+            className="flex gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
             target="_blank"
             href={data.social.links.linkedin.url}
           >
-            <Avatar className="flex items-center justify-center border border-dashed border-white">
+            <Avatar className="border-foreground flex items-center justify-center border border-dashed">
               <LinkedinIcon />
             </Avatar>
           </a>

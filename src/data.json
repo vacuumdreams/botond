@@ -4,6 +4,7 @@
   "headline": "eater of pineapples.",
   "description": "(also) engineer of software.",
   "social": {
+    "website": "https://botond.space",
     "phone": "+351926451663",
     "email": "hello@botond.space",
     "links": {
@@ -21,59 +22,41 @@
   },
   "education": {
     "courses": {
-      "cs:intro:python": {
-        "name": "Introduction to Computer Science and Programming Using Python",
+      "threejs:journey": {
+        "name": "ThreeJs Journey",
         "description": "",
-        "tags": ["python"],
+        "tags": ["ui", "3d"],
+        "issuer": "threejs journey",
+        "date": "Started recently",
+        "icon": "/images/education/courses/threejs-journey.jpg",
+        "link": "https://threejs-journey.com"
+      },
+      "tryhackme": {
+        "name": "Try Hack Me",
+        "description": "",
+        "tags": ["cybersecurity"],
         "issuer": "edX",
-        "date": "02/2015",
-        "icon": "/images/education/courses/edx.jpeg",
-        "link": "https://s3.amazonaws.com/verify.edx.org/downloads/f91f713e6b9b45c8b4a5bf6f6bb3c4a2/Certificate.pdf"
+        "date": "Ongoing",
+        "icon": "/images/education/courses/tryhackme.jpeg",
+        "link": "https://tryhackme.com"
       },
-      "web:app:architecture": {
-        "name": "Web Application Architectures",
+      "+:psych": {
+        "name": "Positive Psychology",
+        "tags": ["non-tech"],
         "description": "",
-        "tags": ["ruby"],
         "issuer": "Coursera",
-        "date": "05/2015",
+        "date": "01/2022",
         "icon": "/images/education/courses/coursera.jpeg",
-        "link": "https://www.coursera.org/account/accomplishments/verify/Y4Z53BJ6M4"
+        "link": "https://www.coursera.org/account/accomplishments/certificate/E9TAL2N49RH5"
       },
-      "angular": {
-        "name": "Learn and Understand AngularJS",
+      "data:visualization:python": {
+        "name": "Data Visualization with Python",
         "description": "",
-        "tags": ["angular"],
-        "issuer": "Udemy",
-        "date": "11/2015",
-        "icon": "/images/education/courses/udemy.jpeg",
-        "link": "https://www.udemy.com/certificate/UC-0QJ3KWC3/"
-      },
-      "nodejs": {
-        "name": "Learn and Understand NodeJS",
-        "description": "",
-        "tags": ["node"],
-        "issuer": "Udemy",
-        "date": "12/2015",
-        "icon": "/images/education/courses/udemy.jpeg",
-        "link": "https://www.udemy.com/certificate/UC-1OSK751H/"
-      },
-      "neural:networks": {
-        "name": "Neural Networks and Deep Learning",
-        "description": "",
-        "tags": ["ai"],
+        "tags": ["machine learning", "python"],
         "issuer": "Coursera",
-        "date": "11/2017",
+        "date": "05/2020",
         "icon": "/images/education/courses/coursera.jpeg",
-        "link": "https://www.coursera.org/account/accomplishments/verify/9Z4SHMDERA9V"
-      },
-      "data:science:python": {
-        "name": "Python for Data Science, AI & Development",
-        "description": "",
-        "tags": ["ai", "python"],
-        "issuer": "Coursera",
-        "date": "05/2019",
-        "icon": "/images/education/courses/coursera.jpeg",
-        "link": "https://coursera.org/share/b7d658e31cae8685e1ca8b4743af89e7"
+        "link": "https://coursera.org/share/ce8a6b23551a8450a166607ec5c7a4a8"
       },
       "data:science:db": {
         "name": "Databases and SQL for Data Science with Python",
@@ -93,23 +76,59 @@
         "icon": "/images/education/courses/coursera.jpeg",
         "link": "https://coursera.org/share/0b70f1c07db757dfb9d5ce863f335af6"
       },
-      "data:visualization:python": {
-        "name": "Data Visualization with Python",
+      "data:science:python": {
+        "name": "Python for Data Science, AI & Development",
         "description": "",
-        "tags": ["machine learning", "python"],
+        "tags": ["ai", "python"],
         "issuer": "Coursera",
-        "date": "05/2020",
+        "date": "05/2019",
         "icon": "/images/education/courses/coursera.jpeg",
-        "link": "https://coursera.org/share/ce8a6b23551a8450a166607ec5c7a4a8"
+        "link": "https://coursera.org/share/b7d658e31cae8685e1ca8b4743af89e7"
       },
-      "+:psych": {
-        "name": "Positive Psychology",
-        "tags": ["non-tech"],
+      "neural:networks": {
+        "name": "Neural Networks and Deep Learning",
         "description": "",
+        "tags": ["ai"],
         "issuer": "Coursera",
-        "date": "01/2022",
+        "date": "11/2017",
         "icon": "/images/education/courses/coursera.jpeg",
-        "link": "https://www.coursera.org/account/accomplishments/certificate/E9TAL2N49RH5"
+        "link": "https://www.coursera.org/account/accomplishments/verify/9Z4SHMDERA9V"
+      },
+      "angular": {
+        "name": "Learn and Understand AngularJS",
+        "description": "",
+        "tags": ["angular"],
+        "issuer": "Udemy",
+        "date": "11/2015",
+        "icon": "/images/education/courses/udemy.jpeg",
+        "link": "https://www.udemy.com/certificate/UC-0QJ3KWC3/"
+      },
+      "nodejs": {
+        "name": "Learn and Understand NodeJS",
+        "description": "",
+        "tags": ["node"],
+        "issuer": "Udemy",
+        "date": "12/2015",
+        "icon": "/images/education/courses/udemy.jpeg",
+        "link": "https://www.udemy.com/certificate/UC-1OSK751H/"
+      },
+      "web:app:architecture": {
+        "name": "Web Application Architectures",
+        "description": "",
+        "tags": ["ruby"],
+        "issuer": "Coursera",
+        "date": "05/2015",
+        "icon": "/images/education/courses/coursera.jpeg",
+        "link": "https://www.coursera.org/account/accomplishments/verify/Y4Z53BJ6M4"
+      },
+      "cs:intro:python": {
+        "name": "Introduction to Computer Science and Programming Using Python",
+        "description": "",
+        "tags": ["python"],
+        "issuer": "edX",
+        "date": "02/2015",
+        "icon": "/images/education/courses/edx.jpeg",
+        "link": "https://s3.amazonaws.com/verify.edx.org/downloads/f91f713e6b9b45c8b4a5bf6f6bb3c4a2/Certificate.pdf"
       }
     },
     "school": {
@@ -623,7 +642,7 @@
       "freelance:2022": {
         "id": "freelance:2022",
         "name": "Freelance",
-        "description": "",
+        "description": "- Worked with various clients to build web applications, websites, and other digital products\n- Lead product roadmaps, laid down strategies, managed deveopment teams",
         "employment": "freelance",
         "start": "01/2022",
         "end": null,

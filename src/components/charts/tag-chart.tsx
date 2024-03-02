@@ -41,7 +41,7 @@ export const TagChart = ({ tag }: TagChartProps) => {
       enableArcLabels={false}
       enableArcLinkLabels={false}
       tooltip={(e) => (
-        <div className="flex items-center gap-2 bg-slate-500 p-2 text-sm text-white">
+        <div className="bg-muted flex items-center gap-2 p-2 text-sm text-white">
           <Avatar className="h-8 w-8">
             <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
               {e.datum.data.icon && (
@@ -53,10 +53,10 @@ export const TagChart = ({ tag }: TagChartProps) => {
             </div>
           </Avatar>
           <div>
-            <h6 className="">
+            <h6 className="text-foreground">
               <span>{e.datum.label}</span>
             </h6>
-            <p className="text-slate-300">
+            <p className="text-muted-foreground">
               xp:{" "}
               {formatDuration({
                 years: Math.floor(e.datum.value / 12),

@@ -15,6 +15,7 @@
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
+      letter-spacing: 0.05em;
       font-variation-settings:
         "BLED" 0,
         "SCAN" 0;
@@ -29,7 +30,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 210 40% 96.1%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -202,5 +203,21 @@
     top: 0;
     left: 0;
     z-index: -99;
+  }
+
+  @media print {
+    * {
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    #header,
+    #footer,
+    #nav {
+      display: none !important;
+    }
   }
 }

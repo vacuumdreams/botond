@@ -58,7 +58,7 @@ export const LanguageChart = () => {
       ariaLabel="Languages"
       barAriaLabel={(e) => e.data.language}
       tooltip={(e) => (
-        <div className="flex items-center gap-2 bg-slate-500 p-2 text-sm text-white">
+        <div className="bg-muted text-foreground flex items-center gap-2 p-2 text-sm">
           <Avatar className="h-8 w-8">
             <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
               {e.data.icon && <i className={`devicon-${e.data.icon}-plain`} />}
@@ -71,7 +71,7 @@ export const LanguageChart = () => {
             <h6 className="">
               <span>{e.data.language}</span>
             </h6>
-            <p className="text-slate-300">
+            <p className="text-muted-foreground">
               xp:{" "}
               {formatDuration({
                 years: Math.floor(e.data.years),

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { Provider } from "@/components/provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="print:light dark">
+    <html lang="en" className="print:light" suppressHydrationWarning>
       <head>
         <link
           rel="apple-touch-icon"
@@ -50,7 +51,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-mono">
-        {children}
+        <Provider>{children}</Provider>
         <Analytics />
       </body>
     </html>
