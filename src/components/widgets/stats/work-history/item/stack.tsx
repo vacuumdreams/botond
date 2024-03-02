@@ -20,10 +20,10 @@ export const Stack = ({ stack }: StackProps) => {
     6,
     shuffle(stack).sort((s1, s2) => {
       if (!s1.featured && s2.featured) {
-        return -1;
+        return 1;
       }
       if (s1.featured && !s2.featured) {
-        return 1;
+        return -1;
       }
       return 0;
     }),

@@ -366,6 +366,7 @@
       },
       "graphql": {
         "name": "graphql",
+        "featured": true,
         "tags": ["architecture", "backend", "frontend"],
         "icon": "graphql"
       },
@@ -1000,7 +1001,7 @@
       "freelance:2017": {
         "id": "freelance:2017",
         "name": "Freelance",
-        "description": "",
+        "description": "- Worked on node microservices and multi-tenancy systems\n - Designed micro-frontend architectures\n - Lead the development of a web app for a startup\n",
         "employment": "freelance",
         "start": "09/2016",
         "end": "03/2020",

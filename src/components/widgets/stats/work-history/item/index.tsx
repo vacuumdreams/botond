@@ -184,8 +184,9 @@ export const FreelanceItem = ({
               phase={c.phase}
               start={c.start}
               end={c.end}
+              mode={mode}
             />
-            <div className="prose my-6 w-full text-white">
+            <div className="prose my-6 w-full text-black dark:text-white">
               <Markdown>{c.description}</Markdown>
             </div>
           </BaseWorkItem>
@@ -209,10 +210,12 @@ export const FreelanceItem = ({
         phase={allClientPhases.join(", ")}
         start={work.start}
         end={work.end}
+        mode={mode}
       />
       <div
-        className={cn("prose my-6 w-full text-black dark:text-white", {
-          "text-xs": mode === "print",
+        className={cn("prose my-6 w-full", {
+          "text-xs print:text-black": mode === "print",
+          "text-black dark:text-white": mode !== "print",
         })}
       >
         <Markdown>{work.description}</Markdown>
@@ -227,7 +230,11 @@ export const FreelanceItem = ({
           {Object.values(work.clients).map((c, i) => (
             <Badge
               key={c.id}
-              className="text-foreground dark:text-background bg-slate-200 hover:bg-slate-200 dark:bg-white hover:dark:bg-white"
+              className={cn(" print:bg-slate-200", {
+                "text-foreground dark:text-background bg-slate-200 hover:bg-slate-200 dark:bg-white hover:dark:bg-white":
+                  mode !== "print",
+                "bg-slate-200 text-black": mode === "print",
+              })}
             >
               <a
                 href={c.url || ""}
@@ -278,10 +285,12 @@ export const PermanentItem = ({
         phase={work.phase}
         start={work.start}
         end={work.end}
+        mode={mode}
       />
       <div
-        className={cn("prose my-6 w-full text-black dark:text-white", {
-          "text-sm": mode === "print",
+        className={cn("prose my-6 w-full", {
+          "text-sm print:text-black": mode === "print",
+          "text-black dark:text-white": mode !== "print",
         })}
       >
         <Markdown>{work.description}</Markdown>

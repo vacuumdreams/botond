@@ -1,9 +1,16 @@
 "use client";
 
-import { PhoneIcon, MailIcon, GithubIcon, LinkedinIcon } from "lucide-react";
+import {
+  PhoneIcon,
+  MailIcon,
+  GithubIcon,
+  LinkedinIcon,
+  GlobeIcon,
+} from "lucide-react";
 
+import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { WorkHistory } from "@/components/widgets/stats/work-history";
 import { Roadmap } from "@/components/widgets/stats/studies";
 import { useData } from "@/components/provider/data";
@@ -13,7 +20,7 @@ export function ScreenPrint() {
 
   return (
     <div className="grid grid-cols-12 overflow-y-scroll print:text-black">
-      <div className="col-span-4 border-r-2">
+      <div className="col-span-4 border-r-2 border-slate-200">
         <div className="w-full px-4 pt-4">
           <Avatar className="border-muted-foreground mx-auto mb-4 h-32 w-32 border-4">
             <AvatarImage src={data.picture} alt={data.name} />
@@ -29,6 +36,12 @@ export function ScreenPrint() {
         <Separator className="my-4" />
         <div className="w-full px-4 py-4">
           <div>
+            <a
+              className="mb-2 flex w-full items-center gap-2"
+              href={data.social.website}
+            >
+              <GlobeIcon size={14} /> {data.social.website}
+            </a>
             <a
               className="mb-2 flex w-full items-center gap-2"
               href={`mailto:${data.social.email}?subject=${encodeURIComponent("Hey Botond!")}`}
@@ -66,14 +79,39 @@ export function ScreenPrint() {
           </div>
         </div>
         <Separator className="my-4" />
+        <div className="px-4">
+          <div className="flex flex-wrap gap-2">
+            {Object.values(data.skills.tech)
+              .filter((t) => t.featured)
+              .map((t) => (
+                <Badge
+                  key={t.name}
+                  className="dark:text-background hover:bg-muted flex gap-2 bg-slate-200 text-black"
+                >
+                  <Avatar className="-ml-2 h-8 w-8">
+                    <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
+                      {t.icon && <i className={`devicon-${t.icon}-plain`} />}
+                      {!t.icon && (
+                        <AvatarFallback className="text-foreground">
+                          {t.name[0]}
+                        </AvatarFallback>
+                      )}
+                    </div>
+                  </Avatar>
+                  <span>{t.name}</span>
+                </Badge>
+              ))}
+          </div>
+        </div>
+        <Separator className="my-4" />
         <div>
           <Roadmap mode="print" />
         </div>
         <Separator className="my-4" />
       </div>
       <div className="col-span-8 pt-4">
-        <h2 className="font-title mb-4 border-b-2 px-4 pb-4 text-xl">
-          Work history
+        <h2 className="font-title mb-4 border-b-2 border-slate-200 px-4 pb-4 text-xl">
+          work history
         </h2>
         <div className="px-4">
           <WorkHistory mode="print" />

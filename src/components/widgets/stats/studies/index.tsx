@@ -46,7 +46,7 @@ export const Roadmap = ({ mode }: RoadmapProps) => {
             <div className="my-4 flex flex-wrap items-center gap-2 md:my-0">
               {c.tags?.map((tag) => (
                 <Badge
-                  className="bg-muted hover:bg-muted text-foreground whitespace-nowrap break-keep"
+                  className="bg-muted hover:bg-muted text-foreground whitespace-nowrap break-keep print:bg-slate-200 print:text-black"
                   key={tag}
                 >
                   {tag}

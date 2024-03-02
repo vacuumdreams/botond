@@ -68,3 +68,34 @@ export function mergeOverlappingRanges(ranges: DateRange[]): DateRange[] {
 
   return merged;
 }
+
+// function areaPrint() {
+//   const areaToPrint = document.getElementById("the-content");
+//   // Select element to print
+
+//   areaToPrint.classList.add("print-area");
+//   // Adds print-area class to element
+
+//   window.print();
+//   // Prints area to which class was assigned only
+// }
+
+// document.getElementById("printBtn").addEventListener("click", () => {
+//   window.print();
+// });
+
+export function printPage(url: string) {
+  window.print();
+  // const hideFrame = document.createElement("iframe");
+  // hideFrame.onload = function setPrint() {
+  //   const closePrint = () => {
+  //     document.body.removeChild(this);
+  //   };
+  //   this.contentWindow.onbeforeunload = closePrint;
+  //   this.contentWindow.onafterprint = closePrint;
+  //   this.contentWindow.print();
+  // };
+  // hideFrame.style.display = "none";
+  // hideFrame.src = url;
+  // document.body.appendChild(hideFrame);
+}

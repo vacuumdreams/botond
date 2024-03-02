@@ -81,12 +81,11 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -95,6 +94,7 @@
     from {
       transform: rotate(0deg);
     }
+
     to {
       transform: rotate(360deg);
     }
@@ -104,6 +104,7 @@
     from {
       transform: rotate(36deg);
     }
+
     to {
       transform: rotate(396deg);
     }
@@ -113,6 +114,7 @@
     from {
       transform: rotate(72deg);
     }
+
     to {
       transform: rotate(432deg);
     }
@@ -122,6 +124,7 @@
     from {
       transform: rotate(108deg);
     }
+
     to {
       transform: rotate(468deg);
     }
@@ -131,6 +134,7 @@
     from {
       transform: rotate(144deg);
     }
+
     to {
       transform: rotate(504deg);
     }
@@ -140,6 +144,7 @@
     from {
       transform: rotate(180deg);
     }
+
     to {
       transform: rotate(540deg);
     }
@@ -149,6 +154,7 @@
     from {
       transform: rotate(216deg);
     }
+
     to {
       transform: rotate(578deg);
     }
@@ -158,6 +164,7 @@
     from {
       transform: rotate(252deg);
     }
+
     to {
       transform: rotate(612deg);
     }
@@ -167,6 +174,7 @@
     from {
       transform: rotate(288deg);
     }
+
     to {
       transform: rotate(648deg);
     }
@@ -176,6 +184,7 @@
     from {
       transform: rotate(324deg);
     }
+
     to {
       transform: rotate(684deg);
     }
@@ -185,9 +194,11 @@
     0% {
       transform: translate(0, 0);
     }
+
     50% {
       transform: translate(0, -30px);
     }
+
     100% {
       transform: translate(0, 0);
     }

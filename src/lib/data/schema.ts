@@ -49,6 +49,7 @@ export const schema = z.object({
   headline: z.string(),
   description: z.string(),
   social: z.object({
+    website: z.string(),
     email: z.string(),
     phone: z.string(),
     links: z.record(

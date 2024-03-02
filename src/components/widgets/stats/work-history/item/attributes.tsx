@@ -11,7 +11,7 @@ import {
 
 import { Badge } from "@/components/ui/badge";
 
-import { getDate } from "@/lib/utils";
+import { cn, getDate } from "@/lib/utils";
 
 type AttributesProps = {
   url?: string | null;
@@ -22,10 +22,8 @@ type AttributesProps = {
   phase?: string;
   start: string;
   end: string | null;
+  mode?: "print" | "normal";
 };
-
-const badgeClass =
-  "text-foreground dark:text-background whitespace-nowrap bg-slate-200 hover:bg-slate-200 dark:bg-white hover:dark:bg-white";
 
 export const Attributes = ({
   url,
@@ -36,7 +34,14 @@ export const Attributes = ({
   phase,
   start,
   end,
+  mode,
 }: AttributesProps) => {
+  const badgeClass = cn("whitespace-nowrap", {
+    "text-foreground dark:text-background bg-slate-200 hover:bg-slate-200 dark:bg-white hover:dark:bg-white":
+      mode !== "print",
+    "bg-slate-200 text-black": mode === "print",
+  });
+
   return (
     <div>
       <div className="mb-6 mt-2 flex w-full items-center justify-between gap-2">
