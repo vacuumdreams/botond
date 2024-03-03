@@ -9,14 +9,6 @@ export default function Home() {
         <Screen />
         <ThemeSwitch />
       </main>
-      <div
-        className="star-field fixed left-0 top-0 h-screen w-screen"
-        style={{ perspective: "600px", zIndex: "-1" }}
-      >
-        <div />
-        <div />
-        <div />
-      </div>
       <div className="hidden print:block">
         <Print />
       </div>

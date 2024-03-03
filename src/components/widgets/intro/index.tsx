@@ -100,7 +100,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
             </div>
 
             <div className="absolute -left-20 top-1 w-40 -rotate-12">
-              <MouseParallaxChild factorX={0.75} factorY={0.95}>
+              <MouseParallaxChild factorX={1.75} factorY={1.5}>
                 <Image
                   src="/images/illustrations/vinyl-player.png"
                   alt="Vinyl player"
@@ -112,7 +112,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
               </MouseParallaxChild>
             </div>
             <div className="absolute -right-40 -top-2 w-48 rotate-[24deg]">
-              <MouseParallaxChild factorX={0.75} factorY={0.95}>
+              <MouseParallaxChild factorX={1.75} factorY={1.5}>
                 <Image
                   src="/images/illustrations/guitar.png"
                   alt="guitar"
@@ -124,7 +124,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
               </MouseParallaxChild>
             </div>
             <div className="absolute -top-24 right-0 w-24 -rotate-[24deg]">
-              <MouseParallaxChild factorX={0.75} factorY={0.95}>
+              <MouseParallaxChild factorX={1.75} factorY={1.5}>
                 <Image
                   src="/images/illustrations/moka.png"
                   alt="guitar"
@@ -136,7 +136,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
               </MouseParallaxChild>
             </div>
             <div className="rotate absolute -left-8 top-44 w-40">
-              <MouseParallaxChild factorX={0.75} factorY={0.95}>
+              <MouseParallaxChild factorX={1.75} factorY={1.5}>
                 <Image
                   src="/images/illustrations/laptop.png"
                   alt="guitar"

@@ -265,6 +265,11 @@
     }
   }
 
+  .star-field {
+    perspective: 600px;
+    z-index: -1;
+  }
+
   .star-field div {
     box-shadow:
       -411px -476px #cccccc,
@@ -384,6 +389,54 @@
   }
   .star-field div:nth-child(3) {
     animation: sf-fly-by-3 10s linear infinite;
+  }
+
+  .warp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 360px;
+    perspective-origin: 50% 50%;
+  }
+
+  .warp > div {
+    width: 200%;
+    height: 130%;
+    position: absolute;
+    bottom: -30%;
+    left: -50%;
+    background-image:
+      -webkit-linear-gradient(rgba(0, 0, 0, 0.05) 2px, transparent 2px),
+      -webkit-linear-gradient(left, rgba(0, 0, 0, 0.05) 2px, transparent 2px);
+    background-size:
+      100px 100px,
+      100px 100px;
+    background-position:
+      -1px -1px,
+      -1px -1px;
+    transform: rotateX(85deg);
+    animation: planeMoveTop 10s infinite linear;
+  }
+
+  @keyframes planeMoveTop {
+    from {
+      background-position:
+        0px -100px,
+        0px 0px;
+    }
+    to {
+      background-position:
+        0px 0px,
+        0px 0px;
+    }
+  }
+
+  @media (max-height: 350px) {
+    .warp {
+      perspective: 360px - 150;
+    }
   }
 
   @media print {
