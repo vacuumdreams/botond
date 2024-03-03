@@ -7,8 +7,10 @@ import { PermanentItem, FreelanceItem } from "./item";
 import { Filters, FilterType, filterFunctions } from "./filters";
 
 const doFilter = (filters: FilterType) => (items: WorkItem[], w: WorkItem) => {
+  console.log("\n", w.name);
   const workItem = Object.values(filterFunctions).reduce<WorkItem | null>(
     (acc, fn) => {
+      console.log(acc);
       return acc && fn(filters, acc);
     },
     w,

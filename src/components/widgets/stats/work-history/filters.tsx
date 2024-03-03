@@ -39,6 +39,9 @@ export const filterFunctions: Record<
     return w;
   },
   minDuration: (filters, w) => {
+    if (filters.minDuration === "all") {
+      return w;
+    }
     if (filters.employment === "freelance" && w.employment === "freelance") {
       const clients = Object.keys(w.clients).reduce<
         Record<string, FreelanceItem["clients"][keyof FreelanceItem["clients"]]>
@@ -73,6 +76,9 @@ export const filterFunctions: Record<
     return null;
   },
   stack: (filters, w) => {
+    if (filters.stack.length === 0) {
+      return w;
+    }
     if (w.employment === "freelance") {
       const clients = Object.keys(w.clients).reduce<
         Record<string, FreelanceItem["clients"][keyof FreelanceItem["clients"]]>
