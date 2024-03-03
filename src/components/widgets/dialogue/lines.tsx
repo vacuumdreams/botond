@@ -41,7 +41,7 @@ export const Lines = ({ text, animate, onFinish }: LinesProps) => {
     if (!animate) {
       onFinish();
     }
-  }, [animate]);
+  }, [animate, onFinish]);
 
   if (!animate) {
     return (
