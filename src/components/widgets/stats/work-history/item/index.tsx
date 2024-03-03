@@ -186,7 +186,7 @@ export const FreelanceItem = ({
               end={c.end}
               mode={mode}
             />
-            <div className="prose my-6 w-full text-black dark:text-white">
+            <div className="prose prose-slate dark:prose-invert my-6 w-full">
               <Markdown>{c.description}</Markdown>
             </div>
           </BaseWorkItem>
@@ -213,9 +213,9 @@ export const FreelanceItem = ({
         mode={mode}
       />
       <div
-        className={cn("prose my-6 w-full", {
-          "text-xs print:text-black": mode === "print",
-          "text-black dark:text-white": mode !== "print",
+        className={cn("prose prose-slate my-6 w-full", {
+          "text-xs": mode === "print",
+          "dark:prose-invert": mode !== "print",
         })}
       >
         <Markdown>{work.description}</Markdown>
@@ -288,9 +288,9 @@ export const PermanentItem = ({
         mode={mode}
       />
       <div
-        className={cn("prose my-6 w-full", {
+        className={cn("prose prose-slate my-6 w-full", {
           "text-sm print:text-black": mode === "print",
-          "text-black dark:text-white": mode !== "print",
+          "dark:prose-invert": mode !== "print",
         })}
       >
         <Markdown>{work.description}</Markdown>

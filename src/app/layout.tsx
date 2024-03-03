@@ -8,6 +8,9 @@ const getUrl = () => {
   try {
     return new URL(process.env.NEXT_PUBLIC_URL);
   } catch (err) {
+    if (process.env.NODE_ENV === "development") {
+      return new URL(`http://localhost:${process.env.PORT}`);
+    }
     return undefined;
   }
 };
@@ -51,7 +54,7 @@ export default function RootLayout({
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Sixtyfour&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Sixtyfour&display=swap&effect=anaglyph"
           rel="stylesheet"
         />
         <link
