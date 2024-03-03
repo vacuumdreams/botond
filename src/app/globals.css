@@ -223,7 +223,7 @@
   }
 
   @keyframes sf-fly-by-1 {
-    0% {
+    100% {
       transform: translateZ(-800px);
       opacity: 0;
     }
@@ -231,13 +231,13 @@
       transform: translateZ(-200);
       opacity: 0.2;
     }
-    100% {
+    0% {
       transform: translateZ(600px);
       opacity: 0;
     }
   }
   @keyframes sf-fly-by-2 {
-    0% {
+    100% {
       transform: translateZ(-1600px);
       opacity: 0;
     }
@@ -245,13 +245,13 @@
       transform: translateZ(-600px);
       opacity: 0.2;
     }
-    100% {
+    0% {
       transform: translateZ(600px);
       opacity: 0;
     }
   }
   @keyframes sf-fly-by-3 {
-    0% {
+    100% {
       transform: translateZ(-2200px);
       opacity: 0;
     }
@@ -259,7 +259,7 @@
       transform: translateZ(-600px);
       opacity: 0.2;
     }
-    100% {
+    0% {
       transform: translateZ(1800px);
       opacity: 0;
     }
