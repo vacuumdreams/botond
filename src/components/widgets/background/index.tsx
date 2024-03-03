@@ -15,7 +15,7 @@ export const Background = () => {
     return (
       <>
         <div
-          className="fixed left-0 top-0 -z-10 flex h-full w-full items-center justify-center"
+          className="fixed left-0 top-0 -z-10 flex h-full w-full items-center justify-center print:hidden"
           style={{
             opacity: "0.075",
             backgroundImage: "url('/images/bg.jpeg')",
@@ -33,7 +33,7 @@ export const Background = () => {
 
   if (mounted) {
     return (
-      <div className="warp">
+      <div className="warp print:hidden">
         <div />
       </div>
     );

@@ -4,7 +4,6 @@ import { compareDesc, format } from "date-fns";
 import { ArrowLeftIcon } from "lucide-react";
 
 import { ThemeSwitch } from "@/components/widgets/theme-switch";
-import { Background } from "@/components/widgets/background";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { allPosts } from "contentlayer/generated";
@@ -22,7 +21,6 @@ export default async function BlogPage() {
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
-      <Background />
       <Link
         href="/"
         className={cn("mb-8 gap-2", buttonVariants({ variant: "default" }))}

@@ -5,19 +5,20 @@ import { format } from "date-fns";
 import Markdown from "react-markdown";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeftIcon } from "lucide-react";
+import { ArrowLeftIcon, ClockIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { ThemeSwitch } from "@/components/widgets/theme-switch";
-import { Background } from "@/components/widgets/background";
 
-interface PostPageProps {
-  params: {
-    slug: string[];
-  };
+function calcReadingTime(text: string) {
+  const wpm = 225;
+  const words = text.trim().split(/\s+/).length;
+  const time = Math.ceil(words / wpm);
+  return time;
 }
 
 async function getPostFromParams(paramSlugs?: string[]) {
@@ -57,6 +58,12 @@ export async function generateStaticParams(): Promise<
   }));
 }
 
+type PostPageProps = {
+  params: {
+    slug: string[];
+  };
+};
+
 export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params.slug);
 
@@ -70,7 +77,6 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="relative py-6 lg:py-10">
-      <Background />
       <div>
         <div className="container max-w-3xl">
           <Link
@@ -83,14 +89,22 @@ export default async function PostPage({ params }: PostPageProps) {
         </div>
         <div className="relative py-8">
           <div className="container max-w-3xl">
-            {post.date && (
-              <time
-                dateTime={post.date}
-                className="text-muted-foreground block text-sm"
-              >
-                Published on {format(post.date, "dd/MM/yyyy")}
-              </time>
-            )}
+            <div className="my-4 flex">
+              <Badge className="flex gap-2" variant={"secondary"}>
+                <ClockIcon className="-ml-2" />
+                <span>{calcReadingTime(post.body.raw)} min read</span>
+              </Badge>
+            </div>
+            <div className="flex w-full items-center gap-4">
+              {post.date && (
+                <time
+                  dateTime={post.date}
+                  className="text-muted-foreground block text-sm"
+                >
+                  Published on {format(post.date, "dd/MM/yyyy")}
+                </time>
+              )}
+            </div>
             <h1 className="font-title font-effect-anaglyph mt-2 inline-block text-4xl leading-tight lg:text-2xl">
               {post.title}
             </h1>

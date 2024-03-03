@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Provider } from "@/components/provider";
+import { Background } from "@/components/widgets/background";
 import "./globals.css";
 
 const getUrl = () => {
@@ -64,7 +65,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-mono">
-        <Provider>{children}</Provider>
+        <Provider>
+          {children}
+          <Background />
+        </Provider>
         <Analytics />
       </body>
     </html>
