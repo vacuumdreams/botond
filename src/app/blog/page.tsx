@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeftIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ThemeSwitch } from "@/components/widgets/theme-switch";
 
 export default function BlogPage() {
   return (
@@ -18,6 +19,7 @@ export default function BlogPage() {
       <div>
         <p>Not yet :(</p>
       </div>
+      <ThemeSwitch />
     </main>
   );
 }
