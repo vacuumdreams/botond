@@ -4,9 +4,9 @@ import { Provider } from "@/components/provider";
 import "./globals.css";
 
 const getUrl = () => {
-  if (!process.env.NEXT_PUBLIC_VERCEL_URL) return undefined;
+  if (!process.env.NEXT_PUBLIC_URL) return undefined;
   try {
-    return new URL(`https://${String(process.env.NEXT_PUBLIC_VERCEL_URL)}`);
+    return new URL(process.env.NEXT_PUBLIC_URL);
   } catch (err) {
     return undefined;
   }
