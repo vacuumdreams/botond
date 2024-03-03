@@ -6,7 +6,7 @@ import "./globals.css";
 const getUrl = () => {
   if (!process.env.NEXT_PUBLIC_VERCEL_URL) return undefined;
   try {
-    return new URL(process.env.NEXT_PUBLIC_VERCEL_URL);
+    return new URL(`https://${String(process.env.NEXT_PUBLIC_VERCEL_URL)}`);
   } catch (err) {
     return undefined;
   }
