@@ -61,7 +61,7 @@ export const Stack = ({ stack }: StackProps) => {
                 {rest.map((t) => (
                   <Badge
                     key={t.name}
-                    className="bg-muted text-foreground dark:text-background hover:bg-muted flex gap-2"
+                    className="bg-muted text-foreground dark:text-foreground hover:bg-muted flex gap-2"
                   >
                     <Avatar className="-ml-2 h-8 w-8">
                       <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
