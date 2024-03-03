@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 const brags: Array<ReactNode> = [
-  <p key="1">Once I rode a motorbike through a typhoon for hours.</p>,
+  <p key="1">Once, I rode a motorbike through a typhoon for hours.</p>,
   <p key="2">
     Arguably the most boring week of my life was when I was stuck on the
     Trans-Siberian train with some Kirkegaard e-books.
@@ -17,7 +17,7 @@ const brags: Array<ReactNode> = [
     people.
   </p>,
   <p key="5">
-    I lived in 8 countries, and visited more, than 30. I had more, than 25
+    I lived in 8 countries, and visited more than 30. I had more than 25
     addresses where I lived 3+ months.
   </p>,
   <p key="6">Drove through Europe with a left hand drive car. Twice.</p>,
