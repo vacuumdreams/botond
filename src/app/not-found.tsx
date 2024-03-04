@@ -11,8 +11,8 @@ export default function NotFound() {
           <PawPrint size={64} />
           <KeyboardIcon size={64} />
         </div>
-        <h2 className="font-title mb-4 text-4xl">404</h2>
-        <h4 className="font-title text-xl">not found</h4>
+        <h2 className="font-title font-effect-anaglyph mb-4 text-4xl">404</h2>
+        <h4 className="font-title font-effect-anaglyph text-xl">not found</h4>
         <p className="my-8">
           Hi, explorer. Your reward for finding this place is this magic button:
         </p>

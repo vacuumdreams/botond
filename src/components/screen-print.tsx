@@ -110,7 +110,7 @@ export function ScreenPrint() {
         <Separator className="my-4" />
       </div>
       <div className="col-span-8 pt-4">
-        <h2 className="font-title mb-4 border-b-2 border-slate-200 px-4 pb-4 text-xl">
+        <h2 className="font-title font-effect-anaglyph mb-4 border-b-2 border-slate-200 px-4 pb-4 text-xl">
           work history
         </h2>
         <div className="px-4">

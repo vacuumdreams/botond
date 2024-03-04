@@ -55,7 +55,7 @@ export default function RootLayout({
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Sixtyfour&display=swap&effect=anaglyph"
+          href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Sixtyfour&display=swap"
           rel="stylesheet"
         />
         <link
