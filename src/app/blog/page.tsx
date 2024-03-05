@@ -53,7 +53,7 @@ export default async function BlogPage() {
                 alt={post.title}
                 width={804}
                 height={452}
-                className="bg-muted rounded-md border transition-colors"
+                className="bg-muted aspect-video rounded-md border object-cover object-center transition-colors"
                 priority={index <= 1}
               />
               <h2 className="text-2xl font-extrabold">{post.title}</h2>
