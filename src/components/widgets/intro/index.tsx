@@ -99,8 +99,11 @@ export const Intro = ({ startTransition }: IntroProps) => {
               </MouseParallaxChild>
             </div>
 
-            <div className="absolute -left-20 top-1 w-40 -rotate-12">
-              <MouseParallaxChild factorX={1.75} factorY={1.5}>
+            <div
+              className="absolute -left-20 top-1 w-40 -rotate-12"
+              style={{ zIndex: -1 }}
+            >
+              <MouseParallaxChild factorX={0.5} factorY={0.35}>
                 <Image
                   src="/images/illustrations/vinyl-player.png"
                   alt="Vinyl player"
@@ -111,8 +114,11 @@ export const Intro = ({ startTransition }: IntroProps) => {
                 />
               </MouseParallaxChild>
             </div>
-            <div className="absolute -right-40 -top-2 w-48 rotate-[24deg]">
-              <MouseParallaxChild factorX={1.75} factorY={1.5}>
+            <div
+              className="absolute -right-28 -top-2 w-48 rotate-[24deg]"
+              style={{ zIndex: -1 }}
+            >
+              <MouseParallaxChild factorX={0.35} factorY={0.15}>
                 <Image
                   src="/images/illustrations/guitar.png"
                   alt="guitar"
@@ -136,7 +142,7 @@ export const Intro = ({ startTransition }: IntroProps) => {
               </MouseParallaxChild>
             </div>
             <div className="rotate absolute -left-8 top-44 w-40">
-              <MouseParallaxChild factorX={1.75} factorY={1.5}>
+              <MouseParallaxChild factorX={1.15} factorY={0.65}>
                 <Image
                   src="/images/illustrations/laptop.png"
                   alt="guitar"

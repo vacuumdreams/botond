@@ -2,13 +2,13 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { allAuthors, allPosts } from "contentlayer/generated";
 import { format } from "date-fns";
-import Markdown from "react-markdown";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftIcon, ClockIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { Mdx } from "@/components/content/mdx";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
@@ -149,16 +149,17 @@ export default async function PostPage({ params }: PostPageProps) {
             priority
           />
         )}
-        <div className="prose prose-slate dark:prose-invert my-6 w-full">
-          <Markdown>{post.body.raw}</Markdown>
+        <div className="bg-slate-800 bg-opacity-50 p-8 text-lg">
+          <Mdx code={post.body.code} />
         </div>
         <Separator className="mt-12" />
         <div className="flex justify-center py-6 lg:py-10">
           <Link
             href="/blog"
-            className={cn(buttonVariants({ variant: "ghost" }))}
+            className={cn("gap-2", buttonVariants({ variant: "default" }))}
           >
-            See all posts
+            <ArrowLeftIcon />
+            <span>See all posts</span>
           </Link>
         </div>
       </div>
