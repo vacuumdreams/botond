@@ -39,31 +39,37 @@ export const Roadmap = ({ mode }: RoadmapProps) => {
               },
             )}
           >
-            <div>
-              <p className="text-muted-foreground">{c.date}</p>
-              <p>{c.name}</p>
-            </div>
-            <div className="my-4 flex flex-wrap items-center gap-2 md:my-0">
-              {c.tags?.map((tag) => (
-                <Badge
-                  className="bg-muted hover:bg-muted text-foreground whitespace-nowrap break-keep print:bg-slate-200 print:text-black"
-                  key={tag}
-                >
-                  {tag}
-                </Badge>
-              ))}
-              {mode !== "print" && (
-                <a href={c.link} target="_blank" rel="noopener noreferrer">
-                  <ExternalLinkIcon />
-                </a>
+            <a
+              href={c.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <div>
+                <p className="text-muted-foreground">{c.date}</p>
+                <p className="flex justify-between gap-2">
+                  {c.name}
+                  {mode !== "print" && <ExternalLinkIcon />}
+                </p>
+              </div>
+              <div className="my-4 flex flex-wrap items-center gap-2 md:my-0">
+                {c.tags?.map((tag) => (
+                  <Badge
+                    className="bg-muted hover:bg-muted text-foreground whitespace-nowrap break-keep print:bg-slate-200 print:text-black"
+                    key={tag}
+                  >
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+
+              {c.issuer && (
+                <Avatar className="absolute -left-11 top-0 border-2">
+                  <AvatarImage src={c.icon} alt={c.issuer} />
+                  <AvatarFallback>{c.issuer[0]}</AvatarFallback>
+                </Avatar>
               )}
-            </div>
-            {c.issuer && (
-              <Avatar className="absolute -left-11 top-0 border-2">
-                <AvatarImage src={c.icon} alt={c.issuer} />
-                <AvatarFallback>{c.issuer[0]}</AvatarFallback>
-              </Avatar>
-            )}
+            </a>
           </li>
         ))}
       </ul>
