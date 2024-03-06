@@ -24,19 +24,18 @@ export const Stats = ({ open, setOpen }: StatsProps) => {
         <div className="grid grid-cols-12 overflow-y-scroll">
           <div className="col-span-12 md:col-span-4 md:border-r">
             <div className="w-full p-4">
-              <Avatar className="border-muted mx-auto mb-4 h-52 w-52 border-8">
+              <Avatar className="border-muted mx-auto mb-4 size-52 border-8">
                 <AvatarImage src={data.picture} alt={data.name} />
               </Avatar>
               <h1 className="md:text:2xl flex w-full items-center justify-center gap-4 text-xl lg:text-3xl">
                 <ContactIcon />
                 <span>{data.name}</span>
               </h1>
-              <p className="text-muted-foreground text-center">
-                {data.headline}
-              </p>
-              <p className="text-muted-foreground text-center">
-                {data.description}
-              </p>
+              {data.headline.map((h) => (
+                <p key={h} className="text-muted-foreground text-center">
+                  {h}
+                </p>
+              ))}
             </div>
 
             <Separator className="my-4 hidden md:block" />

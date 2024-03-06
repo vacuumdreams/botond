@@ -2,8 +2,8 @@
   "name": "Botond Fekete",
   "location": "Lisbon, PT",
   "picture": "/images/botond.jpg",
-  "headline": "eater of pineapples.",
-  "description": "(also) engineer of software.",
+  "headline": ["eater of pineapples.", "(also) engineer of software."],
+  "description": "Contributed to dozens of successful projects, some of which had millions of daily users. Got insights from various industries. Lead projects and designed architectures, made impact by introducing technologies or tools to companies to increase productivity and developer experience.",
   "social": {
     "website": "https://botond.space",
     "phone": "+351926451663",

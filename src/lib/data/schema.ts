@@ -47,7 +47,7 @@ export const schema = z.object({
   name: z.string(),
   location: z.string(),
   picture: z.string(),
-  headline: z.string(),
+  headline: z.array(z.string()),
   description: z.string(),
   social: z.object({
     website: z.string(),

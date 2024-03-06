@@ -28,12 +28,12 @@ export const Roadmap = ({ mode }: RoadmapProps) => {
           certifications I{"'"}ve completed or I{"'"}m currently working on:
         </p>
       </div>
-      <ul className="ml-8 border-l-2 pl-6">
+      <ul className="ml-8 border-l-2 pb-8 pl-6">
         {certs.map((c, i) => (
           <li
             key={i}
             className={cn(
-              "relative my-8 items-center justify-between gap-4 pr-4",
+              "relative my-8 items-center justify-between gap-4 pr-4 last:mb-0",
               {
                 "md:flex": mode !== "print",
               },
@@ -55,7 +55,8 @@ export const Roadmap = ({ mode }: RoadmapProps) => {
               <div className="my-4 flex flex-wrap items-center gap-2 md:my-0">
                 {c.tags?.map((tag) => (
                   <Badge
-                    className="bg-muted hover:bg-muted text-foreground whitespace-nowrap break-keep print:bg-slate-200 print:text-black"
+                    className="whitespace-nowrap break-keep"
+                    variant="secondary"
                     key={tag}
                   >
                     {tag}

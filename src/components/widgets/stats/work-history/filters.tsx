@@ -130,7 +130,7 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
   }, [data]);
 
   return (
-    <div className="flex flex-wrap gap-2 border-b px-4 py-4 print:hidden">
+    <div className="flex flex-wrap gap-2 border-b p-4 print:hidden">
       <div className="w-40">
         <p className="text-muted-foreground mb-1 text-xs">Employment</p>
         <Select

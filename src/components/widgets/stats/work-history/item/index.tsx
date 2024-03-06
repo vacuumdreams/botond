@@ -51,7 +51,11 @@ function BaseWorkItem({
         <div className="flex w-full items-center justify-between pr-4">
           <h4>
             <a className="flex items-center gap-2" href={url || undefined}>
-              <Avatar className="flex items-center justify-center border-2">
+              <Avatar
+                className={cn("flex items-center justify-center", {
+                  "border-2": !icon,
+                })}
+              >
                 {!icon && <BriefcaseIcon />}
                 {icon && (
                   <>
@@ -88,12 +92,12 @@ function BaseWorkItem({
       <AccordionTrigger className="p-4">
         <div className="flex w-full items-center justify-between pr-4">
           <h4 className="flex items-center gap-2">
-            <Avatar className="flex items-center justify-center border-2">
-              {!icon && (
-                <div className="flex h-full w-full items-center justify-center border-2">
-                  <BriefcaseIcon />
-                </div>
-              )}
+            <Avatar
+              className={cn("flex items-center justify-center", {
+                "border-2": !icon,
+              })}
+            >
+              {!icon && <BriefcaseIcon />}
               {icon && (
                 <>
                   <AvatarImage src={icon || ""} alt={name} />
@@ -218,7 +222,7 @@ export const FreelanceItem = ({
       />
       <div
         className={cn("prose prose-slate my-6 w-full", {
-          "text-xs print:text-black": mode === "print",
+          "text-xs": mode === "print",
           "dark:prose-invert": mode !== "print",
         })}
       >
@@ -232,14 +236,7 @@ export const FreelanceItem = ({
         <p className={cn({ "mb-4": mode === "print" })}>Clients: </p>
         <div className="flex flex-wrap gap-2">
           {Object.values(work.clients).map((c, i) => (
-            <Badge
-              key={c.id}
-              className={cn(" print:bg-slate-200", {
-                "text-foreground dark:text-background bg-slate-200 hover:bg-slate-200 dark:bg-white hover:dark:bg-white":
-                  mode !== "print",
-                "bg-slate-200 text-xs text-black": mode === "print",
-              })}
-            >
+            <Badge key={c.id} variant="secondary">
               <a
                 href={c.url || ""}
                 rel="noopener noreferrer"

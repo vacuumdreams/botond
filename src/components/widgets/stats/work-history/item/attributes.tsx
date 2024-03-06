@@ -36,11 +36,7 @@ export const Attributes = ({
   end,
   mode,
 }: AttributesProps) => {
-  const badgeClass = cn("whitespace-nowrap", {
-    "text-foreground dark:text-background bg-slate-200 hover:bg-slate-200 dark:bg-white hover:dark:bg-white":
-      mode !== "print",
-    "bg-slate-200 text-black": mode === "print",
-  });
+  const badgeClass = cn("whitespace-nowrap");
 
   return (
     <div>
@@ -59,32 +55,32 @@ export const Attributes = ({
       </div>
       <div className="flex flex-wrap gap-2">
         {location && (
-          <Badge className={badgeClass}>
-            <MapPinIcon className="mr-2 h-6 w-6" />
+          <Badge variant={"secondary"} className={badgeClass}>
+            <MapPinIcon className="mr-2 size-6" />
             {location}
           </Badge>
         )}
         {level && (
-          <Badge className={badgeClass}>
-            <AwardIcon className="mr-2 h-6 w-6" />
+          <Badge variant={"secondary"} className={badgeClass}>
+            <AwardIcon className="mr-2 size-6" />
             {level}
           </Badge>
         )}
         {time && (
-          <Badge className={badgeClass}>
-            <TimerIcon className="mr-2 h-6 w-6" />
+          <Badge variant={"secondary"} className={badgeClass}>
+            <TimerIcon className="mr-2 size-6" />
             {time}
           </Badge>
         )}
         {phase && (
-          <Badge className={badgeClass}>
-            <ActivityIcon className="mr-2 h-6 w-6" />
+          <Badge variant={"secondary"} className={badgeClass}>
+            <ActivityIcon className="mr-2 size-6" />
             {phase}
           </Badge>
         )}
         {industry && (
-          <Badge className={badgeClass}>
-            <FactoryIcon className="mr-2 h-6 w-6" />
+          <Badge variant={"secondary"} className={badgeClass}>
+            <FactoryIcon className="mr-2 size-6" />
             {industry}
           </Badge>
         )}
