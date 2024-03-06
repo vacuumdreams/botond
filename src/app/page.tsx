@@ -9,9 +9,7 @@ export default function Home() {
         <Screen />
         <ThemeSwitch />
       </main>
-      <div className="hidden print:block">
-        <Print />
-      </div>
+      <Print />
     </>
   );
 }

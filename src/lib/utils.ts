@@ -69,33 +69,29 @@ export function mergeOverlappingRanges(ranges: DateRange[]): DateRange[] {
   return merged;
 }
 
-// function areaPrint() {
-//   const areaToPrint = document.getElementById("the-content");
-//   // Select element to print
+export function getHeightMm(el: null | HTMLElement) {
+  if (!el?.cloneNode) {
+    return 0;
+  }
+  const clone = el.cloneNode(true);
 
-//   areaToPrint.classList.add("print-area");
-//   // Adds print-area class to element
+  if (clone instanceof HTMLElement) {
+    Object.assign(clone.style, {
+      width: "210mm",
+      overflow: "visible",
+      height: "auto",
+      maxHeight: "none",
+      opacity: "0",
+      visibility: "hidden",
+      display: "block",
+    });
 
-//   window.print();
-//   // Prints area to which class was assigned only
-// }
+    el.after(clone);
+    const height = clone.offsetHeight;
 
-// document.getElementById("printBtn").addEventListener("click", () => {
-//   window.print();
-// });
+    clone.remove();
 
-export function printPage(url: string) {
-  window.print();
-  // const hideFrame = document.createElement("iframe");
-  // hideFrame.onload = function setPrint() {
-  //   const closePrint = () => {
-  //     document.body.removeChild(this);
-  //   };
-  //   this.contentWindow.onbeforeunload = closePrint;
-  //   this.contentWindow.onafterprint = closePrint;
-  //   this.contentWindow.print();
-  // };
-  // hideFrame.style.display = "none";
-  // hideFrame.src = url;
-  // document.body.appendChild(hideFrame);
+    return Math.floor((height * 25.4) / 96);
+  }
+  return 0;
 }

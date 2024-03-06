@@ -1,6 +1,6 @@
 import { HTMLAttributes, ImgHTMLAttributes } from "react";
 import Image from "next/image";
-import { ExternalLinkIcon, AlertTriangleIcon } from "lucide-react";
+import { ExternalLinkIcon, AlertTriangleIcon, InfoIcon } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 import { cn } from "@/lib/utils";
@@ -11,6 +11,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
 import { MdxPanel } from "./panel";
 import { MdxAvatar } from "./avatar";
@@ -161,11 +167,16 @@ const components = {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  TooltipProvider,
   Badge,
 
   // icons
   ExternalLinkIcon,
   AlertTriangleIcon,
+  InfoIcon,
 };
 
 interface MdxProps {
@@ -177,7 +188,9 @@ export function Mdx({ code }: MdxProps) {
 
   return (
     <div className="mdx">
-      <Component components={components} />
+      <TooltipProvider>
+        <Component components={components} />
+      </TooltipProvider>
     </div>
   );
 }

@@ -45,6 +45,7 @@ export const freelanceSchema = z.object({
 
 export const schema = z.object({
   name: z.string(),
+  location: z.string(),
   picture: z.string(),
   headline: z.string(),
   description: z.string(),

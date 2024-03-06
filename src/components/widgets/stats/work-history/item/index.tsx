@@ -89,7 +89,11 @@ function BaseWorkItem({
         <div className="flex w-full items-center justify-between pr-4">
           <h4 className="flex items-center gap-2">
             <Avatar className="flex items-center justify-center border-2">
-              {!icon && <BriefcaseIcon />}
+              {!icon && (
+                <div className="flex h-full w-full items-center justify-center border-2">
+                  <BriefcaseIcon />
+                </div>
+              )}
               {icon && (
                 <>
                   <AvatarImage src={icon || ""} alt={name} />
@@ -214,7 +218,7 @@ export const FreelanceItem = ({
       />
       <div
         className={cn("prose prose-slate my-6 w-full", {
-          "text-xs": mode === "print",
+          "text-xs print:text-black": mode === "print",
           "dark:prose-invert": mode !== "print",
         })}
       >
@@ -233,7 +237,7 @@ export const FreelanceItem = ({
               className={cn(" print:bg-slate-200", {
                 "text-foreground dark:text-background bg-slate-200 hover:bg-slate-200 dark:bg-white hover:dark:bg-white":
                   mode !== "print",
-                "bg-slate-200 text-black": mode === "print",
+                "bg-slate-200 text-xs text-black": mode === "print",
               })}
             >
               <a
@@ -289,7 +293,7 @@ export const PermanentItem = ({
       />
       <div
         className={cn("prose prose-slate my-6 w-full", {
-          "text-sm print:text-black": mode === "print",
+          "text-xs print:text-black": mode === "print",
           "dark:prose-invert": mode !== "print",
         })}
       >

@@ -11,7 +11,6 @@ import {
   PrinterIcon,
 } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
-import { printPage } from "@/lib/utils";
 import { Bubble, BubbleProps } from "./bubble";
 import { Lines } from "./lines";
 
@@ -99,7 +98,7 @@ const DIALOGUE: BubbleItemProps[] = [
             className="flex cursor-pointer gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
             target="_blank"
             onClick={() => {
-              printPage("/print");
+              window.print();
             }}
           >
             <Avatar className="border-foreground flex items-center justify-center border border-dashed">

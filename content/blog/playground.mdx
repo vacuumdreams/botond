@@ -1,0 +1,31 @@
+---
+title: playground
+description: Toying around with Elysia
+date: "2024-03-06"
+published: false
+image: /images/blog/last-typebender.png
+authors:
+  - botond
+---
+
+I remember the rise of Typescript back in the days. The thing which always turned me off about it, specially for smaller frontend projects, that you had to manually type out and then maintain every single data type which was coming into your system from your all your APIs and some of the potential third party libraries you were using. I suppose I wasn't the only one, as people quickly started publishing type defs for their own or others' libraries.
+
+I believe for me the real turning point was when I came across [OpenAPI](https://www.openapis.org/). There was already a lot of tooling around it, all sorts of code generators (for tests, mocks, type definitions in different languages, endpoints). In case you're not familiar with it, OpenAPI is an initiative to standardize RESTful APIs, to provide them with a descriptive, language agnostic way to precisely describe them. This was growingly useful in microservice architectures, where you had dozens of APIs, the these specs were there to document the interactions and provide you with an interface / documentation for how to use each of them.
+
+<div className="[&>*]:inline">
+I dived into this at the time when I was working for [Prezi](https://prezi.com). Most of their services had OpenAPI specs or{' '}
+<Tooltip>
+<TooltipTrigger>
+<span className="flex gap-2 rounded bg-muted">Swagger files<InfoIcon size={12} /></span>
+</TooltipTrigger>
+<TooltipContent>
+
+<div className="max-w-80">Swagger was an umbrella term for tools implementing OpenAPI, and Swagger file was the term for the service spec files a while ago, which was based on the OpenAPI v1 and v2. Now, after v3 came out, the spec files are called "OpenAPI specification" officially. Not planning to go into more details about this here, you can read the whole story <a href="https://swagger.io/blog/api-strategy/difference-between-swagger-and-openapi/" taget="_blank" className="underline">here</a>.</div>
+</TooltipContent>
+</Tooltip>
+. I got really excited, and during a hackaton I prototyped a code generator which would combine the given open source tools (like [openapi-typescript-codegen](https://github.com/ferdikoomen/openapi-typescript-codegen)) and all the business logic we had and produce a client package into our frontend monorepo as a set of async functions with the appropriate type signatures, since the request and response types were all readily available in the API specifications. This got slowly adopted afterwards, but there were still a lot of problems. Some of the service specs were not up to date, the older services had manually typed spec files and didn't use any of the toolings to generate it from the code itself, so we got some type mismatches and faulty expectations.
+</div>
+
+Shortly after this, [Orval](https://orval.dev/) came out and simplified things even more. It gave you a fully typed client library without having to template your async functions, and you could choose from a variety of outputs, my favorite obviously being [React Query](https://react-query.tanstack.com/). I felt like REST APIs were made as pleasent to use as GraphQL was with its schema and client generator.
+
+Some time last year I came across [trpc](https://trpc.io/), and quickly tried it out. Having Typescript code in all directions really does magic, code generation becomes obsolete, and you get instant feedback on the changes in your data structure. What it essentially gives you is a router for your backend and one for your frontend, which would both feed on the same data source, and then you'd use an adapter to hook it into pretty much any node based service. It uses a lot of concepts borrowed from GraphQL, like naming conventions for requests (queries, mutations, subscriptions), using links to fetch data, etc.
