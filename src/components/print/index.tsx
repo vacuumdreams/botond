@@ -15,7 +15,7 @@ export function Print() {
   }, []);
 
   return (
-    <div ref={ref} className="hidden print:block">
+    <div ref={ref} className="hidden w-[210mm] print:block">
       <div className="max-w-screen min-h-screen overflow-hidden text-xs">
         <ScreenPrint />
       </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, ReactNode } from "react";
 import { useTransition, animated } from "@react-spring/web";
 import Link from "next/link";
 import {
@@ -23,6 +23,27 @@ function setSeen() {
 function hasBeenSeen() {
   return localStorage.getItem(STORAGE_KEY_DIALOGUE_FINISH) === "true";
 }
+
+type ContactLinkProps = {
+  href?: string;
+  onClick?: () => void;
+  icon: ReactNode;
+};
+
+const ContactLink = ({ icon, href, onClick }: ContactLinkProps) => {
+  return (
+    <a
+      className="bg-background flex cursor-pointer gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
+      target="_blank"
+      href={href}
+      onClick={onClick}
+    >
+      <Avatar className="border-foreground flex items-center justify-center border border-dashed">
+        {icon}
+      </Avatar>
+    </a>
+  );
+};
 
 type BubbleItemProps = BubbleProps["dialogue"] & { id: string };
 
@@ -94,53 +115,26 @@ const DIALOGUE: BubbleItemProps[] = [
       }, [onFinish]);
       return (
         <div className="flex justify-end gap-4">
-          <a
-            className="flex cursor-pointer gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
-            target="_blank"
+          <ContactLink
+            icon={<PrinterIcon />}
             onClick={() => {
               window.print();
             }}
-          >
-            <Avatar className="border-foreground flex items-center justify-center border border-dashed">
-              <PrinterIcon />
-            </Avatar>
-          </a>
-          <a
-            className="flex gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
-            target="_blank"
-            href={`tel:${data.social.phone}`}
-          >
-            <Avatar className="border-foreground flex items-center justify-center border border-dashed">
-              <PhoneIcon />
-            </Avatar>
-          </a>
-          <a
-            className="flex gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
-            target="_blank"
+          />
+          <ContactLink icon={<PhoneIcon />} href={`tel:${data.social.phone}`} />
+          <ContactLink
+            icon={<MailIcon />}
             href={`mailto:${data.social.email}?subject=${encodeURIComponent("Hey Botond!")}`}
-          >
-            <Avatar className="border-foreground flex items-center justify-center border border-dashed">
-              <MailIcon />
-            </Avatar>
-          </a>
-          <a
-            className="flex gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
-            target="_blank"
+          />
+
+          <ContactLink
+            icon={<GithubIcon />}
             href={data.social.links.github.url}
-          >
-            <Avatar className="border-foreground flex items-center justify-center border border-dashed">
-              <GithubIcon />
-            </Avatar>
-          </a>
-          <a
-            className="flex gap-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
-            target="_blank"
+          />
+          <ContactLink
+            icon={<LinkedinIcon />}
             href={data.social.links.linkedin.url}
-          >
-            <Avatar className="border-foreground flex items-center justify-center border border-dashed">
-              <LinkedinIcon />
-            </Avatar>
-          </a>
+          />
         </div>
       );
     },

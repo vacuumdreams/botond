@@ -22,7 +22,7 @@ export function ScreenPrint() {
   return (
     <div className="grid grid-cols-12 overflow-y-scroll">
       <div className="col-span-4 border-r-2 border-slate-200">
-        <div className="w-full px-4 pt-4">
+        <div className="w-full px-4 pb-2 pt-4">
           <Avatar className="border-muted mx-auto mb-4 size-32 border-4">
             <AvatarImage src={data.picture} alt={data.name} />
           </Avatar>
@@ -84,8 +84,8 @@ export function ScreenPrint() {
           </div>
         </div>
         <Separator className="my-4" />
-        <div className="px-4">
-          <p className="mb-4">{data.description}</p>
+        <div className="px-4 pb-8 pt-6">
+          <p className="mb-[1.85rem]">{data.description}</p>
           <div className="flex flex-wrap gap-2">
             {Object.values(data.skills.tech)
               .filter((t) => t.featured)
@@ -111,7 +111,7 @@ export function ScreenPrint() {
           </div>
         </div>
         <Separator className="my-4" />
-        <div className="border-b-2">
+        <div className="border-b-2 pt-4">
           <Roadmap mode="print" />
         </div>
       </div>
