@@ -1,44 +1,44 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { allAuthors, allPosts } from "contentlayer/generated";
-import { format } from "date-fns";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeftIcon, ClockIcon } from "lucide-react";
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { allAuthors, allPosts } from "contentlayer/generated"
+import { format } from "date-fns"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowLeftIcon, ClockIcon } from "lucide-react"
 
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { Mdx } from "@/components/content/mdx";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Separator } from "@/components/ui/separator";
-import { ThemeSwitch } from "@/components/widgets/theme-switch";
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
+import { Mdx } from "@/components/content/mdx"
+import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { Separator } from "@/components/ui/separator"
+import { ThemeSwitch } from "@/components/widgets/theme-switch"
 
 function calcReadingTime(text: string) {
-  const wpm = 225;
-  const words = text.trim().split(/\s+/).length;
-  const time = Math.ceil(words / wpm);
-  return time;
+  const wpm = 225
+  const words = text.trim().split(/\s+/).length
+  const time = Math.ceil(words / wpm)
+  return time
 }
 
 async function getPostFromParams(paramSlugs?: string[]) {
-  const slug = paramSlugs?.join("/");
-  const post = allPosts.find((post) => post.slugAsParams === slug);
+  const slug = paramSlugs?.join("/")
+  const post = allPosts.find((post) => post.slugAsParams === slug)
 
   if (!post) {
-    null;
+    null
   }
 
-  return post;
+  return post
 }
 
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
-  const post = await getPostFromParams(params.slug);
+  const post = await getPostFromParams(params.slug)
 
   if (!post) {
-    return {};
+    return {}
   }
 
   return {
@@ -47,7 +47,7 @@ export async function generateMetadata({
     authors: post.authors.map((author) => ({
       name: author,
     })),
-  };
+  }
 }
 
 export async function generateStaticParams(): Promise<
@@ -55,25 +55,25 @@ export async function generateStaticParams(): Promise<
 > {
   return allPosts.map((post) => ({
     slug: post.slugAsParams.split("/"),
-  }));
+  }))
 }
 
 type PostPageProps = {
   params: {
-    slug: string[];
-  };
-};
+    slug: string[]
+  }
+}
 
 export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostFromParams(params.slug);
+  const post = await getPostFromParams(params.slug)
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
   const authors = post.authors.map((author) =>
-    allAuthors.find(({ slug }) => slug === `/authors/${author}`),
-  );
+    allAuthors.find(({ slug }) => slug === `/authors/${author}`)
+  )
 
   return (
     <article className="relative py-6 lg:py-10">
@@ -131,7 +131,7 @@ export default async function PostPage({ params }: PostPageProps) {
                         {author.title}
                       </span>
                     </div>
-                  ) : null,
+                  ) : null
                 )}
               </div>
             ) : null}
@@ -149,7 +149,7 @@ export default async function PostPage({ params }: PostPageProps) {
             priority
           />
         )}
-        <div className="bg-slate-800 bg-opacity-50 p-8 text-lg">
+        <div className="bg-muted bg-opacity-50 p-8 text-lg">
           <Mdx code={post.body.code} />
         </div>
         <Separator className="mt-12" />
@@ -165,5 +165,5 @@ export default async function PostPage({ params }: PostPageProps) {
       </div>
       <ThemeSwitch />
     </article>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
+import { defineDocumentType, makeSource } from "contentlayer/source-files"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypePrettyCode from "rehype-pretty-code"
+import rehypeSlug from "rehype-slug"
+import remarkGfm from "remark-gfm"
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -14,7 +14,7 @@ const computedFields = {
     type: "string",
     resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
   },
-};
+}
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -51,7 +51,7 @@ export const Post = defineDocumentType(() => ({
     },
   },
   computedFields,
-}));
+}))
 
 export const Author = defineDocumentType(() => ({
   name: "Author",
@@ -71,7 +71,7 @@ export const Author = defineDocumentType(() => ({
     },
   },
   computedFields,
-}));
+}))
 
 export default makeSource({
   contentDirPath: "./content",
@@ -83,19 +83,22 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "github-dark",
+          theme: {
+            dark: "github-dark-dimmed",
+            light: "github-light",
+          },
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
             if (node.children.length === 0) {
-              node.children = [{ type: "text", value: " " }];
+              node.children = [{ type: "text", value: " " }]
             }
           },
           onVisitHighlightedLine(node) {
-            node.properties.className.push("line--highlighted");
+            node.properties.className.push("line--highlighted")
           },
           onVisitHighlightedWord(node) {
-            node.properties.className = ["word--highlighted"];
+            node.properties.className = ["word--highlighted"]
           },
         },
       ],
@@ -110,4 +113,4 @@ export default makeSource({
       ],
     ],
   },
-});
+})

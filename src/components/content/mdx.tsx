@@ -1,32 +1,32 @@
-import { HTMLAttributes, ImgHTMLAttributes } from "react";
-import Image from "next/image";
-import { ExternalLinkIcon, AlertTriangleIcon, InfoIcon } from "lucide-react";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { HTMLAttributes, ImgHTMLAttributes } from "react"
+import Image from "next/image"
+import { ExternalLinkIcon, AlertTriangleIcon, InfoIcon } from "lucide-react"
+import { useMDXComponent } from "next-contentlayer/hooks"
 
-import { cn } from "@/lib/utils";
-import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils"
+import { Separator } from "@/components/ui/separator"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/ui/accordion"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Badge } from "@/components/ui/badge";
-import { MdxPanel } from "./panel";
-import { MdxAvatar } from "./avatar";
+} from "@/components/ui/tooltip"
+import { Badge } from "@/components/ui/badge"
+import { MdxPanel } from "./panel"
+import { MdxAvatar } from "./avatar"
 
 const components = {
   h1: ({ className, ...props }: HTMLAttributes<HTMLHeadElement>) => (
     <h1
       className={cn(
         "mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
-        className,
+        className
       )}
       {...props}
     />
@@ -35,7 +35,7 @@ const components = {
     <h2
       className={cn(
         "mt-24 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0",
-        className,
+        className
       )}
       {...props}
     />
@@ -44,7 +44,7 @@ const components = {
     <h3
       className={cn(
         "mt-16 scroll-m-20 text-2xl font-semibold tracking-tight",
-        className,
+        className
       )}
       {...props}
     />
@@ -53,7 +53,7 @@ const components = {
     <h4
       className={cn(
         "mt-16 scroll-m-20 text-xl font-semibold tracking-tight",
-        className,
+        className
       )}
       {...props}
     />
@@ -62,7 +62,7 @@ const components = {
     <h5
       className={cn(
         "mt-16 scroll-m-20 text-lg font-semibold tracking-tight",
-        className,
+        className
       )}
       {...props}
     />
@@ -71,7 +71,7 @@ const components = {
     <h6
       className={cn(
         "mt-8 scroll-m-20 text-base font-semibold tracking-tight",
-        className,
+        className
       )}
       {...props}
     />
@@ -101,7 +101,7 @@ const components = {
     <blockquote
       className={cn(
         "[&>*]:text-muted-foreground mt-6 border-l-2 pl-6 italic",
-        className,
+        className
       )}
       {...props}
     />
@@ -128,7 +128,7 @@ const components = {
     <th
       className={cn(
         "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
-        className,
+        className
       )}
       {...props}
     />
@@ -137,7 +137,7 @@ const components = {
     <td
       className={cn(
         "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
-        className,
+        className
       )}
       {...props}
     />
@@ -145,8 +145,8 @@ const components = {
   pre: ({ className, ...props }: HTMLAttributes<HTMLPreElement>) => (
     <pre
       className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
-        className,
+        "bg-muted max-h-72 overflow-x-auto border dark:bg-slate-900",
+        className
       )}
       {...props}
     />
@@ -155,7 +155,7 @@ const components = {
     <code
       className={cn(
         "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
-        className,
+        className
       )}
       {...props}
     />
@@ -177,14 +177,14 @@ const components = {
   ExternalLinkIcon,
   AlertTriangleIcon,
   InfoIcon,
-};
+}
 
 interface MdxProps {
-  code: string;
+  code: string
 }
 
 export function Mdx({ code }: MdxProps) {
-  const Component = useMDXComponent(code);
+  const Component = useMDXComponent(code)
 
   return (
     <div className="mdx">
@@ -192,5 +192,5 @@ export function Mdx({ code }: MdxProps) {
         <Component components={components} />
       </TooltipProvider>
     </div>
-  );
+  )
 }

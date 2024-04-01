@@ -99,6 +99,48 @@
     margin-bottom: 2em;
   }
 
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-light);
+    background-color: var(--shiki-light-bg);
+  }
+
+  .dark code[data-theme*=" "],
+  .dark code[data-theme*=" "] span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
+  }
+
+  [data-rehype-pretty-code-figure] {
+    @apply my-4;
+  }
+
+  [data-rehype-pretty-code-title] {
+    @apply mt-4;
+  }
+
+  [data-rehype-pretty-code-caption] {
+    @apply mb-4;
+  }
+
+  [data-rehype-pretty-code-title],
+  [data-rehype-pretty-code-caption] {
+    @apply bg-background text-muted-foreground border p-1;
+  }
+
+  [data-rehype-pretty-code-title]::before {
+    font-family: "devicon";
+    @apply ml-1 mr-2;
+  }
+
+  [data-rehype-pretty-code-title][data-language="ts"]:before {
+    content: "";
+  }
+
+  [data-rehype-pretty-code-title][data-language="bash"]:before {
+    content: ">_";
+  }
+
   .font-effect-anaglyph {
     text-shadow:
       -0.06em 0 red,

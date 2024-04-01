@@ -2,15 +2,15 @@
 title: playground
 description: Toying around with Elysia
 date: "2024-03-06"
-published: false
+published: true
 image: /images/blog/last-typebender.png
 authors:
   - botond
 ---
 
-I remember the rise of Typescript back in the days. The thing which always turned me off about it, specially for smaller frontend projects, that you had to manually type out and then maintain every single data type which was coming into your system from your all your APIs and some of the potential third party libraries you were using. I suppose I wasn't the only one, as people quickly started publishing type defs for their own or others' libraries.
+I remember the rise of Typescript back in the days. The thing which always turned me off about it, specially for smaller frontend projects which interacted with a lot of services outside your control, that you had to manually type out and then maintain every single data type which was coming into your system from your all your APIs and some of the third party libraries which didn't provide you with it, which meant you were destined to get false positives whenever things changed outside your system, making it very non-intuitive to debug.
 
-I believe for me the real turning point was when I came across [OpenAPI](https://www.openapis.org/). There was already a lot of tooling around it, all sorts of code generators (for tests, mocks, type definitions in different languages, endpoints). In case you're not familiar with it, OpenAPI is an initiative to standardize RESTful APIs, to provide them with a descriptive, language agnostic way to precisely describe them. This was growingly useful in microservice architectures, where you had dozens of APIs, the these specs were there to document the interactions and provide you with an interface / documentation for how to use each of them.
+I believe for me the real boost for me was when I came across [OpenAPI](https://www.openapis.org/). There was a lot of tooling available, all sorts of code generators (for tests, mocks, type definitions for different languages). In case you're not familiar with it, OpenAPI is an initiative to standardize RESTful APIs, to provide a language agnostic way to precisely describe them. This was growingly useful in the microservice architectures, where you had dozens of APIs, the these specs were there to document interactions and data structures coming in and out from your APIs.
 
 <div className="[&>*]:inline">
 I dived into this at the time when I was working for [Prezi](https://prezi.com). Most of their services had OpenAPI specs or{' '}
@@ -19,13 +19,200 @@ I dived into this at the time when I was working for [Prezi](https://prezi.com).
 <span className="flex gap-2 rounded bg-muted">Swagger files<InfoIcon size={12} /></span>
 </TooltipTrigger>
 <TooltipContent>
-
 <div className="max-w-80">Swagger was an umbrella term for tools implementing OpenAPI, and Swagger file was the term for the service spec files a while ago, which was based on the OpenAPI v1 and v2. Now, after v3 came out, the spec files are called "OpenAPI specification" officially. Not planning to go into more details about this here, you can read the whole story <a href="https://swagger.io/blog/api-strategy/difference-between-swagger-and-openapi/" taget="_blank" className="underline">here</a>.</div>
 </TooltipContent>
 </Tooltip>
-. I got really excited, and during a hackaton I prototyped a code generator which would combine the given open source tools (like [openapi-typescript-codegen](https://github.com/ferdikoomen/openapi-typescript-codegen)) and all the business logic we had and produce a client package into our frontend monorepo as a set of async functions with the appropriate type signatures, since the request and response types were all readily available in the API specifications. This got slowly adopted afterwards, but there were still a lot of problems. Some of the service specs were not up to date, the older services had manually typed spec files and didn't use any of the toolings to generate it from the code itself, so we got some type mismatches and faulty expectations.
+. I got really excited, and during a hackaton I prototyped a code generator which would combine the given open source tools (like [openapi-typescript-codegen](https://github.com/ferdikoomen/openapi-typescript-codegen)) and all the business logic we had and produce a type-safe client package into our frontend monorepo. This got slowly adopted afterwards, but there were still a lot of problems. Some services didn't have auto-generated OpenAPI specs, the information in them was outdated, so sometimes types vs. reality didn't quite match the expectations.
 </div>
 
-Shortly after this, [Orval](https://orval.dev/) came out and simplified things even more. It gave you a fully typed client library without having to template your async functions, and you could choose from a variety of outputs, my favorite obviously being [React Query](https://react-query.tanstack.com/). I felt like REST APIs were made as pleasent to use as GraphQL was with its schema and client generator.
+Shortly after I went through this enlightenment, [Orval](https://orval.dev/) came out and simplified things even more. It gave you a fully typed client library with a variety of outputs you could choose from, my favorite at the time obviously being [React Query](https://react-query.tanstack.com/). I felt like REST APIs were finally just as pleasant to use on the frontend as GraphQL was with its schemas and client generators.
 
-Some time last year I came across [trpc](https://trpc.io/), and quickly tried it out. Having Typescript code in all directions really does magic, code generation becomes obsolete, and you get instant feedback on the changes in your data structure. What it essentially gives you is a router for your backend and one for your frontend, which would both feed on the same data source, and then you'd use an adapter to hook it into pretty much any node based service. It uses a lot of concepts borrowed from GraphQL, like naming conventions for requests (queries, mutations, subscriptions), using links to fetch data, and so on.
+Some time last year I came across [trpc](https://trpc.io/), and quickly tried it out. Having Typescript code in all directions really does magic, code generation becomes obsolete. It's pretty neat that you get instant feedback on the changes in your data structure. What it essentially gives you is a router for your backend and one for your frontend, which would both feed on the same data source, and then you can use an adapter to hook it into pretty much any node based service (node, express, fastify, etc). It uses a lot of concepts borrowed from GraphQL clients, like naming conventions for requests (queries, mutations, subscriptions), using links to fetch data, and so on.
+
+Okay, we're finally arriving to the actual topic of the post.
+
+### The actual topic of the post
+
+Told you.
+
+I made two discoveries relatively recently, and as a result I officially entered my post-trpc era.
+
+### The first discovery
+
+This is [Drizzle](https://orm.drizzle.team), which prides itself as a [Prisma](https://www.prisma.io/) alternative, but without the code generation and the special schema language, as it's all Typescript, baby! The ORM part of it also feels closer to actual SQL, which took a little to get used to again, but I think it's a great thing. It's definitely less rouboust than Prisma, which recently announced e.g. [Pulse](https://www.prisma.io/data-platform/pulse) which looks pretty awesome.
+
+### The second discovery
+
+The second thing I stumbled upon was [Elysia](https://elysiajs.com), and I thought I give it a try. As you can tell from the long ass intro, this post is going to be more about the developer experience rather than how fast it is, you can find plenty of benchmarks online for that. It definitely took a few minutes to get over its logo, which essentially resembles a monochromatic version of the Firefox logo from the early 2000s.
+
+On the front page you can see with big letters: "Ergonomic Framework for Humans". As a human, I was already intrigued.
+
+<p className="text-muted-foreground">(Fun fact: while writing this post, Elysia v1.0 was released 🎉)</p>
+
+### Code, give me code. Now!
+
+Wait for it!
+
+If you ever used [Fastify](https://fastify.dev), the route handlers in Elysia will feel familiar in terms of validation - Fastify does it with Json Schema, Elysia uses [Typebox](https://github.com/sinclairzx81/typebox).
+
+I'm not going to go into the details on how to set up a database, what to do with your connection URI, because it would make a ridiculously long post. Instead, I'll try to present the simplicity of passing around data in a few steps.
+
+_1. The database_
+
+Going with a simple initializer based on the [docs](https://orm.drizzle.team/docs/get-started-postgresql#postgresjs) for Drizzle's Postgres adapter:
+
+```ts title="src/lib/db/index.ts"
+import { drizzle } from "drizzle-orm/postgres-js"
+import postgres from "postgres"
+
+const connectionString = String(process.env.DATABASE_URL)
+
+const sql = postgres(connectionString)
+export const db = drizzle(sql)
+```
+
+Then we'll need a dummy table:
+
+```ts title="src/lib/db/schema.ts"
+import { pgTable, text, timestamp } from "drizzle-orm/pg-core"
+
+export const resourceTable = pgTable("resource", {
+  id: text("id").primaryKey(),
+  createdAt: timestamp("created_at", {
+    withTimezone: true,
+    mode: "date",
+  }).notNull(),
+  updatedAt: timestamp("created_at", {
+    withTimezone: true,
+    mode: "date",
+  }).notNull(),
+  value: text("value"),
+})
+```
+
+_2. The service_
+
+So, a few things here: [drizzle-typebox](https://orm.drizzle.team/docs/typebox) is a handy library to grab the table definition and create a validation schema, which Elysia can just pick up. Going to create two endpoints, one for getting the list of resources, and one for inserting a new one.
+
+```ts title="src/api/index.ts"
+import { Elysia, t } from "elysia"
+import { createSelectSchema, createInsertSchema } from "drizzle-typebox"
+import { resourceTable } from "../lib/db/schema"
+
+export const schemas = {
+  resource: {
+    select: createSelectSchema(resourceTable),
+    insert: createInsertSchema(resourceTable),
+  },
+}
+
+export const api = new Elysia({ prefix: "/api" })
+  .get(
+    "/resource",
+    () => {
+      return db.select().from(resourceTable)
+    },
+    {
+      response: {
+        body: t.Array(selectSchema),
+      },
+    }
+  )
+  .post(
+    "resource",
+    async (req) => {
+      const [res] = await db.insert(resourceTable).values(req.body).returning()
+      return res
+    },
+    {
+      body: insertSchema,
+      response: selectSchema,
+    }
+  )
+  .listen(3001)
+
+export type Api = typeof api
+```
+
+I'm sorry if I offend you with the lack of semicolons (translation: I'm not sorry, I'm being cynical). On semicolons, I totally agree with [Vonnegut](https://www.grammarbook.com/blog/commas/the-man-who-hated-semicolons/), even though I'd probably leave off the "transvestite hermaphrodites" part. Wtf Kurt?
+
+_3. The frontend_
+
+So, Im going to go back to use the good old [react-query](https://tanstack.com/query/v4/docs/framework/react/overview) for my example, combined with Elysia's [eden](https://elysiajs.com/eden/overview.html) library for the client, and [react-hook-form](https://www.react-hook-form.com) combined with a typebox resolver to process the validation schema we previously created for the backend above. For a very dummy CR~~UD~~ interface, to display the list of resources and be able to add new ones, I could do something like:
+
+```tsx title="src/app/resource.tsx"
+import { useForm } from "react-hook-form"
+import { typeboxResolver } from "@hookform/resolvers/typebox"
+import { useQuery, useMutation } from "@tanstack/react-query"
+import { treaty } from "@elysiajs/eden"
+import { schemas } from "../api"
+import type { Api } from "../api"
+
+const client = treaty<Api>("http://localhost:3001")
+
+export const Resource = () => {
+  const { data, refetch } = useQuery({
+    queryKey: ["resources"],
+    queryFn: () => client.resource.get(),
+  })
+  const { mutate } = useMutation({
+    mutationFn: (args: Parameters<typeof client.resource.post>) => {
+      return client.resource.post(args)
+    },
+    onSuccess: () => refetch(),
+  })
+  const { register, handleSubmit } = useForm({
+    resolver: typeboxResolver(schemas.resource.insert),
+  })
+
+  return (
+    <div>
+      <ul>
+        {data?.map((resource) => <li key={resource.id}>{resource.value}</li>)}
+      </ul>
+      <form onSubmit={handleSubmit(mutate)}>
+        <input
+          {...register("value")}
+          type="text"
+          placeholder="New Resource Value"
+        />
+      </form>
+    </div>
+  )
+}
+```
+
+For this example this might look like an overkill, but this is something I imagine a real world application would look like.
+
+Finally finishing off with setting up the query provider:
+
+```tsx title="src/app/index.tsx"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { Resource } from "./resource"
+
+const queryClient = new QueryClient()
+
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Resource />
+    </QueryClientProvider>
+  )
+}
+```
+
+### Summary
+
+So, as you can see above, you can have a fully type-safe application from database to frontend without having to write a single type definition, which for me is super exciting to think of. I've created a repo to show all this in action, plus I've tried a few extra things in there, like using Elysia as a resolver for a Next.js app's endpoints, added shadcn/ui for the frontend, etc. You can check it out on <span className="bg-primary-foreground inline-block">[-> this link](https://github.com/vacuumdreams/test_elysia)</span>.
+
+### Final notes
+
+So, what's up? Is code generation obsolete?
+
+Well, pretty much with everything, code generation has its place. Code generators can be super useful for handling boilerplate, without adding complexity (boilerplate is usually easy to understand, some abstractions not so much), without compromising performance (they usually don't execute on runtime), without hiding logic (the output is usually part of your codebase).
+
+For example, if the code above was to serve some mid-large scale production app, I'd love to write a code generator which would take a drizzle table name as an input, and generate the CRUD endpoints into my Elysia API, and my react-query handlers for the frontend.
+
+There are popular libraries out there, shadcn/ui, for example is just a code generator, and most people love the control they get out from the output, and not having to deal with third party code, waiting for releases to get things fixed, and so on.
+
+Code generators are awesome. Drizzle's awesome. Elysia's awesome. You are awesome. Until next time.
