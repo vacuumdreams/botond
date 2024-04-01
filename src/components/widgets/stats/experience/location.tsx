@@ -1,10 +1,10 @@
-import { useMemo } from "react";
-import { differenceInMonths, formatDuration } from "date-fns";
-import { ResponsivePie } from "@nivo/pie";
-import { MapPinIcon, LaptopIcon } from "lucide-react";
-import { Avatar } from "@/components/ui/avatar";
-import { useData } from "@/components/provider/data";
-import { getStartDate, getEndDate } from "@/lib/utils";
+import { useMemo } from "react"
+import { differenceInMonths, formatDuration } from "date-fns"
+import { ResponsivePie } from "@nivo/pie"
+import { MapPinIcon, LaptopIcon } from "lucide-react"
+import { Avatar } from "@/components/ui/avatar"
+import { useData } from "@/components/provider/data"
+import { getStartDate, getEndDate } from "@/lib/utils"
 
 type Item = {
   id: string;
@@ -23,8 +23,8 @@ function addItem(
       id: location,
       label: location,
       value: differenceInMonths(getEndDate(end), getStartDate(start)),
-    };
-    return acc;
+    }
+    return acc
   }
   acc[location] = {
     id: location,
@@ -32,11 +32,11 @@ function addItem(
     value:
       acc[location].value +
       differenceInMonths(getEndDate(end), getStartDate(start)),
-  };
+  }
 }
 
 export const LocationChart = () => {
-  const { data } = useData();
+  const { data } = useData()
 
   const chartData = useMemo(() => {
     const res = Object.values(data.work.history).reduce<Record<string, Item>>(
@@ -44,21 +44,21 @@ export const LocationChart = () => {
         if (work.employment === "freelance") {
           Object.values(work.clients || {}).reduce<Record<string, Item>>(
             (accClients, client) => {
-              addItem(accClients, client.location, client.start, client.end);
-              return accClients;
+              addItem(accClients, client.location, client.start, client.end)
+              return accClients
             },
             acc,
-          );
-          return acc;
+          )
+          return acc
         }
-        addItem(acc, work.location, work.start, work.end);
-        return acc;
+        addItem(acc, work.location, work.start, work.end)
+        return acc
       },
       {},
-    );
+    )
 
-    return Object.values(res);
-  }, [data]);
+    return Object.values(res)
+  }, [data])
 
   return (
     <ResponsivePie
@@ -78,7 +78,7 @@ export const LocationChart = () => {
       enableArcLinkLabels={false}
       tooltip={(e) => (
         <div className="bg-muted text-foreground flex items-center gap-2 p-2 text-sm">
-          <Avatar className="h-8 w-8">
+          <Avatar className="size-8">
             {e.datum.label === "remote" ? <LaptopIcon /> : <MapPinIcon />}
           </Avatar>
           <div>
@@ -96,5 +96,5 @@ export const LocationChart = () => {
         </div>
       )}
     />
-  );
-};
+  )
+}

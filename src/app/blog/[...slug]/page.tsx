@@ -105,7 +105,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 </time>
               )}
             </div>
-            <h1 className="font-title font-effect-anaglyph mt-2 inline-block text-xl sm:text-4xl leading-tight lg:text-2xl">
+            <h1 className="font-title font-effect-anaglyph mt-2 inline-block text-xl leading-tight sm:text-4xl lg:text-2xl">
               {post.title}
             </h1>
             {authors?.length ? (
@@ -138,7 +138,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
         </div>
       </div>
-      <div className="sm:container max-w-3xl">
+      <div className="max-w-3xl sm:container">
         {post.image && (
           <Image
             src={post.image}

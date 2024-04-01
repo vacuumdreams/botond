@@ -1,5 +1,5 @@
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { cn } from "@/lib/utils";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { cn } from "@/lib/utils"
 
 type MdxAvatarProps = {
   src: string;
@@ -24,5 +24,5 @@ export function MdxAvatar({ src, name, className }: MdxAvatarProps) {
           .join("")}
       </AvatarFallback>
     </Avatar>
-  );
+  )
 }

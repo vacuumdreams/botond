@@ -1,17 +1,17 @@
-import { Dispatch, SetStateAction, useMemo } from "react";
-import { differenceInMonths } from "date-fns";
-import { capitalCase } from "change-case";
+import { Dispatch, SetStateAction, useMemo } from "react"
+import { differenceInMonths } from "date-fns"
+import { capitalCase } from "change-case"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { MultiSelect } from "@/components/ui/multi-select";
-import { useData } from "@/components/provider/data";
-import { WorkItem, FreelanceItem } from "@/lib/data";
-import { getDate } from "@/lib/utils";
+} from "@/components/ui/select"
+import { MultiSelect } from "@/components/ui/multi-select"
+import { useData } from "@/components/provider/data"
+import { WorkItem, FreelanceItem } from "@/lib/data"
+import { getDate } from "@/lib/utils"
 
 export type FilterType = {
   employment: "all" | "freelance" | "permanent";
@@ -21,12 +21,12 @@ export type FilterType = {
 
 const getStack = (w: WorkItem) => {
   if (w.employment === "permanent") {
-    return w.stack;
+    return w.stack
   }
   return Object.values(w.clients).reduce<string[]>((acc, c) => {
-    return acc.concat(c.stack);
-  }, []);
-};
+    return acc.concat(c.stack)
+  }, [])
+}
 
 export const filterFunctions: Record<
   keyof FilterType,
@@ -34,76 +34,76 @@ export const filterFunctions: Record<
 > = {
   employment: (filters, w) => {
     if (filters.employment !== "all" && w.employment !== filters.employment) {
-      return null;
+      return null
     }
-    return w;
+    return w
   },
   minDuration: (filters, w) => {
     if (filters.minDuration === "all") {
-      return w;
+      return w
     }
     if (filters.employment === "freelance" && w.employment === "freelance") {
       const clients = Object.keys(w.clients).reduce<
         Record<string, FreelanceItem["clients"][keyof FreelanceItem["clients"]]>
       >((acc, key) => {
-        const c = w.clients[key];
-        const diff = differenceInMonths(getDate(c.end), getDate(c.start));
+        const c = w.clients[key]
+        const diff = differenceInMonths(getDate(c.end), getDate(c.start))
         if (
           filters.minDuration === "all" ||
           (filters.minDuration === "6m" && diff >= 6) ||
           (filters.minDuration === "1y" && diff >= 12)
         ) {
-          acc[key] = c;
+          acc[key] = c
         }
-        return acc;
-      }, {});
+        return acc
+      }, {})
 
-      return { ...w, clients };
+      return { ...w, clients }
     }
 
     if (
       filters.minDuration === "6m" &&
       differenceInMonths(getDate(w.end), getDate(w.start)) >= 6
     ) {
-      return w;
+      return w
     }
     if (
       filters.minDuration === "1y" &&
       differenceInMonths(getDate(w.end), getDate(w.start)) >= 12
     ) {
-      return w;
+      return w
     }
-    return null;
+    return null
   },
   stack: (filters, w) => {
     if (filters.stack.length === 0) {
-      return w;
+      return w
     }
     if (w.employment === "freelance") {
       const clients = Object.keys(w.clients).reduce<
         Record<string, FreelanceItem["clients"][keyof FreelanceItem["clients"]]>
       >((acc, key) => {
-        const c = w.clients[key];
+        const c = w.clients[key]
         const qualifies = filters.stack.reduce((a, s) => {
-          return a && c.stack.includes(s);
-        }, true);
+          return a && c.stack.includes(s)
+        }, true)
         if (qualifies) {
-          acc[key] = c;
+          acc[key] = c
         }
-        return acc;
-      }, {});
-      return { ...w, clients };
+        return acc
+      }, {})
+      return { ...w, clients }
     }
-    const stack = getStack(w);
+    const stack = getStack(w)
     const qualifies = filters.stack.reduce((a, s) => {
-      return a && stack.includes(s);
-    }, true);
+      return a && stack.includes(s)
+    }, true)
     if (qualifies) {
-      return w;
+      return w
     }
-    return null;
+    return null
   },
-};
+}
 
 type FiltersProps = {
   filters: FilterType;
@@ -111,7 +111,7 @@ type FiltersProps = {
 };
 
 export const Filters = ({ filters, setFilters }: FiltersProps) => {
-  const { data } = useData();
+  const { data } = useData()
   const stackOptions = useMemo(() => {
     return Object.values(data.skills.tech).reduce<
       {
@@ -123,11 +123,11 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
         acc.push({
           value: t.name,
           label: t.name,
-        });
+        })
       }
-      return acc;
-    }, []);
-  }, [data]);
+      return acc
+    }, [])
+  }, [data])
 
   return (
     <div className="flex flex-wrap gap-2 border-b p-4 print:hidden">
@@ -208,10 +208,10 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
             setFilters((f) => ({
               ...f,
               stack: v,
-            }));
+            }))
           }}
         />
       </div>
     </div>
-  );
-};
+  )
+}

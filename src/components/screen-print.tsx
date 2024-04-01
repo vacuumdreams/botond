@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   PhoneIcon,
@@ -7,17 +7,17 @@ import {
   LinkedinIcon,
   GlobeIcon,
   MapPinIcon,
-} from "lucide-react";
+} from "lucide-react"
 
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { WorkHistory } from "@/components/widgets/stats/work-history";
-import { Roadmap } from "@/components/widgets/stats/studies";
-import { useData } from "@/components/provider/data";
+import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { WorkHistory } from "@/components/widgets/stats/work-history"
+import { Roadmap } from "@/components/widgets/stats/studies"
+import { useData } from "@/components/provider/data"
 
 export function ScreenPrint() {
-  const { data } = useData();
+  const { data } = useData()
 
   return (
     <div className="grid grid-cols-12 overflow-y-scroll">
@@ -124,5 +124,5 @@ export function ScreenPrint() {
         </div>
       </div>
     </div>
-  );
+  )
 }

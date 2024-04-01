@@ -1,6 +1,6 @@
-import { Screen } from "@/components/screen";
-import { ThemeSwitch } from "@/components/widgets/theme-switch";
-import { Print } from "@/components/print";
+import { Screen } from "@/components/screen"
+import { ThemeSwitch } from "@/components/widgets/theme-switch"
+import { Print } from "@/components/print"
 
 export default function Home() {
   return (
@@ -11,5 +11,5 @@ export default function Home() {
       </main>
       <Print />
     </>
-  );
+  )
 }

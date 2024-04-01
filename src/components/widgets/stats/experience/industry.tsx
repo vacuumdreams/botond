@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { differenceInMonths, formatDuration } from "date-fns";
+import { useMemo } from "react"
+import { differenceInMonths, formatDuration } from "date-fns"
 import {
   FactoryIcon,
   HeartPulseIcon,
@@ -10,11 +10,11 @@ import {
   TvIcon,
   RocketIcon,
   LinkIcon,
-} from "lucide-react";
-import { ResponsivePie } from "@nivo/pie";
-import { Avatar } from "@/components/ui/avatar";
-import { useData } from "@/components/provider/data";
-import { getStartDate, getEndDate } from "@/lib/utils";
+} from "lucide-react"
+import { ResponsivePie } from "@nivo/pie"
+import { Avatar } from "@/components/ui/avatar"
+import { useData } from "@/components/provider/data"
+import { getStartDate, getEndDate } from "@/lib/utils"
 
 const iconMapping = {
   "health & wellness": <HeartPulseIcon />,
@@ -25,7 +25,7 @@ const iconMapping = {
   gambling: <ClubIcon />,
   finance: <LandmarkIcon />,
   sales: <BadgePoundSterlingIcon />,
-};
+}
 
 type Item = {
   id: string;
@@ -44,8 +44,8 @@ function addItem(
       id: industry,
       label: industry,
       value: differenceInMonths(getEndDate(end), getStartDate(start)),
-    };
-    return acc;
+    }
+    return acc
   }
   acc[industry] = {
     id: industry,
@@ -53,11 +53,11 @@ function addItem(
     value:
       acc[industry].value +
       differenceInMonths(getEndDate(end), getStartDate(start)),
-  };
+  }
 }
 
 export const IndustryChart = () => {
-  const { data } = useData();
+  const { data } = useData()
 
   const chartData = useMemo(() => {
     const res = Object.values(data.work.history).reduce<Record<string, Item>>(
@@ -65,21 +65,21 @@ export const IndustryChart = () => {
         if (work.employment === "freelance") {
           Object.values(work.clients || {}).reduce<Record<string, Item>>(
             (accClients, client) => {
-              addItem(accClients, client.industry, client.start, client.end);
-              return accClients;
+              addItem(accClients, client.industry, client.start, client.end)
+              return accClients
             },
             acc,
-          );
-          return acc;
+          )
+          return acc
         }
-        addItem(acc, work.industry, work.start, work.end);
-        return acc;
+        addItem(acc, work.industry, work.start, work.end)
+        return acc
       },
       {},
-    );
+    )
 
-    return Object.values(res);
-  }, [data]);
+    return Object.values(res)
+  }, [data])
 
   return (
     <ResponsivePie
@@ -99,7 +99,7 @@ export const IndustryChart = () => {
       enableArcLinkLabels={false}
       tooltip={(e) => (
         <div className="bg-muted text-foreground flex items-center gap-2 p-2 text-sm">
-          <Avatar className="h-8 w-8">
+          <Avatar className="size-8">
             {/* @ts-ignore */}
             {iconMapping[e.datum.label] || <FactoryIcon />}
           </Avatar>
@@ -118,5 +118,5 @@ export const IndustryChart = () => {
         </div>
       )}
     />
-  );
-};
+  )
+}

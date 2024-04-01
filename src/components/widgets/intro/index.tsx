@@ -1,32 +1,32 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import Image from "next/image"
+import { useEffect, useState } from "react"
 import {
   MouseParallaxContainer,
   MouseParallaxChild,
-} from "react-parallax-mouse";
+} from "react-parallax-mouse"
 
-import { cn } from "@/lib/utils";
-import { Orbit } from "./orbit";
-import { useData } from "@/components/provider/data";
+import { cn } from "@/lib/utils"
+import { Orbit } from "./orbit"
+import { useData } from "@/components/provider/data"
 
 type IntroProps = {
   startTransition: boolean;
 };
 
 export const Intro = ({ startTransition }: IntroProps) => {
-  const { intro } = useData();
-  const [showZen, setZen] = useState(false);
+  const { intro } = useData()
+  const [showZen, setZen] = useState(false)
 
   useEffect(() => {
-    setZen(true);
-  }, []);
+    setZen(true)
+  }, [])
 
   useEffect(() => {
     if (startTransition) {
     }
-  }, [startTransition]);
+  }, [startTransition])
 
   return (
     <MouseParallaxContainer
@@ -157,5 +157,5 @@ export const Intro = ({ startTransition }: IntroProps) => {
         </div>
       </div>
     </MouseParallaxContainer>
-  );
-};
+  )
+}

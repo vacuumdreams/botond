@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "zod"
 
 export const projectSchema = z.object({
   name: z.string(),
@@ -11,7 +11,7 @@ export const projectSchema = z.object({
   end: z.string().or(z.null()),
   tags: z.array(z.string()).or(z.undefined()),
   stack: z.array(z.string()).or(z.undefined()),
-});
+})
 
 export const permanentSchema = z.object({
   id: z.string(),
@@ -31,7 +31,7 @@ export const permanentSchema = z.object({
   projects: z.array(projectSchema).or(z.undefined()),
   tags: z.array(z.string()).or(z.undefined()),
   stack: z.array(z.string()),
-});
+})
 
 export const freelanceSchema = z.object({
   id: z.string(),
@@ -41,7 +41,7 @@ export const freelanceSchema = z.object({
   start: z.string(),
   end: z.string().or(z.null()),
   clients: z.record(permanentSchema.omit({ employment: true })),
-});
+})
 
 export const schema = z.object({
   name: z.string(),
@@ -106,6 +106,6 @@ export const schema = z.object({
     history: z.record(permanentSchema.or(freelanceSchema)),
   }),
   projects: z.record(projectSchema),
-});
+})
 
 export type Data = z.infer<typeof schema>;

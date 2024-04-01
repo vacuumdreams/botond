@@ -4,12 +4,12 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import { TagChart } from "@/components/charts/tag-chart";
-import { LanguageChart } from "./languages";
-import { JavascriptChart } from "./javascript";
-import { IndustryChart } from "./industry";
-import { LocationChart } from "./location";
+} from "@/components/ui/carousel"
+import { TagChart } from "@/components/charts/tag-chart"
+import { LanguageChart } from "./languages"
+import { JavascriptChart } from "./javascript"
+import { IndustryChart } from "./industry"
+import { LocationChart } from "./location"
 
 export const Experience = () => {
   return (
@@ -94,5 +94,5 @@ export const Experience = () => {
         </Carousel>
       </div>
     </div>
-  );
-};
+  )
+}

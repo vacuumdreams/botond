@@ -1,10 +1,10 @@
-import { HammerIcon } from "lucide-react";
-import { useData } from "@/components/provider/data";
-import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+import { HammerIcon } from "lucide-react"
+import { useData } from "@/components/provider/data"
+import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
 
 export const TagCloud = () => {
-  const { normalisedTags } = useData();
+  const { normalisedTags } = useData()
 
   return (
     <div className="px-4 pb-4">
@@ -24,9 +24,9 @@ export const TagCloud = () => {
             >
               {tag}
             </Badge>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import Typewriter from "react-ts-typewriter";
+import { useEffect, useState } from "react"
+import Typewriter from "react-ts-typewriter"
 
 type LinesProps = {
   animate?: boolean;
@@ -18,7 +18,7 @@ const Wrapper = ({
   text: string;
   onFinish: () => void;
 }) => {
-  if (!show) return null;
+  if (!show) return null
   return (
     <p className="font-mono">
       <Typewriter
@@ -29,19 +29,19 @@ const Wrapper = ({
         onFinished={onFinish}
       />
     </p>
-  );
-};
+  )
+}
 
-let called = false;
+let called = false
 
 export const Lines = ({ text, animate, onFinish }: LinesProps) => {
-  const [active, setActive] = useState<number | null>(0);
+  const [active, setActive] = useState<number | null>(0)
 
   useEffect(() => {
     if (!animate) {
-      onFinish();
+      onFinish()
     }
-  }, [animate, onFinish]);
+  }, [animate, onFinish])
 
   if (!animate) {
     return (
@@ -52,7 +52,7 @@ export const Lines = ({ text, animate, onFinish }: LinesProps) => {
           </p>
         ))}
       </>
-    );
+    )
   }
 
   return (
@@ -65,18 +65,18 @@ export const Lines = ({ text, animate, onFinish }: LinesProps) => {
           text={t}
           onFinish={() => {
             setTimeout(() => {
-              if (called) return;
+              if (called) return
               if (i < text.length - 1) {
-                setActive(i + 1);
-                return;
+                setActive(i + 1)
+                return
               }
-              setActive(null);
-              onFinish();
-              called = true;
-            }, 1000);
+              setActive(null)
+              onFinish()
+              called = true
+            }, 1000)
           }}
         />
       ))}
     </>
-  );
-};
+  )
+}

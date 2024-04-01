@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { ArrowLeftIcon, PawPrint, KeyboardIcon } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import Link from "next/link"
+import { ArrowLeftIcon, PawPrint, KeyboardIcon } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 export default function NotFound() {
   return (
@@ -25,5 +25,5 @@ export default function NotFound() {
         </Link>
       </div>
     </div>
-  );
+  )
 }

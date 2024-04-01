@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { ReactNode } from "react";
-import { usePathname } from "next/navigation";
-import { ThemeProvider as NextThemeProvider, useTheme } from "next-themes";
+import { ReactNode } from "react"
+import { usePathname } from "next/navigation"
+import { ThemeProvider as NextThemeProvider, useTheme } from "next-themes"
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   return (
     <NextThemeProvider
@@ -16,7 +16,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     >
       {children}
     </NextThemeProvider>
-  );
+  )
 }
 
-export { useTheme };
+export { useTheme }

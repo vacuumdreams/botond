@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback, ReactNode } from "react";
-import { useTransition, animated } from "@react-spring/web";
-import Link from "next/link";
+import { useState, useEffect, useCallback, ReactNode } from "react"
+import { useTransition, animated } from "@react-spring/web"
+import Link from "next/link"
 import {
   PhoneIcon,
   MailIcon,
@@ -9,19 +9,19 @@ import {
   RssIcon,
   PieChartIcon,
   PrinterIcon,
-} from "lucide-react";
-import { Avatar } from "@/components/ui/avatar";
-import { Bubble, BubbleProps } from "./bubble";
-import { Lines } from "./lines";
+} from "lucide-react"
+import { Avatar } from "@/components/ui/avatar"
+import { Bubble, BubbleProps } from "./bubble"
+import { Lines } from "./lines"
 
-const STORAGE_KEY_DIALOGUE_FINISH = "dialogue-finished";
+const STORAGE_KEY_DIALOGUE_FINISH = "dialogue-finished"
 
 function setSeen() {
-  return localStorage.setItem(STORAGE_KEY_DIALOGUE_FINISH, "true");
+  return localStorage.setItem(STORAGE_KEY_DIALOGUE_FINISH, "true")
 }
 
 function hasBeenSeen() {
-  return localStorage.getItem(STORAGE_KEY_DIALOGUE_FINISH) === "true";
+  return localStorage.getItem(STORAGE_KEY_DIALOGUE_FINISH) === "true"
 }
 
 type ContactLinkProps = {
@@ -42,8 +42,8 @@ const ContactLink = ({ icon, href, onClick }: ContactLinkProps) => {
         {icon}
       </Avatar>
     </a>
-  );
-};
+  )
+}
 
 type BubbleItemProps = BubbleProps["dialogue"] & { id: string };
 
@@ -62,7 +62,7 @@ const DIALOGUE: BubbleItemProps[] = [
           ]}
           onFinish={onFinish}
         />
-      );
+      )
     },
   },
   {
@@ -71,8 +71,8 @@ const DIALOGUE: BubbleItemProps[] = [
     pos: "right",
     Component: ({ setStatsOpen, onFinish }) => {
       useEffect(() => {
-        setTimeout(() => onFinish(), hasBeenSeen() ? 0 : 1000);
-      }, [onFinish]);
+        setTimeout(() => onFinish(), hasBeenSeen() ? 0 : 1000)
+      }, [onFinish])
       return (
         <button
           className="flex w-full justify-start gap-2 text-left"
@@ -80,7 +80,7 @@ const DIALOGUE: BubbleItemProps[] = [
         >
           <PieChartIcon /> Tell me more about yourself!
         </button>
-      );
+      )
     },
   },
   {
@@ -89,13 +89,13 @@ const DIALOGUE: BubbleItemProps[] = [
     pos: "right",
     Component: ({ onFinish }) => {
       useEffect(() => {
-        setTimeout(() => onFinish(), hasBeenSeen() ? 0 : 2000);
-      }, [onFinish]);
+        setTimeout(() => onFinish(), hasBeenSeen() ? 0 : 2000)
+      }, [onFinish])
       return (
         <Link className="flex w-full gap-2" href={"/blog"}>
           <RssIcon /> Do you have a blog?
         </Link>
-      );
+      )
     },
   },
   {
@@ -107,18 +107,18 @@ const DIALOGUE: BubbleItemProps[] = [
       useEffect(() => {
         setTimeout(
           () => {
-            onFinish();
-            setSeen();
+            onFinish()
+            setSeen()
           },
           hasBeenSeen() ? 0 : 4000,
-        );
-      }, [onFinish]);
+        )
+      }, [onFinish])
       return (
         <div className="flex justify-end gap-4">
           <ContactLink
             icon={<PrinterIcon />}
             onClick={() => {
-              window.print();
+              window.print()
             }}
           />
           <ContactLink icon={<PhoneIcon />} href={`tel:${data.social.phone}`} />
@@ -136,10 +136,10 @@ const DIALOGUE: BubbleItemProps[] = [
             href={data.social.links.linkedin.url}
           />
         </div>
-      );
+      )
     },
   },
-];
+]
 
 type DialogueListProps = {
   queue: BubbleItemProps[];
@@ -153,7 +153,7 @@ function DialogueList({ queue, setStatsOpen, onFinish }: DialogueListProps) {
     from: { transform: "translateY(100%)", opacity: 0 },
     enter: { transform: "translateY(0%)", opacity: 1 },
     leave: { transform: "translateY(-50%)", opacity: 0 },
-  });
+  })
 
   return (
     <>
@@ -169,7 +169,7 @@ function DialogueList({ queue, setStatsOpen, onFinish }: DialogueListProps) {
         </animated.div>
       ))}
     </>
-  );
+  )
 }
 
 type DialogueProps = {
@@ -177,38 +177,38 @@ type DialogueProps = {
 };
 
 export const Dialogue = ({ setStatsOpen }: DialogueProps) => {
-  const [queue, setQueue] = useState<BubbleItemProps[]>([]);
+  const [queue, setQueue] = useState<BubbleItemProps[]>([])
 
   useEffect(() => {
     setTimeout(
       () => {
         setQueue((q) => {
           if (q.length === 0) {
-            return [...q, DIALOGUE[0]];
+            return [...q, DIALOGUE[0]]
           }
-          return q;
-        });
+          return q
+        })
       },
       hasBeenSeen() ? 0 : DIALOGUE[0].delay,
-    );
-  }, []);
+    )
+  }, [])
 
   const handleFinish = useCallback(
     (id?: string) => {
       const nextIndex = id
         ? DIALOGUE.findIndex((d) => d.id === id)
-        : queue.length;
+        : queue.length
       if (nextIndex < DIALOGUE.length) {
         setQueue((prevQueue) => {
           if (!prevQueue.find((q) => q.id === DIALOGUE[nextIndex].id)) {
-            return [...prevQueue, DIALOGUE[nextIndex]];
+            return [...prevQueue, DIALOGUE[nextIndex]]
           }
-          return prevQueue;
-        });
+          return prevQueue
+        })
       }
     },
     [queue],
-  );
+  )
 
   return (
     <div className="fixed bottom-4 left-0 w-full max-w-full px-4 md:bottom-12 md:left-auto md:right-4 md:w-[530px]">
@@ -218,5 +218,5 @@ export const Dialogue = ({ setStatsOpen }: DialogueProps) => {
         onFinish={handleFinish}
       />
     </div>
-  );
-};
+  )
+}

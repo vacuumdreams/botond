@@ -1,15 +1,15 @@
-import { splitAt } from "ramda";
+import { splitAt } from "ramda"
 
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { TechItem } from "@/lib/data";
-import { shuffle } from "@/lib/utils";
+} from "@/components/ui/tooltip"
+import { TechItem } from "@/lib/data"
+import { shuffle } from "@/lib/utils"
 
 type StackProps = {
   stack: TechItem[];
@@ -20,14 +20,14 @@ export const Stack = ({ stack }: StackProps) => {
     6,
     shuffle(stack).sort((s1, s2) => {
       if (!s1.featured && s2.featured) {
-        return 1;
+        return 1
       }
       if (s1.featured && !s2.featured) {
-        return -1;
+        return -1
       }
-      return 0;
+      return 0
     }),
-  );
+  )
 
   return (
     <>
@@ -35,8 +35,8 @@ export const Stack = ({ stack }: StackProps) => {
         <TooltipProvider key={t.name}>
           <Tooltip>
             <TooltipTrigger>
-              <Avatar className="h-8 w-8">
-                <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
+              <Avatar className="size-8">
+                <div className="flex size-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
                   {t.icon && <i className={`devicon-${t.icon}-plain`} />}
                   {!t.icon && <AvatarFallback>{t.name[0]}</AvatarFallback>}
                 </div>
@@ -64,8 +64,8 @@ export const Stack = ({ stack }: StackProps) => {
                     variant="secondary"
                     className="flex gap-2"
                   >
-                    <Avatar className="-ml-2 h-8 w-8">
-                      <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
+                    <Avatar className="-ml-2 size-8">
+                      <div className="flex size-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
                         {t.icon && <i className={`devicon-${t.icon}-plain`} />}
                         {!t.icon && (
                           <AvatarFallback className="text-foreground">
@@ -83,5 +83,5 @@ export const Stack = ({ stack }: StackProps) => {
         </TooltipProvider>
       )}
     </>
-  );
-};
+  )
+}

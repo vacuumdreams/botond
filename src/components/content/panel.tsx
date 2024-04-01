@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 type MdxPanelProps = {
   icon?: string;
@@ -27,5 +27,5 @@ export function MdxPanel({
     >
       <div>{children}</div>
     </div>
-  );
+  )
 }

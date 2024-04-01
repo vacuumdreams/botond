@@ -1,23 +1,23 @@
-import { ExternalLinkIcon } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { useData } from "@/components/provider/data";
-import { cn, getDate } from "@/lib/utils";
+import { ExternalLinkIcon } from "lucide-react"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import { useData } from "@/components/provider/data"
+import { cn, getDate } from "@/lib/utils"
 
 type RoadmapProps = {
   mode?: "normal" | "print";
 };
 
 export const Roadmap = ({ mode }: RoadmapProps) => {
-  const { data } = useData();
+  const { data } = useData()
 
   const certs = Object.values(data.education.courses).sort((i1, i2) => {
-    const d1 = getDate(i1.date);
-    const d2 = getDate(i2.date);
-    if (d1 > d2) return -1;
-    if (d1 < d2) return 1;
-    return 0;
-  });
+    const d1 = getDate(i1.date)
+    const d2 = getDate(i2.date)
+    if (d1 > d2) return -1
+    if (d1 < d2) return 1
+    return 0
+  })
 
   return (
     <div>
@@ -75,5 +75,5 @@ export const Roadmap = ({ mode }: RoadmapProps) => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}

@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
+import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
 
 export const Background = () => {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
   if (mounted && resolvedTheme === "dark") {
     return (
@@ -28,7 +28,7 @@ export const Background = () => {
           <div />
         </div>
       </>
-    );
+    )
   }
 
   if (mounted) {
@@ -36,8 +36,8 @@ export const Background = () => {
       <div className="warp print:hidden">
         <div />
       </div>
-    );
+    )
   }
 
-  return null;
-};
+  return null
+}

@@ -1,4 +1,4 @@
-import { formatDistance } from "date-fns";
+import { formatDistance } from "date-fns"
 import {
   ClockIcon,
   ExternalLinkIcon,
@@ -7,11 +7,11 @@ import {
   ActivityIcon,
   FactoryIcon,
   AwardIcon,
-} from "lucide-react";
+} from "lucide-react"
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge"
 
-import { cn, getDate } from "@/lib/utils";
+import { cn, getDate } from "@/lib/utils"
 
 type AttributesProps = {
   url?: string | null;
@@ -36,7 +36,7 @@ export const Attributes = ({
   end,
   mode,
 }: AttributesProps) => {
-  const badgeClass = cn("whitespace-nowrap");
+  const badgeClass = cn("whitespace-nowrap")
 
   return (
     <div>
@@ -86,5 +86,5 @@ export const Attributes = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}

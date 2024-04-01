@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { ReactNode, createContext, useContext } from "react";
-import type { ProcessedData } from "@/lib/data";
+import { ReactNode, createContext, useContext } from "react"
+import type { ProcessedData } from "@/lib/data"
 
-export const DataContext = createContext<ProcessedData>({} as ProcessedData);
+export const DataContext = createContext<ProcessedData>({} as ProcessedData)
 
 type DataProviderProps = {
   data: ProcessedData;
@@ -11,9 +11,9 @@ type DataProviderProps = {
 };
 
 export const DataProvider = ({ data, children }: DataProviderProps) => {
-  return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
-};
+  return <DataContext.Provider value={data}>{children}</DataContext.Provider>
+}
 
 export const useData = () => {
-  return useContext(DataContext);
-};
+  return useContext(DataContext)
+}

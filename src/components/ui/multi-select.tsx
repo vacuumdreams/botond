@@ -1,22 +1,22 @@
 // https://github.com/shadcn-ui/ui/issues/66
-import * as React from "react";
-import { cn } from "@/lib/utils";
+import * as React from "react"
+import { cn } from "@/lib/utils"
 
-import { Check, X, ChevronsUpDown } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { Check, X, ChevronsUpDown } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@/components/ui/command";
+} from "@/components/ui/command"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { Badge } from "@/components/ui/badge";
+} from "@/components/ui/popover"
+import { Badge } from "@/components/ui/badge"
 
 export type OptionType = {
   label: string;
@@ -39,11 +39,11 @@ function MultiSelect({
   className,
   ...props
 }: MultiSelectProps) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
   const handleUnselect = (item: string) => {
-    onChange(selected.filter((i) => i !== item));
-  };
+    onChange(selected.filter((i) => i !== item))
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen} {...props}>
@@ -72,21 +72,21 @@ function MultiSelect({
                   className="ring-offset-background focus:ring-ring ml-1 rounded-full outline-none focus:ring-2 focus:ring-offset-2"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
-                      handleUnselect(item);
+                      handleUnselect(item)
                     }
                   }}
                   onMouseDown={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
+                    e.preventDefault()
+                    e.stopPropagation()
                   }}
                   onClick={() => handleUnselect(item)}
                 >
-                  <X className="text-muted-foreground hover:text-foreground h-3 w-3" />
+                  <X className="text-muted-foreground hover:text-foreground size-3" />
                 </button>
               </Badge>
             ))}
           </div>
-          <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="size-4 shrink-0 opacity-50" />
         </div>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">
@@ -102,13 +102,13 @@ function MultiSelect({
                     selected.includes(option.value)
                       ? selected.filter((item) => item !== option.value)
                       : [...selected, option.value],
-                  );
-                  setOpen(true);
+                  )
+                  setOpen(true)
                 }}
               >
                 <Check
                   className={cn(
-                    "mr-2 h-4 w-4",
+                    "mr-2 size-4",
                     selected.includes(option.value)
                       ? "opacity-100"
                       : "opacity-0",
@@ -121,7 +121,7 @@ function MultiSelect({
         </Command>
       </PopoverContent>
     </Popover>
-  );
+  )
 }
 
-export { MultiSelect };
+export { MultiSelect }

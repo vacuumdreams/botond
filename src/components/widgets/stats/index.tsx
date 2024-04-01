@@ -1,15 +1,15 @@
-import { ContactIcon } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { useData } from "@/components/provider/data";
+import { ContactIcon } from "lucide-react"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { useData } from "@/components/provider/data"
 
-import { Separator } from "@/components/ui/separator";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TagCloud } from "./tag-cloud";
-import { WorkHistory } from "./work-history";
-import { Experience } from "./experience";
-import { Roadmap } from "./studies";
-import { FunFacts } from "./fun-facts";
+import { Separator } from "@/components/ui/separator"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { TagCloud } from "./tag-cloud"
+import { WorkHistory } from "./work-history"
+import { Experience } from "./experience"
+import { Roadmap } from "./studies"
+import { FunFacts } from "./fun-facts"
 
 type StatsProps = {
   open: boolean;
@@ -17,7 +17,7 @@ type StatsProps = {
 };
 
 export const Stats = ({ open, setOpen }: StatsProps) => {
-  const { data } = useData();
+  const { data } = useData()
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="mx-auto h-[calc(100vh_-_2rem)] max-w-[calc(100vw_-_2rem)] p-0 font-mono">
@@ -68,5 +68,5 @@ export const Stats = ({ open, setOpen }: StatsProps) => {
         </div>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}

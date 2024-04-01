@@ -1,15 +1,15 @@
-import { useMemo } from "react";
-import { formatDuration } from "date-fns";
-import { ResponsivePie } from "@nivo/pie";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { useData } from "@/components/provider/data";
+import { useMemo } from "react"
+import { formatDuration } from "date-fns"
+import { ResponsivePie } from "@nivo/pie"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { useData } from "@/components/provider/data"
 
 type TagChartProps = {
   tag: string;
 };
 
 export const TagChart = ({ tag }: TagChartProps) => {
-  const { data } = useData();
+  const { data } = useData()
 
   const chartData = useMemo(() => {
     return Object.values(data.skills.tech)
@@ -20,9 +20,9 @@ export const TagChart = ({ tag }: TagChartProps) => {
           label: skill.name,
           value: skill.xp || 0,
           icon: skill.icon,
-        };
-      });
-  }, [data, tag]);
+        }
+      })
+  }, [data, tag])
 
   return (
     <ResponsivePie
@@ -42,8 +42,8 @@ export const TagChart = ({ tag }: TagChartProps) => {
       enableArcLinkLabels={false}
       tooltip={(e) => (
         <div className="bg-muted flex items-center gap-2 p-2 text-sm text-white">
-          <Avatar className="h-8 w-8">
-            <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
+          <Avatar className="size-8">
+            <div className="flex size-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
               {e.datum.data.icon && (
                 <i className={`devicon-${e.datum.data.icon}-plain`} />
               )}
@@ -67,5 +67,5 @@ export const TagChart = ({ tag }: TagChartProps) => {
         </div>
       )}
     />
-  );
-};
+  )
+}

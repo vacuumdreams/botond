@@ -1,21 +1,21 @@
-import { z } from "zod";
-import { uniq } from "ramda";
-import data from "@/data.json";
+import { z } from "zod"
+import { uniq } from "ramda"
+import data from "@/data.json"
 import {
   schema,
   Data,
   freelanceSchema,
   permanentSchema,
   projectSchema,
-} from "./schema";
+} from "./schema"
 import {
   getStartDate,
   getEndDate,
   mergeOverlappingRanges,
   shuffle,
-} from "@/lib/utils";
+} from "@/lib/utils"
 
-export { freelanceSchema, permanentSchema, schema } from "./schema";
+export { freelanceSchema, permanentSchema, schema } from "./schema"
 
 const SIZES = [
   "text-xs",
@@ -24,32 +24,32 @@ const SIZES = [
   "text-lg",
   "text-xl",
   "text-2xl",
-];
+]
 
 function normaliseTags(data: Data) {
   return shuffle(
     uniq(
       Object.values(data.work.history).reduce<string[]>((acc, work) => {
         if (work.employment === "permanent") {
-          return [...acc, ...(work.tags || [])];
+          return [...acc, ...(work.tags || [])]
         }
 
         const wTags = Object.values(work.clients).reduce<string[]>(
           (acc, client) => {
-            return [...acc, ...(client.tags || [])];
+            return [...acc, ...(client.tags || [])]
           },
           [],
-        );
-        return [...acc, ...wTags];
+        )
+        return [...acc, ...wTags]
       }, []),
     ),
   ).map((tag) => {
     const size =
       tag.length >= 20
         ? ["text-xs", "text-sm"][Math.floor(Math.random() * 2)]
-        : SIZES[Math.floor(Math.random() * SIZES.length)];
-    return { tag, size };
-  });
+        : SIZES[Math.floor(Math.random() * SIZES.length)]
+    return { tag, size }
+  })
 }
 
 export type ProcessedData = {
@@ -85,21 +85,21 @@ function monthDiff(dateFrom: Date, dateTo: Date): number {
     dateTo.getMonth() -
     dateFrom.getMonth() +
     12 * (dateTo.getFullYear() - dateFrom.getFullYear())
-  );
+  )
 }
 
 function getXp(ranges: [Date, Date][]): number {
-  const mergedRanges = mergeOverlappingRanges(ranges);
-  let totalMonths = 0;
+  const mergedRanges = mergeOverlappingRanges(ranges)
+  let totalMonths = 0
   for (let range of mergedRanges) {
-    totalMonths += monthDiff(range[0], range[1]);
+    totalMonths += monthDiff(range[0], range[1])
   }
-  return totalMonths;
+  return totalMonths
 }
 
 const transformData = (raw: Data): ProcessedData => {
-  const processedData: ProcessedData["data"] = JSON.parse(JSON.stringify(raw));
-  const xp: Record<string, Array<[Date, Date]>> = {};
+  const processedData: ProcessedData["data"] = JSON.parse(JSON.stringify(raw))
+  const xp: Record<string, Array<[Date, Date]>> = {}
 
   Object.values(raw.work.history).forEach((entry) => {
     if (entry.employment === "permanent") {
@@ -108,13 +108,13 @@ const transformData = (raw: Data): ProcessedData => {
           const rangeItem: [Date, Date] = [
             getStartDate(entry.start),
             getEndDate(entry.end),
-          ];
+          ]
           if (!xp[stack]) {
-            xp[stack] = [];
+            xp[stack] = []
           }
-          xp[stack].push(rangeItem);
+          xp[stack].push(rangeItem)
         }
-      });
+      })
     }
     if (entry.employment === "freelance") {
       Object.values(entry.clients).forEach((client) => {
@@ -123,16 +123,16 @@ const transformData = (raw: Data): ProcessedData => {
             const rangeItem: [Date, Date] = [
               getStartDate(client.start),
               getEndDate(client.end),
-            ];
+            ]
             if (!xp[stack]) {
-              xp[stack] = [];
+              xp[stack] = []
             }
-            xp[stack].push(rangeItem);
+            xp[stack].push(rangeItem)
           }
-        });
-      });
+        })
+      })
     }
-  });
+  })
 
   Object.values(raw.projects).forEach((project) => {
     project.stack?.forEach((stack) => {
@@ -140,30 +140,30 @@ const transformData = (raw: Data): ProcessedData => {
         const rangeItem: [Date, Date] = [
           getStartDate(project.start),
           getEndDate(project.end),
-        ];
+        ]
         if (!xp[stack]) {
-          xp[stack] = [];
+          xp[stack] = []
         }
-        xp[stack].push(rangeItem);
+        xp[stack].push(rangeItem)
       }
-    });
-  });
+    })
+  })
 
   Object.keys(processedData.skills.tech).forEach((stack) => {
     if (xp[stack]) {
-      processedData.skills.tech[stack].xp = getXp(xp[stack]);
+      processedData.skills.tech[stack].xp = getXp(xp[stack])
     }
-  });
+  })
 
   return {
     data: processedData,
     normalisedTags: normaliseTags(raw),
     // @ts-ignore
     intro: shuffle(Object.values(data.skills.tech).filter((t) => t.featured)),
-  };
-};
+  }
+}
 
 export const getData = (async () => {
-  const raw = schema.parse(data);
-  return transformData(raw);
-}) satisfies () => Promise<ProcessedData>;
+  const raw = schema.parse(data)
+  return transformData(raw)
+}) satisfies () => Promise<ProcessedData>

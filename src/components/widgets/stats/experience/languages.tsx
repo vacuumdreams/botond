@@ -1,11 +1,11 @@
-import { useMemo } from "react";
-import { formatDuration } from "date-fns";
-import { ResponsiveBar } from "@nivo/bar";
-import { useData } from "@/components/provider/data";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useMemo } from "react"
+import { formatDuration } from "date-fns"
+import { ResponsiveBar } from "@nivo/bar"
+import { useData } from "@/components/provider/data"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 export const LanguageChart = () => {
-  const { data } = useData();
+  const { data } = useData()
 
   const chartData = useMemo(() => {
     return Object.values(data.skills.tech)
@@ -15,10 +15,10 @@ export const LanguageChart = () => {
           language: skill.name,
           icon: skill.icon || "",
           years: (skill.xp || 0) / 12,
-        };
+        }
       })
-      .sort((a, b) => b["years"] - a["years"]);
-  }, [data]);
+      .sort((a, b) => b["years"] - a["years"])
+  }, [data])
 
   return (
     <ResponsiveBar
@@ -59,8 +59,8 @@ export const LanguageChart = () => {
       barAriaLabel={(e) => e.data.language}
       tooltip={(e) => (
         <div className="bg-muted text-foreground flex items-center gap-2 p-2 text-sm">
-          <Avatar className="h-8 w-8">
-            <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
+          <Avatar className="size-8">
+            <div className="flex size-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
               {e.data.icon && <i className={`devicon-${e.data.icon}-plain`} />}
               {!e.data.icon && (
                 <AvatarFallback>{e.data.language[0]}</AvatarFallback>
@@ -82,5 +82,5 @@ export const LanguageChart = () => {
         </div>
       )}
     />
-  );
-};
+  )
+}

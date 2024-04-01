@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 
-import { Intro } from "@/components/widgets/intro";
-import { Dialogue } from "@/components/widgets/dialogue";
-import { Stats } from "@/components/widgets/stats";
+import { Intro } from "@/components/widgets/intro"
+import { Dialogue } from "@/components/widgets/dialogue"
+import { Stats } from "@/components/widgets/stats"
 
 export const Screen = () => {
-  const [statsOpen, setStatsOpen] = useState(false);
+  const [statsOpen, setStatsOpen] = useState(false)
 
   return (
     <div>
@@ -21,5 +21,5 @@ export const Screen = () => {
       </article>
       <Stats open={statsOpen} setOpen={setStatsOpen} />
     </div>
-  );
-};
+  )
+}

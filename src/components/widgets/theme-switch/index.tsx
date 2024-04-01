@@ -1,21 +1,21 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
+import { MoonIcon, SunIcon } from "lucide-react"
+import { Switch } from "@/components/ui/switch"
 
 export const ThemeSwitch = () => {
-  const [isMounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
+  const [isMounted, setMounted] = useState(false)
+  const { resolvedTheme, setTheme } = useTheme()
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), [])
 
-  if (!isMounted) return null;
+  if (!isMounted) return null
 
   return (
     <div className="absolute right-0 top-0">
-      <div className="p-2 flex gap-2">
+      <div className="flex gap-2 p-2">
         <MoonIcon className="text-muted-foreground" />
         <Switch
           checked={resolvedTheme === "light"}
@@ -25,5 +25,5 @@ export const ThemeSwitch = () => {
         <SunIcon className="text-muted-foreground" />
       </div>
     </div>
-  );
-};
+  )
+}

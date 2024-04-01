@@ -1,23 +1,23 @@
-import Link from "next/link";
-import Image from "next/image";
-import { compareDesc, format } from "date-fns";
-import { ArrowLeftIcon } from "lucide-react";
+import Link from "next/link"
+import Image from "next/image"
+import { compareDesc, format } from "date-fns"
+import { ArrowLeftIcon } from "lucide-react"
 
-import { ThemeSwitch } from "@/components/widgets/theme-switch";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { allPosts } from "contentlayer/generated";
+import { ThemeSwitch } from "@/components/widgets/theme-switch"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { allPosts } from "contentlayer/generated"
 
 export const metadata = {
   title: "Blog - Botond Fekete",
-};
+}
 
 export default async function BlogPage() {
   const posts = allPosts
     .filter((post) => post.published)
     .sort((a, b) => {
-      return compareDesc(new Date(a.date), new Date(b.date));
-    });
+      return compareDesc(new Date(a.date), new Date(b.date))
+    })
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
@@ -30,7 +30,7 @@ export default async function BlogPage() {
       </Link>
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
         <div className="flex-1 space-y-4">
-          <h1 className="font-title font-effect-anaglyph inline-block text-xl sm:text-4xl tracking-tight lg:text-5xl">
+          <h1 className="font-title font-effect-anaglyph inline-block text-xl tracking-tight sm:text-4xl lg:text-5xl">
             Blog
           </h1>
           <p className="text-muted-foreground">
@@ -76,5 +76,5 @@ export default async function BlogPage() {
       )}
       <ThemeSwitch />
     </div>
-  );
+  )
 }

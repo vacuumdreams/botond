@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
-import { useData } from "@/components/provider/data";
+import { useEffect, useState } from "react"
+import { cn } from "@/lib/utils"
+import { useData } from "@/components/provider/data"
 
 export type BubbleProps = {
   onEvents: {
@@ -20,11 +20,11 @@ export type BubbleProps = {
 };
 
 export const Bubble = ({ dialogue, onEvents, onFinish }: BubbleProps) => {
-  const { data } = useData();
-  const [show, setShow] = useState(false);
-  const decor = dialogue.decor !== false;
+  const { data } = useData()
+  const [show, setShow] = useState(false)
+  const decor = dialogue.decor !== false
 
-  useEffect(() => setShow(true), [setShow]);
+  useEffect(() => setShow(true), [setShow])
 
   return (
     <div
@@ -53,5 +53,5 @@ export const Bubble = ({ dialogue, onEvents, onFinish }: BubbleProps) => {
         }
       </div>
     </div>
-  );
-};
+  )
+}

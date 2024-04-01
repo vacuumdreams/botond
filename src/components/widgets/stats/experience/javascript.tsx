@@ -1,14 +1,14 @@
-import { useMemo } from "react";
-import { formatDuration } from "date-fns";
-import { ResponsiveCirclePacking } from "@nivo/circle-packing";
-import { useData } from "@/components/provider/data";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useMemo } from "react"
+import { formatDuration } from "date-fns"
+import { ResponsiveCirclePacking } from "@nivo/circle-packing"
+import { useData } from "@/components/provider/data"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 export const JavascriptChart = () => {
-  const { data } = useData();
+  const { data } = useData()
 
   const chartData = useMemo(() => {
-    const tech = Object.values(data.skills.tech);
+    const tech = Object.values(data.skills.tech)
     return {
       name: "Javascript",
       children: [
@@ -61,8 +61,8 @@ export const JavascriptChart = () => {
             })),
         },
       ],
-    };
-  }, [data]);
+    }
+  }, [data])
 
   return (
     <ResponsiveCirclePacking
@@ -107,7 +107,7 @@ export const JavascriptChart = () => {
             <div className="bg-muted text-foreground p-2 text-sm">
               {e.data.name}
             </div>
-          );
+          )
         }
         if ("xp" in e.data) {
           const {
@@ -118,11 +118,11 @@ export const JavascriptChart = () => {
             icon?: string;
             name?: string;
             xp: number;
-          };
+          }
           return (
             <div className="bg-muted text-foreground flex items-center gap-2 p-2 text-sm">
-              <Avatar className="h-8 w-8">
-                <div className="flex h-full w-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
+              <Avatar className="size-8">
+                <div className="flex size-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
                   {icon && <i className={`devicon-${icon}-plain`} />}
                   {!icon && <AvatarFallback>{e.data.name[0]}</AvatarFallback>}
                 </div>
@@ -140,10 +140,10 @@ export const JavascriptChart = () => {
                 </p>
               </div>
             </div>
-          );
+          )
         }
-        return <span />;
+        return <span />
       }}
     />
-  );
-};
+  )
+}

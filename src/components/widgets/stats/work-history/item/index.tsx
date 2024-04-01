@@ -1,26 +1,26 @@
-import { z } from "zod";
-import { ReactNode, useMemo } from "react";
-import { uniq } from "ramda";
-import Markdown from "react-markdown";
-import { Layers3Icon, BriefcaseIcon } from "lucide-react";
+import { z } from "zod"
+import { ReactNode, useMemo } from "react"
+import { uniq } from "ramda"
+import Markdown from "react-markdown"
+import { Layers3Icon, BriefcaseIcon } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/ui/accordion"
 import {
   ProcessedData,
   TechItem,
   freelanceSchema,
   permanentSchema,
-} from "@/lib/data";
-import { Attributes } from "./attributes";
-import { Stack } from "./stack";
-import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
+} from "@/lib/data"
+import { Attributes } from "./attributes"
+import { Stack } from "./stack"
+import { Separator } from "@/components/ui/separator"
+import { cn } from "@/lib/utils"
 
 type BaseWorkItemProps = {
   mode?: "normal" | "print";
@@ -84,7 +84,7 @@ function BaseWorkItem({
         {children}
         <Separator className="my-8 -ml-4 w-[calc(100%+2rem)]" />
       </div>
-    );
+    )
   }
 
   return (
@@ -127,7 +127,7 @@ function BaseWorkItem({
         </div>
       </AccordionContent>
     </AccordionItem>
-  );
+  )
 }
 
 export const FreelanceItem = ({
@@ -146,29 +146,29 @@ export const FreelanceItem = ({
       Object.values(work.clients)
         .map((c) => c.stack)
         .flat(),
-    );
-  }, [work]);
+    )
+  }, [work])
   const allClientLevels = useMemo(() => {
     return uniq(
       Object.values(work.clients)
         .map((c) => c.level)
         .flat(),
-    );
-  }, [work]);
+    )
+  }, [work])
   const allClientIndustries = useMemo(() => {
     return uniq(
       Object.values(work.clients)
         .map((c) => c.industry)
         .flat(),
-    );
-  }, [work]);
+    )
+  }, [work])
   const allClientPhases = useMemo(() => {
     return uniq(
       Object.values(work.clients)
         .map((c) => c.phase)
         .flat(),
-    );
-  }, [work]);
+    )
+  }, [work])
 
   if (flattenClients && mode !== "print") {
     return (
@@ -200,7 +200,7 @@ export const FreelanceItem = ({
           </BaseWorkItem>
         ))}
       </>
-    );
+    )
   }
 
   return (
@@ -243,7 +243,7 @@ export const FreelanceItem = ({
                 target="_blank"
                 className="flex items-center whitespace-nowrap"
               >
-                <Avatar className="-ml-2 mr-2 h-6 w-6">
+                <Avatar className="-ml-2 mr-2 size-6">
                   <AvatarImage src={c.icon || ""} alt={c.name} />
                   <AvatarFallback>{c.name[0]}</AvatarFallback>
                 </Avatar>
@@ -254,8 +254,8 @@ export const FreelanceItem = ({
         </div>
       </div>
     </BaseWorkItem>
-  );
-};
+  )
+}
 
 export const PermanentItem = ({
   work,
@@ -297,5 +297,5 @@ export const PermanentItem = ({
         <Markdown>{work.description}</Markdown>
       </div>
     </BaseWorkItem>
-  );
-};
+  )
+}

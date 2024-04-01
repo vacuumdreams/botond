@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from "react"
 
 const brags: Array<ReactNode> = [
   <p key="1">Once, I rode a motorbike through a typhoon for hours.</p>,
@@ -32,7 +32,7 @@ const brags: Array<ReactNode> = [
     gotten good at it.
   </p>,
   <p key="9">I can juggle with 3 medium sized, round shaped objects. </p>,
-];
+]
 
 export const FunFacts = () => {
   return (
@@ -52,5 +52,5 @@ export const FunFacts = () => {
         ))}
       </ol>
     </div>
-  );
-};
+  )
+}

@@ -97,6 +97,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-tailwindcss": "^3.14.3",
     "husky": "^9.0.11",
