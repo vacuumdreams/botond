@@ -87,7 +87,7 @@ export default async function PostPage({ params }: PostPageProps) {
             back
           </Link>
         </div>
-        <div className="relative py-8">
+        <div className="relative py-2 sm:py-8">
           <div className="container max-w-3xl">
             <div className="my-4 flex">
               <Badge className="flex gap-2" variant={"secondary"}>
@@ -105,7 +105,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 </time>
               )}
             </div>
-            <h1 className="font-title font-effect-anaglyph mt-2 inline-block text-4xl leading-tight lg:text-2xl">
+            <h1 className="font-title font-effect-anaglyph mt-2 inline-block text-xl sm:text-4xl leading-tight lg:text-2xl">
               {post.title}
             </h1>
             {authors?.length ? (
@@ -138,7 +138,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
         </div>
       </div>
-      <div className="container max-w-3xl">
+      <div className="sm:container max-w-3xl">
         {post.image && (
           <Image
             src={post.image}
@@ -152,7 +152,6 @@ export default async function PostPage({ params }: PostPageProps) {
         <div className="bg-muted bg-opacity-50 p-8 text-lg">
           <Mdx code={post.body.code} />
         </div>
-        <Separator className="mt-12" />
         <div className="flex justify-center py-6 lg:py-10">
           <Link
             href="/blog"

@@ -14,8 +14,8 @@ export const ThemeSwitch = () => {
   if (!isMounted) return null;
 
   return (
-    <div className="fixed right-2 top-2">
-      <div className="flex gap-2">
+    <div className="absolute right-0 top-0">
+      <div className="p-2 flex gap-2">
         <MoonIcon className="text-muted-foreground" />
         <Switch
           checked={resolvedTheme === "light"}
