@@ -1,14 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useRouter } from 'next/navigation'
 
 import { Intro } from "@/components/widgets/intro"
 import { Dialogue } from "@/components/widgets/dialogue"
-import { Stats } from "@/components/widgets/stats"
 
 export const Screen = () => {
-  const [statsOpen, setStatsOpen] = useState(false)
-
+  const router = useRouter()
   return (
     <div>
       <div>
@@ -17,9 +15,8 @@ export const Screen = () => {
         </div>
       </div>
       <article className="container">
-        <Dialogue setStatsOpen={setStatsOpen} />
+        <Dialogue setStatsOpen={() => router.push('/profile')} />
       </article>
-      <Stats open={statsOpen} setOpen={setStatsOpen} />
     </div>
   )
 }

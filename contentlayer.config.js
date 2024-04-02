@@ -36,6 +36,10 @@ export const Post = defineDocumentType(() => ({
       type: "boolean",
       default: true,
     },
+    tags: {
+      type: "string",
+      default: "",
+    },
     image: {
       type: "string",
       required: false,

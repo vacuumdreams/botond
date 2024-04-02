@@ -94,7 +94,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 <span>{calcReadingTime(post.body.raw)} min read</span>
               </Badge>
             </div>
-            <div className="flex w-full items-center gap-4">
+            <div className="flex w-full items-center gap-4 justify-between mb-2">
               {post.date && (
                 <time
                   dateTime={post.date}
@@ -103,10 +103,19 @@ export default async function PostPage({ params }: PostPageProps) {
                   Published on {format(post.date, "dd/MM/yyyy")}
                 </time>
               )}
+              <div className="flex gap-2">
+                {post.tags.split(',').map(tag => (
+                  <Badge key={tag} className="ml-2" variant="outline">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
             </div>
-            <h1 className="font-title font-effect-anaglyph mt-2 inline-block text-xl leading-tight sm:text-4xl lg:text-2xl">
-              {post.title}
-            </h1>
+            <div className="sm:flex gap-2 justify-between">
+              <h1 className="font-title font-effect-anaglyph mt-2 inline-block text-xl leading-tight sm:text-4xl lg:text-2xl">
+                {post.title}
+              </h1>
+            </div>
             {authors?.length ? (
               <div className="mt-4 flex space-x-4">
                 {authors.map((author) =>

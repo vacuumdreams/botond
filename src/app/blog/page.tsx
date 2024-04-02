@@ -3,6 +3,7 @@ import Image from "next/image"
 import { compareDesc, format } from "date-fns"
 import { ArrowLeftIcon } from "lucide-react"
 
+import { Badge } from "@/components/ui/badge"
 import { ThemeSwitch } from "@/components/widgets/theme-switch"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -60,11 +61,18 @@ export default async function BlogPage() {
               {post.description && (
                 <p className="text-muted-foreground">{post.description}</p>
               )}
-              {post.date && (
-                <p className="text-muted-foreground text-sm">
-                  {format(post.date, "dd/MM/yyyy")}
-                </p>
-              )}
+              <div className="flex justify-between gap-2">
+                {post.date && (
+                  <p className="text-muted-foreground text-sm">
+                    {format(post.date, "dd/MM/yyyy")}
+                  </p>
+                )}
+                {post.tags.split(',').map(tag => (
+                  <Badge key={tag} className="ml-2">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
               <Link href={post.slug} className="absolute inset-0">
                 <span className="sr-only">View Article</span>
               </Link>
