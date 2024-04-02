@@ -11,7 +11,6 @@ import { buttonVariants } from "@/components/ui/button"
 import { Mdx } from "@/components/content/mdx"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { Separator } from "@/components/ui/separator"
 import { ThemeSwitch } from "@/components/widgets/theme-switch"
 
 function calcReadingTime(text: string) {
@@ -138,14 +137,14 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
         </div>
       </div>
-      <div className="max-w-3xl sm:container">
+      <div className="max-w-full sm:max-w-3xl mx-auto px-4">
         {post.image && (
           <Image
             src={post.image}
             alt={post.title}
             width={720}
             height={405}
-            className="bg-muted mt-8 aspect-video border object-cover object-center transition-colors"
+            className="bg-muted mt-8 aspect-video border object-cover object-center transition-colors w-full"
             priority
           />
         )}
