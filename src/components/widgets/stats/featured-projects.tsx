@@ -146,7 +146,7 @@ export const FeaturedProjects = ({ mode }: FeaturedProjectsProps) => {
 
   return (
     <div className={cn("pb-4", { 'border-t': mode !== 'print' })}>
-      <h3 className="px-4 pb-4 mb-0 flex items-center gap-2">
+      <h3 className="px-4 pb-4 pt-4 mb-0 flex items-center gap-2">
         <PresentationIcon />
         <span className="text-muted-foreground">Featured projects</span>
       </h3>
