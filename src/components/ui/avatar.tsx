@@ -35,13 +35,17 @@ AvatarImage.displayName = AvatarPrimitive.Image.displayName
 const AvatarFallback = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Fallback>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
->(({ className, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cn(
       "bg-muted flex size-full items-center justify-center rounded-full",
       className,
     )}
+    children={typeof children === 'string'
+      ? children.split(' ').map(chunk => chunk[0]).join('').toUpperCase()
+      : children
+    }
     {...props}
   />
 ))

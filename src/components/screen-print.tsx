@@ -12,6 +12,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { FeaturedProjects } from '@/components/widgets/stats/featured-projects'
 import { WorkHistory } from "@/components/widgets/stats/work-history"
 import { Roadmap } from "@/components/widgets/stats/studies"
 import { useData } from "@/components/provider/data"
@@ -111,7 +112,10 @@ export function ScreenPrint() {
           </div>
         </div>
         <Separator className="my-4" />
-        <div className="border-b-2 pt-4">
+        <div className="border-b-2">
+          <FeaturedProjects mode="print" />
+        </div>
+        <div className="border-b-2 pb-1">
           <Roadmap mode="print" />
         </div>
       </div>

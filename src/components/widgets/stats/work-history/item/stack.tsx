@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, useState, useMemo } from 'react'
 import { splitAt } from "ramda"
 
 import { Badge } from "@/components/ui/badge"
@@ -8,16 +9,54 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { TechItem } from "@/lib/data"
+import { TechItem, ProcessedData } from "@/lib/data"
 import { shuffle } from "@/lib/utils"
+import { useData } from '@/components/provider/data'
 
 type StackProps = {
+  mode?: 'normal' | 'print'
   stack: TechItem[];
 };
 
-export const Stack = ({ stack }: StackProps) => {
+function getPrintStack(data: ProcessedData['data'], stack: TechItem[]) {
+  const featuredTech = Object.values(data.skills.tech).filter(t => t.featured)
+  const list = stack.filter(t => featuredTech.includes(t))
+  return {
+    list,
+    rest: stack.length - list.length
+  }
+}
+
+const PrintStack = ({ stack }: Pick<StackProps, 'stack'>) => {
+  const { data } = useData()
+  const { list, rest } = getPrintStack(data, stack)
+
+  return (
+    <ul className="block">
+      {list.map((t, i) => (
+        <li key={t.name} className="inline">
+          <span>{t.name}</span>
+          {', '}
+        </li>
+      ))}
+      <li className="inline">
+        <a href={`${data.social.website}/profile`}>
+          <Badge
+            variant="secondary"
+          >
+            +{rest}
+          </Badge>
+        </a>
+      </li>
+    </ul>
+  )
+}
+
+export const Stack = ({ mode, stack }: StackProps) => {
+  const [splitIndex, setSplitIndex] = useState(6)
+  const ref = useRef<HTMLDivElement>(null)
   const [display, rest] = splitAt(
-    6,
+    splitIndex,
     shuffle(stack).sort((s1, s2) => {
       if (!s1.featured && s2.featured) {
         return 1
@@ -29,8 +68,18 @@ export const Stack = ({ stack }: StackProps) => {
     }),
   )
 
+  useLayoutEffect(() => {
+    if (ref.current?.offsetWidth) {
+      setSplitIndex((ref.current.offsetWidth - 52) / 40)
+    }
+  }, [setSplitIndex])
+
+  if (mode === 'print') {
+    return <PrintStack stack={stack} />
+  }
+
   return (
-    <>
+    <div ref={ref} className="flex gap-2 items-center flex-auto">
       {display.map((t) => (
         <TooltipProvider key={t.name}>
           <Tooltip>
@@ -82,6 +131,6 @@ export const Stack = ({ stack }: StackProps) => {
           </Tooltip>
         </TooltipProvider>
       )}
-    </>
+    </div>
   )
 }

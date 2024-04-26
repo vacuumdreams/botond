@@ -34,7 +34,7 @@ interface MultiSelectProps {
 function MultiSelect({
   placeholder,
   options,
-  selected,
+  selected = [],
   onChange,
   className,
   ...props

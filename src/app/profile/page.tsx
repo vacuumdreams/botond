@@ -1,12 +1,11 @@
-"use client"
-
-import { useRouter } from "next/navigation"
-
 import { Stats } from "@/components/widgets/stats"
 
+export const metadata = {
+  title: "Profile - Botond Fekete",
+}
+
 export default function ProfilePage() {
-  const router = useRouter()
   return (
-    <Stats onBack={() => router.push('/')} />
+    <Stats />
   )
 }

@@ -34,7 +34,7 @@ type BaseWorkItemProps = {
   children: ReactNode;
 };
 
-function BaseWorkItem({
+export function BaseWorkItem({
   mode,
   id,
   url,
@@ -82,6 +82,8 @@ function BaseWorkItem({
           </div>
         </div>
         {children}
+        <h4 className="mb-2">Technologies:</h4>
+        <Stack mode={mode} stack={stack} />
         <Separator className="my-8 -ml-4 w-[calc(100%+2rem)]" />
       </div>
     )
@@ -120,10 +122,10 @@ function BaseWorkItem({
       </AccordionTrigger>
       <AccordionContent className="p-4">
         {children}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <Layers3Icon />
           <p>Stack: </p>
-          <Stack stack={stack} />
+          <Stack mode={mode} stack={stack} />
         </div>
       </AccordionContent>
     </AccordionItem>

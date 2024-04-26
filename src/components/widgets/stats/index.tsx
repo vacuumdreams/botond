@@ -1,30 +1,30 @@
+'use client'
+
 import { ContactIcon } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { useData } from "@/components/provider/data"
 import { XIcon } from 'lucide-react'
 
-import { Separator } from "@/components/ui/separator"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { TagCloud } from "./tag-cloud"
+import { FeaturedProjects } from "./featured-projects"
 import { WorkHistory } from "./work-history"
 import { Experience } from "./experience"
 import { Roadmap } from "./studies"
 import { FunFacts } from "./fun-facts"
 
-type StatsProps = {
-  onBack: () => void;
-};
-
-export const Stats = ({ onBack }: StatsProps) => {
+export const Stats = () => {
+  const router = useRouter()
   const { data } = useData()
   return (
     <div className="min-h-screen">
-      <button className="absolute top-2 right-2" onClick={onBack}>
+      <button className="absolute top-2 right-2" onClick={() => router.push('/')}>
         <XIcon size={32} />
       </button>
-      <div className="grid grid-cols-12 overflow-y-scroll">
+      <div className="grid grid-cols-12 overflow-y-scroll min-h-screen">
         <div className="col-span-12 md:col-span-4 md:border-r">
-          <div className="w-full p-4">
+          <div className="w-full p-4 mb-4">
             <Avatar className="border-muted mx-auto mb-4 size-52 border-8">
               <AvatarImage src={data.picture} alt={data.name} />
             </Avatar>
@@ -38,8 +38,9 @@ export const Stats = ({ onBack }: StatsProps) => {
               </p>
             ))}
           </div>
-
-          <Separator className="my-4 hidden md:block" />
+          <div>
+            <FeaturedProjects />
+          </div>
           <div className="hidden md:block">
             <TagCloud />
           </div>
@@ -67,6 +68,6 @@ export const Stats = ({ onBack }: StatsProps) => {
           </Tabs>
         </div>
       </div>
-    </div>
+    </div >
   )
 }

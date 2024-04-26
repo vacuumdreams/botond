@@ -40,7 +40,7 @@ export const Attributes = ({
 
   return (
     <div>
-      <div className="mb-6 mt-2 flex w-full items-center justify-between gap-2">
+      <div className="mb-6 flex w-full items-center justify-between gap-2">
         {url && (
           <a href={url} className="flex items-center gap-2">
             <ExternalLinkIcon />

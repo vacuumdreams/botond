@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { allAuthors, allPosts } from "contentlayer/generated"
 import { format } from "date-fns"
+import { sentenceCase } from 'change-case'
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeftIcon, ClockIcon } from "lucide-react"
@@ -41,7 +42,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: post.title,
+    title: `${sentenceCase(post.title)} - Botond Fekete`,
     description: post.description,
     authors: post.authors.map((author) => ({
       name: author,
@@ -63,7 +64,7 @@ type PostPageProps = {
   }
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function BlogPostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params.slug)
 
   if (!post) {

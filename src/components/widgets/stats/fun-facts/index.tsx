@@ -1,10 +1,10 @@
 import { ReactNode } from "react"
 
 const brags: Array<ReactNode> = [
-  <p key="1">Once, I rode a motorbike through a typhoon for hours.</p>,
+  <p key="1">Once, I rode a motorbike through a typhoon for about 2.5 hours.</p>,
   <p key="2">
     Arguably the most boring week of my life was when I was stuck on the
-    Trans-Siberian train with some Kirkegaard e-books.
+    Trans-Siberian train for a week with Kirkegaard e-books.
   </p>,
   <p key="3">
     I was pretty drunk on the profile photo{" "}
@@ -13,17 +13,16 @@ const brags: Array<ReactNode> = [
   </p>,
   <p key="4">
     I learned basic HTML, CSS, Javascript, PHP and jQuery in about three month,
-    during which I spent around 16 hours a day on projects, and zero time with
-    people.
+    during which I spent around 16-18 hours a day on projects and learning, practically locked in my room.
   </p>,
   <p key="5">
-    I lived in 8 countries, and visited more than 30. I had more than 25
-    addresses where I lived 3+ months.
+    I lived in 8 countries, and visited more than 30. There are more than 25
+    addresses where I lived for 3+ months.
   </p>,
   <p key="6">Drove through Europe with a left hand drive car. Twice.</p>,
   <p key="7">I eat peanut butter almost every day.</p>,
   <p key="8">
-    After 5 years of not-so-goal-oriented practice, I can hold a handstand for
+    After many years of not-so-goal-oriented practice, I can hold a handstand for
     about 20 seconds on a good day.
   </p>,
   <p key="8">
@@ -32,6 +31,8 @@ const brags: Array<ReactNode> = [
     gotten good at it.
   </p>,
   <p key="9">I can juggle with 3 medium sized, round shaped objects. </p>,
+  <p key="10">I have a stamp in my passport from the Myanmar border control. I have never been to Myanmar.</p>,
+  <p key="11">Controversy alert. I love pineapples. I love pizza. Now, I'm not a radical extremist when it comes to this question, I love the combination occasionally, but only on a thin crust. I guess that leaves the sourdough sacred for all ya fanatics.</p>,
 ]
 
 export const FunFacts = () => {

@@ -5,6 +5,7 @@ export const projectSchema = z.object({
   featured: z.boolean().or(z.undefined()),
   type: z.string().or(z.undefined()),
   url: z.string().url().or(z.null()),
+  repoUrl: z.string().url().optional(),
   icon: z.string().or(z.undefined()),
   description: z.string(),
   start: z.string(),
