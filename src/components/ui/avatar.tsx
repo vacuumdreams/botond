@@ -42,12 +42,13 @@ const AvatarFallback = React.forwardRef<
       "bg-muted flex size-full items-center justify-center rounded-full",
       className,
     )}
-    children={typeof children === 'string'
+    {...props}
+  >
+    {typeof children === 'string'
       ? children.split(' ').map(chunk => chunk[0]).join('').toUpperCase()
       : children
     }
-    {...props}
-  />
+  </AvatarPrimitive.Fallback>
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
