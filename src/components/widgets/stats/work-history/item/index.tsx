@@ -45,7 +45,6 @@ export function BaseWorkItem({
   stack,
   children,
 }: BaseWorkItemProps) {
-  console.log(name, stack)
   if (mode === "print") {
     return (
       <div>

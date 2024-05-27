@@ -10,7 +10,8 @@ export function Print() {
     // Set the height of the page to the height of the content for printing
     const height = getHeightMm(ref.current)
     const style = document.createElement("style")
-    style.innerHTML = "@page {size: 210mm " + height + "mm;}"
+    // TODO: fix incorrect dynamic height later
+    style.innerHTML = "@page {size: 210mm " + 800 + "mm;}"
     document.head.appendChild(style)
   }, [])
 

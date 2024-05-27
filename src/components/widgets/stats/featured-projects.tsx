@@ -154,10 +154,15 @@ export const FeaturedProjects = ({ mode }: FeaturedProjectsProps) => {
   }
 
   return (
-    <div className={cn({ 'border-t': mode !== 'print' })}>
-      <h3 className="bg-muted px-4 py-4 mb-0 flex items-center gap-2">
+    <div className={cn({ 'border-t': mode !== 'print', 'pb-2': mode === 'print' })}>
+      <h3 className={cn("bg-muted px-4 py-4 mb-0 flex items-center gap-2", {
+        'mb-4': mode === 'print',
+      })}>
         <PresentationIcon />
-        <span className="text-muted-foreground font-title text-xs">featured projects</span>
+        <span className={cn("text-muted-foreground font-title", {
+          'text-[0.55rem]': mode === 'print',
+          'text-sm': mode !== 'print',
+        })}>featured projects</span>
       </h3>
 
       <Accordion type="single" collapsible className="w-full">

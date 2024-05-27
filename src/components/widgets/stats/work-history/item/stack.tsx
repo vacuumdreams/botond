@@ -57,7 +57,7 @@ export const Stack = ({ mode, stack }: StackProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const [display, rest] = splitAt(
     splitIndex,
-    shuffle(stack).sort((s1, s2) => {
+    stack.sort((s1, s2) => {
       if (!s1.featured && s2.featured) {
         return 1
       }

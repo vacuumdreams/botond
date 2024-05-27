@@ -110,7 +110,7 @@ export function ScreenPrint() {
               ))}
           </div>
         </div>
-        <div className="border-b-2 pt-2">
+        <div className="border-b-2">
           <FeaturedProjects mode="print" />
         </div>
         <div className="border-b-2 pb-1">

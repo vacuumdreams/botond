@@ -33,7 +33,7 @@ export const Roadmap = ({ mode }: RoadmapProps) => {
           <li
             key={i}
             className={cn(
-              "relative my-8 items-center justify-between gap-4 pr-4 last:mb-0",
+              "relative my-8 items-center justify-between gap-4 pr-4 last:mb-0 first:mt-0",
               {
                 "md:flex": mode !== "print",
               },
