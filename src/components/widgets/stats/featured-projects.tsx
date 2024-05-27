@@ -1,4 +1,4 @@
-import { Fragment, useMemo } from "react"
+import { Fragment } from "react"
 import { formatDistance } from "date-fns"
 import Markdown from "react-markdown"
 import { PresentationIcon, ClockIcon, ExternalLinkIcon, Layers3Icon, GithubIcon } from 'lucide-react'
@@ -7,7 +7,7 @@ import { Accordion, AccordionItem, AccordionContent, AccordionTrigger } from "@/
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 import { cn, getDate } from '@/lib/utils'
-import { ProcessedData, ProjectItem } from "@/lib/data"
+import { ProcessedData, ProjectItem as Project } from "@/lib/data"
 import { Stack } from './work-history/item/stack'
 
 type AttributesProps = {
@@ -51,7 +51,7 @@ const Attributes = ({ url, repoUrl, start, end }: AttributesProps) => {
 type ProjectItemProps = {
   mode?: "normal" | "print";
   tech: ProcessedData["data"]["skills"]["tech"];
-  project: ProjectItem
+  project: Project
 }
 
 const ProjectItem = ({ mode, tech, project }: ProjectItemProps) => {

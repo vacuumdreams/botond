@@ -201,10 +201,9 @@ export const Filters = ({ filters, setFilters }: FiltersProps) => {
         <p className="text-muted-foreground mb-1 text-xs">Stack</p>
         <MultiSelect
           placeholder="All"
-          selected={filters.stack}
+          value={filters.stack}
           options={stackOptions}
           onChange={(v) => {
-            // @ts-ignore
             setFilters((f) => ({
               ...f,
               stack: v,

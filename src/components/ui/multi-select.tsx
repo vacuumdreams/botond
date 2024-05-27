@@ -26,15 +26,15 @@ export type OptionType = {
 interface MultiSelectProps {
   placeholder?: string;
   options: OptionType[];
-  selected: string[];
-  onChange: React.Dispatch<React.SetStateAction<string[]>>;
+  value: string[];
+  onChange: (props: string[]) => void;
   className?: string;
 }
 
 function MultiSelect({
   placeholder,
   options,
-  selected = [],
+  value = [],
   onChange,
   className,
   ...props
@@ -42,7 +42,7 @@ function MultiSelect({
   const [open, setOpen] = React.useState(false)
 
   const handleUnselect = (item: string) => {
-    onChange(selected.filter((i) => i !== item))
+    onChange(value.filter((i) => i !== item))
   }
 
   return (
@@ -59,8 +59,8 @@ function MultiSelect({
           onClick={() => setOpen(!open)}
         >
           <div className="flex flex-nowrap gap-1">
-            {selected.length === 0 && placeholder}
-            {selected.map((item) => (
+            {value.length === 0 && placeholder}
+            {value.map((item) => (
               <Badge
                 variant="secondary"
                 key={item}
@@ -99,9 +99,9 @@ function MultiSelect({
                 key={option.value}
                 onSelect={() => {
                   onChange(
-                    selected.includes(option.value)
-                      ? selected.filter((item) => item !== option.value)
-                      : [...selected, option.value],
+                    value.includes(option.value)
+                      ? value.filter((item) => item !== option.value)
+                      : [...value, option.value],
                   )
                   setOpen(true)
                 }}
@@ -109,7 +109,7 @@ function MultiSelect({
                 <Check
                   className={cn(
                     "mr-2 size-4",
-                    selected.includes(option.value)
+                    value.includes(option.value)
                       ? "opacity-100"
                       : "opacity-0",
                   )}
