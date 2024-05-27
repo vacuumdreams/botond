@@ -8,7 +8,7 @@ export const TagCloud = () => {
 
   return (
     <div className="pb-4">
-      <h3 className="bg-muted px-4 py-4 mb-4 flex items-center gap-2">
+      <h3 className="bg-muted mb-4 flex items-center gap-2 p-4">
         <HammerIcon />
         <span className="text-muted-foreground font-title text-xs">toolbox</span>
       </h3>

@@ -79,7 +79,7 @@ export const Stack = ({ mode, stack }: StackProps) => {
   }
 
   return (
-    <div ref={ref} className="flex gap-2 items-center flex-auto">
+    <div ref={ref} className="flex flex-auto items-center gap-2">
       {display.map((t) => (
         <TooltipProvider key={t.name}>
           <Tooltip>

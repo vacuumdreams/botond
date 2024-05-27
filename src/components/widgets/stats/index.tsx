@@ -19,12 +19,12 @@ export const Stats = () => {
   const { data } = useData()
   return (
     <div className="min-h-screen">
-      <button className="absolute top-2 right-2" onClick={() => router.push('/')}>
+      <button className="absolute right-2 top-2" onClick={() => router.push('/')}>
         <XIcon size={32} />
       </button>
-      <div className="grid grid-cols-12 overflow-y-scroll min-h-screen">
+      <div className="grid min-h-screen grid-cols-12 overflow-y-scroll">
         <div className="col-span-12 md:col-span-4 md:border-r">
-          <div className="w-full p-4 mb-4">
+          <div className="mb-4 w-full p-4">
             <Avatar className="border-muted mx-auto mb-4 size-52 border-8">
               <AvatarImage src={data.picture} alt={data.name} />
             </Avatar>

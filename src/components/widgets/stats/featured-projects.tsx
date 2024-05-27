@@ -19,11 +19,11 @@ type AttributesProps = {
 
 const Attributes = ({ url, repoUrl, start, end }: AttributesProps) => {
   return (
-    <div className="sm:flex gap-2 md:block xl:flex justify-between items-start mb-6 w-full">
+    <div className="mb-6 w-full items-start justify-between gap-2 sm:flex md:block xl:flex">
       <div>
       <div>
         {url && (
-          <a href={url} target="_blank" className="flex items-center gap-2 mb-2">
+          <a href={url} target="_blank" className="mb-2 flex items-center gap-2">
             <ExternalLinkIcon />
             <span>Website</span>
           </a>
@@ -31,7 +31,7 @@ const Attributes = ({ url, repoUrl, start, end }: AttributesProps) => {
       </div>
       <div>
         {repoUrl && (
-          <a href={repoUrl} target="_blank" className="flex items-center gap-2 mb-2">
+          <a href={repoUrl} target="_blank" className="mb-2 flex items-center gap-2">
             <GithubIcon />
             <span>Repository</span>
           </a>
@@ -39,7 +39,7 @@ const Attributes = ({ url, repoUrl, start, end }: AttributesProps) => {
       </div>
       </div>
       <div>
-      <p className="flex items-center gap-2 mb-2">
+      <p className="mb-2 flex items-center gap-2">
         <ClockIcon />
         <span>Duration: {formatDistance(getDate(start), getDate(end))}</span>
       </p>
@@ -60,7 +60,7 @@ const ProjectItem = ({ mode, tech, project }: ProjectItemProps) => {
       <div>
         <div className="w-full px-4">
           <h4>
-            <a className="flex items-center gap-2 mb-2" href={project.url || undefined}>
+            <a className="mb-2 flex items-center gap-2" href={project.url || undefined}>
               <Avatar
                 className={cn("flex items-center justify-center", {
                   "border-2": !project.icon,
@@ -119,7 +119,7 @@ const ProjectItem = ({ mode, tech, project }: ProjectItemProps) => {
         />
         {project?.image && <img src={project.image} />}
         <div
-          className="prose prose-slate my-6 w-full dark:prose-invert"
+          className="prose prose-slate dark:prose-invert my-6 w-full"
         >
           <Markdown>{project.description}</Markdown>
         </div>
@@ -155,7 +155,7 @@ export const FeaturedProjects = ({ mode }: FeaturedProjectsProps) => {
 
   return (
     <div className={cn({ 'border-t': mode !== 'print', 'pb-2': mode === 'print' })}>
-      <h3 className={cn("bg-muted px-4 py-4 mb-0 flex items-center gap-2", {
+      <h3 className={cn("bg-muted mb-0 flex items-center gap-2 p-4", {
         'mb-4': mode === 'print',
       })}>
         <PresentationIcon />

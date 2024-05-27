@@ -32,7 +32,7 @@ const brags: Array<ReactNode> = [
   </p>,
   <p key="9">I can juggle with 3 medium sized, round shaped objects. </p>,
   <p key="10">I have a stamp in my passport from the Myanmar border control. I have never been to Myanmar.</p>,
-  <p key="11">Controversy alert. I love pineapples. I love pizza. Now, I'm not a radical extremist when it comes to this question, I love the combination occasionally, but only on a thin crust. I guess that leaves the sourdough sacred for all ya fanatics.</p>,
+  <p key="11">Controversy alert. I love pineapples. I love pizza. Now, I{"'"}m not a radical extremist when it comes to this question, I love the combination occasionally, but only on a thin crust. I guess that leaves the sourdough sacred for all ya fanatics.</p>,
 ]
 
 export const FunFacts = () => {

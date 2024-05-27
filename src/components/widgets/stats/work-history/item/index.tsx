@@ -122,7 +122,7 @@ export function BaseWorkItem({
       </AccordionTrigger>
       <AccordionContent className="p-4">
         {children}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex flex-wrap items-center gap-2">
           <Layers3Icon />
           <p>Stack: </p>
           <Stack mode={mode} stack={stack} />

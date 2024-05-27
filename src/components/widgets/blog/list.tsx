@@ -55,7 +55,7 @@ export function BlogList() {
         <ArrowLeftIcon />
         <span>back</span>
       </Link>
-      <div className="flex flex-col items-start gap-4 mb-8 md:flex-row md:justify-between md:gap-8">
+      <div className="mb-8 flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
         <div className="flex-1 space-y-4">
           <h1 className="font-title font-effect-anaglyph inline-block text-xl tracking-tight sm:text-4xl lg:text-5xl">
             Blog

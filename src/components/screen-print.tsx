@@ -37,7 +37,7 @@ export function ScreenPrint() {
           ))}
         </div>
         <Separator className="my-4" />
-        <div className="w-full p-4 border-b-2">
+        <div className="w-full border-b-2 p-4">
           <div>
             <p className="mb-2 flex w-full items-center gap-2">
               <MapPinIcon size={14} /> {data.location}
@@ -84,7 +84,7 @@ export function ScreenPrint() {
             </a>
           </div>
         </div>
-        <div className="px-4 pb-8 pt-6 border-b-2">
+        <div className="border-b-2 px-4 pb-8 pt-6">
           <p className="mb-[1.85rem]">{data.description}</p>
           <div className="flex flex-wrap gap-2">
             {Object.values(data.skills.tech)
