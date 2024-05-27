@@ -155,6 +155,31 @@ const transformData = (raw: Data): ProcessedData => {
     }
   })
 
+  const workHistory = Object.values(processedData.work.history).reduce((acc, entry) => {
+    if (entry.employment === "permanent" && entry.hidden !== true) {
+      return { ...acc, [entry.id]: entry }
+    }
+    if (entry.employment === "freelance" && entry.hidden !== true) {
+      return {
+        ...acc,
+        [entry.id]: {
+          ...entry,
+          clients: Object.values(entry.clients).reduce((acc, client) => {
+            if (client.hidden !== true) {
+              return { ...acc, [client.id]: client }
+            }
+            return acc
+          }, {}),
+        },
+      }
+    }
+    return acc
+  }, {})
+
+  processedData.work.history = workHistory
+
+  console.log(processedData.work.history)
+
   return {
     data: processedData,
     normalisedTags: normaliseTags(raw),

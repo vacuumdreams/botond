@@ -37,7 +37,7 @@ export function ScreenPrint() {
           ))}
         </div>
         <Separator className="my-4" />
-        <div className="w-full p-4">
+        <div className="w-full p-4 border-b-2">
           <div>
             <p className="mb-2 flex w-full items-center gap-2">
               <MapPinIcon size={14} /> {data.location}
@@ -84,8 +84,7 @@ export function ScreenPrint() {
             </a>
           </div>
         </div>
-        <Separator className="my-4" />
-        <div className="px-4 pb-8 pt-6">
+        <div className="px-4 pb-8 pt-6 border-b-2">
           <p className="mb-[1.85rem]">{data.description}</p>
           <div className="flex flex-wrap gap-2">
             {Object.values(data.skills.tech)
@@ -96,7 +95,7 @@ export function ScreenPrint() {
                   className="flex gap-2"
                   variant={"secondary"}
                 >
-                  <Avatar className="-ml-2 size-8">
+                  <Avatar className="-ml-2 size-6">
                     <div className="flex size-full items-center justify-center overflow-hidden bg-black text-2xl uppercase text-white">
                       {t.icon && <i className={`devicon-${t.icon}-plain`} />}
                       {!t.icon && (
@@ -111,8 +110,7 @@ export function ScreenPrint() {
               ))}
           </div>
         </div>
-        <Separator className="my-4" />
-        <div className="border-b-2">
+        <div className="border-b-2 pt-2">
           <FeaturedProjects mode="print" />
         </div>
         <div className="border-b-2 pb-1">

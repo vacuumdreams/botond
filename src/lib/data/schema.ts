@@ -3,6 +3,7 @@ import { z } from "zod"
 export const projectSchema = z.object({
   name: z.string(),
   featured: z.boolean().or(z.undefined()),
+  hidden: z.boolean().or(z.undefined()),
   type: z.string().or(z.undefined()),
   url: z.string().url().or(z.null()),
   repoUrl: z.string().url().optional(),
@@ -17,6 +18,7 @@ export const projectSchema = z.object({
 export const permanentSchema = z.object({
   id: z.string(),
   name: z.string(),
+  hidden: z.boolean().or(z.undefined()),
   industry: z.string(),
   phase: z.string().or(z.undefined()),
   employment: z.literal("permanent"),
@@ -37,6 +39,7 @@ export const permanentSchema = z.object({
 export const freelanceSchema = z.object({
   id: z.string(),
   name: z.string(),
+  hidden: z.boolean().or(z.undefined()),
   description: z.string(),
   employment: z.literal("freelance"),
   start: z.string(),

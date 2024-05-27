@@ -961,6 +961,55 @@
         "start": "01/2022",
         "end": null,
         "clients": {
+          "engagespark": {
+            "id": "engagespark",
+            "name": "engageSPARK",
+            "industry": "telecommunication",
+            "phase": "startup",
+            "employment": "freelance",
+            "url": "https://engagespark.com",
+            "projects": [
+              {
+                "name": "engageSPARK Dashboard",
+                "featured": true,
+                "url": "https://app.engagespark.com",
+                "icon": "/images/work/engagespark.png",
+                "start": "03/2018",
+                "end": "09/2019",
+                "description": ""
+              }
+            ],
+            "level": "consultant",
+            "time": "part-time",
+            "description": "- Redone the infrastructure for their web application, improving a lot on speed and developer experience\n- Migrated hundrests of javascript files to typescript.",
+            "start": "05/2024",
+            "end": "06/2024",
+            "reasonEnd": "End of contract",
+            "location": "remote",
+            "icon": "/images/work/engagespark.png",
+            "tags": [
+              "webapp",
+              "architecture",
+              "infrastructure",
+              "performance"
+            ],
+            "stack": [
+              "html",
+              "css",
+              "javascript",
+              "typescript",
+              "react",
+              "redux",
+              "material-ui",
+              "docker",
+              "kubernetes",
+              "gcloud",
+              "rest/http",
+              "openapi",
+              "git",
+              "github"
+            ]
+          },
           "solidstarts": {
             "id": "solidstarts",
             "name": "Solid Starts",
@@ -970,10 +1019,10 @@
             "url": "https://solidstarts.com",
             "level": "lead",
             "time": "part-time",
-            "description": "- Lead the development of the website, integrated new features \n- Implemented various performance optimizations",
+            "description": "- Implemented performance optimizations, bug-fixes, and did some basic website maintenance\n- Did maintenance tasks for the company website",
             "start": "08/2023",
-            "end": "03/2024",
-            "reasonEnd": null,
+            "end": "05/2024",
+            "reasonEnd": "The company hired an agency to take over the development",
             "location": "remote",
             "icon": "/images/work/solidstarts.webp",
             "tags": [
@@ -1041,10 +1090,10 @@
             ],
             "level": "lead",
             "time": "full-time",
-            "description": "- Designed a node discovery feature for the frontend apps\n- Worked on features for the wallet desktop application\n- Worked on a web wallet as browser extension for Chrome and Firefox",
+            "description": "- Designed a node discovery and health status reporter feature for their frontend apps\n- Worked on features for their wallet desktop application\n- Worked on a web wallet as browser extension for Chrome and Firefox",
             "start": "05/2022",
             "end": "05/2023",
-            "reasonEnd": "",
+            "reasonEnd": "End of contract",
             "location": "remote",
             "icon": "/images/work/vega.png",
             "tags": [
@@ -1104,10 +1153,10 @@
             ],
             "level": "senior",
             "time": "part-time",
-            "description": "- Built reusable components for an internal UI library\n- Added features to their custom code generator\n- Implemented custom features for different client products (e.g., [Chainabuse](https://chainabuse.com))",
+            "description": "- Built a text editor for the company's internal UI library\n- Added features to their custom code generator\n- Implemented custom features for different client products (e.g., [Chainabuse](https://chainabuse.com))",
             "start": "04/2022",
             "end": "08/2022",
-            "reasonEnd": null,
+            "reasonEnd": "I decided to leave because I wasn't able to fulfill their minimum time requirements of 20h/week anymore",
             "location": "remote",
             "icon": "/images/work/create.png",
             "tags": [
@@ -1143,6 +1192,7 @@
           "nexum": {
             "id": "nexum",
             "name": "Nexum",
+            "hidden": true,
             "industry": "digital agency",
             "phase": "corporate",
             "employment": "freelance",
@@ -1160,10 +1210,10 @@
             ],
             "level": "senior",
             "time": "full-time",
-            "description": "- Added features for the user-facing website for [Asklepios](https://asklepios.com)",
+            "description": "- Planned the work for the user-facing website for [Asklepios](https://asklepios.com)",
             "start": "01/2022",
             "end": "05/2022",
-            "reasonEnd": "",
+            "reasonEnd": "I had not written any code for five month while 'working' for them which made me look for other opportunities where I could actually work on something",
             "location": "remote",
             "icon": "/images/work/nexum.png",
             "tags": [
@@ -1195,10 +1245,10 @@
         "url": "https://planet.com",
         "level": "senior",
         "time": "full-time",
-        "description": "- Worked on internal tools to support other teams\n- Prototyped an internal dashboard for data analysis\n- Mentoring",
+        "description": "- Designed an internal dashboard for image metadata analysis for other teams doing data analysis\n- Mentoring teammates",
         "start": "09/2021",
         "end": "01/2022",
-        "reasonEnd": "",
+        "reasonEnd": "The company could not to accommodate what they previously agreed to unofficially: my change of location, moving to Portugal",
         "location": "Berlin, DE",
         "icon": "/images/work/planet.png",
         "tags": [
@@ -1281,7 +1331,7 @@
         "description": "- Contributed to designing their internal UI library\n- Wrote a code generator to automate syncing the frontend with APIs\n- Designed storybook deployments for test environments\n- Contributed to creating an internal dashboard for displaying analytics for all the frontend packages within the company\n- Developed features and maintained their user dashboard\n- Integrated react components into the Prezi Video desktop app\n- Held knowledge sharing sessions",
         "start": "03/2020",
         "end": "08/2021",
-        "reasonEnd": "",
+        "reasonEnd": "I quit due to lack of responsibility and ownership, facing micromanagement",
         "location": "Berlin, DE",
         "icon": "/images/work/prezi.png",
         "tags": [
@@ -1317,7 +1367,7 @@
       "freelance:2017": {
         "id": "freelance:2017",
         "name": "Freelance",
-        "description": "- Worked on node microservices and multi-tenancy systems\n - Designed micro-frontend architectures\n - Lead the development of a web app for a startup\n",
+        "description": "- Migrated an ORM from MongoDB to Cassandra for node microservices\n- Worked on node microservices and multi-tenancy systems\n - Implemented micro-frontend architectures with server side rendering\n - Lead the development of a web app for a startup\n",
         "employment": "freelance",
         "start": "09/2016",
         "end": "03/2020",
@@ -1345,7 +1395,7 @@
             "description": "- Created and deployed the company's new website",
             "start": "10/2019",
             "end": "11/2019",
-            "reasonEnd": null,
+            "reasonEnd": "End of project",
             "location": "remote",
             "tags": [
               "website",
@@ -1386,7 +1436,7 @@
             "description": "- Designed the frontend architecture for a new webapp\n- Implemented various features enabling users to manage their campaigns online\n- Mentoring, knowledge sharing",
             "start": "03/2018",
             "end": "09/2019",
-            "reasonEnd": "",
+            "reasonEnd": "Lack of professional growth",
             "location": "remote",
             "icon": "/images/work/engagespark.png",
             "tags": [
@@ -1427,7 +1477,7 @@
             "description": "- Worked on a new site navigation\n- Took part in designing a new micro-frontend architecture\n- Built a microservice for custom SSR for react micro-frontends",
             "start": "05/2017",
             "end": "11/2017",
-            "reasonEnd": "",
+            "reasonEnd": "End of contract",
             "location": "Gibraltar",
             "tags": [
               "website",
@@ -1462,10 +1512,10 @@
             "url": "https://piksel.com",
             "level": "senior",
             "time": "full-time",
-            "description": "- Migrated a custom ORM from using Mongo to Cassandra\n- Implemented a general purpose circuit breaker for node microservices\n- Worked on new features for the authentication microservice",
+            "description": "- Migrated a custom ORM from using MongoDB to Cassandra\n- Implemented a general purpose circuit breaker for node microservices\n- Worked on new features for the authentication microservice",
             "start": "09/2016",
             "end": "03/2017",
-            "reasonEnd": "",
+            "reasonEnd": "End of contract",
             "location": "York, UK",
             "icon": "/images/work/piksel.png",
             "tags": [
@@ -1502,7 +1552,7 @@
         "url": "https://moneyhub.com",
         "level": "mid",
         "time": "full-time",
-        "description": "- Integrated microservices with various bank APIs\n- Worked on data visualisation charts for the mobile app-n- Implemented a subscription management microservice using Stripe and ChargeBee\n- Worked on their b2b web application",
+        "description": "- Integrated microservices with various bank APIs\n- Worked on data visualisation charts for the mobile app\n- Implemented a subscription management microservice using Stripe and ChargeBee\n- Worked on the company's b2b web application",
         "start": "02/2016",
         "end": "08/2016",
         "reasonEnd": "Redundancy",
@@ -1549,7 +1599,7 @@
         "description": "- Developed a map search feature to see deals around the user's current location\n- Integrated site search using Algolia\n- Implemented various performance improvements",
         "start": "04/2015",
         "end": "02/2016",
-        "reasonEnd": "",
+        "reasonEnd": "Lack of professional growth",
         "location": "Bristol, UK",
         "icon": "/images/work/vouchercloud.png",
         "tags": [
@@ -1580,10 +1630,10 @@
         "url": null,
         "level": "junior",
         "time": "full-time",
-        "description": "- Designed and deployed various websites for smaller clients.",
+        "description": "- Designed, developed and deployed various websites for smaller clients",
         "start": "06/2014",
         "end": "04/2015",
-        "reasonEnd": "",
+        "reasonEnd": "Lack of professional growth",
         "location": "Warrington, UK",
         "tags": [
           "website",
@@ -1605,37 +1655,50 @@
           "svn",
           "bitbucket"
         ]
+      },
+      "freelance:2014": {
+        "id": "freelance:2014",
+        "name": "Freelance",
+        "description": "- Prototyped various websites for small clients.",
+        "employment": "freelance",
+        "hidden": true,
+        "start": "09/2016",
+        "end": "03/2020",
+        "clients": {
+          "pro-curator": {
+            "id": "pro-curator",
+            "name": "PRO*curator",
+            "industry": "digital agency",
+            "phase": "startup",
+            "url": null,
+            "level": "junior",
+            "time": "part-time",
+            "description": "- Developed various websites for smaller clients.",
+            "start": "02/2014",
+            "end": "06/2014",
+            "reasonEnd": "This was a friend's project who decided to abandon it.",
+            "location": "remote",
+            "tags": [
+              "website",
+              "cms",
+              "ecommerce"
+            ],
+            "stack": [
+              "photoshop",
+              "html",
+              "css",
+              "javascript",
+              "jquery",
+              "wordpress",
+              "github",
+              "git"
+            ]
+          }
+        }
       }
     }
   },
   "projects": {
-    "zew": {
-      "name": "ZEW",
-      "type": "volunteer",
-      "url": "https://zew.world",
-      "start": "01/2024",
-      "end": null,
-      "description": "",
-      "icon": "/images/work/zew.png",
-      "tags": [
-        "webapp",
-        "design system"
-      ],
-      "stack": [
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "react",
-        "material-ui",
-        "node",
-        "npm",
-        "tailwind",
-        "nextjs",
-        "git",
-        "github"
-      ]
-    },
     "pencilheads": {
       "name": "Pencilheads",
       "featured": true,
@@ -1644,7 +1707,7 @@
       "repoUrl": "https://github.com/vacuumdreams/pencilheads",
       "start": "10/2023",
       "end": "11/2023",
-      "description": "I wanted to explore the world of progressive web apps for a while, and since at that time Apple launched support for a lot of native features, like notifications, badges, and so on, I thought it might be a good time to try taking advantage of these. I've decided to build a fun little project for the movie club we were running with some friends, and use it to manage our events there.",
+      "description": "I wanted to explore progressive web apps for a while, and since at that time Apple launched support for a lot of native features, like notifications, badges, and so on, I thought it might be a good time to try these out. I've decided to build a fun little project for the movie club we were running with some friends, and use it to manage our events here.",
       "icon": "/images/work/pencilheads.png",
       "tags": [
         "pwa",
