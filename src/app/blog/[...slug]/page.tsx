@@ -7,7 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeftIcon, ClockIcon } from "lucide-react"
 
-import { cn } from "@/lib/utils"
+import { cn, getOrigin } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Mdx } from "@/components/content/mdx"
 import { Badge } from "@/components/ui/badge"
@@ -44,6 +44,7 @@ export async function generateMetadata({
   return {
     title: `${sentenceCase(post.title)} - Botond Fekete`,
     description: post.description,
+    metadataBase: getOrigin(),
     authors: post.authors.map((author) => ({
       name: author,
     })),

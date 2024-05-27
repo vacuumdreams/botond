@@ -3,24 +3,13 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Provider } from "@/components/provider"
 import { Background } from "@/components/widgets/background"
+import { getOrigin } from "@/lib/utils"
 import "./globals.css"
-
-const getUrl = () => {
-  if (!process.env.NEXT_PUBLIC_URL) return undefined
-  try {
-    return new URL(process.env.NEXT_PUBLIC_URL)
-  } catch (err) {
-    if (process.env.NODE_ENV === "development") {
-      return new URL(`http://localhost:${process.env.PORT}`)
-    }
-    return undefined
-  }
-}
 
 export const metadata: Metadata = {
   title: "Botond Fekete",
   description: "Botond Fekete's personal website",
-  metadataBase: getUrl(),
+  metadataBase: getOrigin(),
 }
 
 export default function RootLayout({

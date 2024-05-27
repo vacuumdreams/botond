@@ -95,3 +95,15 @@ export function getHeightMm(el: null | HTMLElement) {
   }
   return 0
 }
+
+export const getOrigin = () => {
+  if (!process.env.NEXT_PUBLIC_URL) return undefined
+  try {
+    return new URL(process.env.NEXT_PUBLIC_URL)
+  } catch (err) {
+    if (process.env.NODE_ENV === "development") {
+      return new URL(`http://localhost:${process.env.PORT}`)
+    }
+    return undefined
+  }
+}
