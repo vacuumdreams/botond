@@ -7,10 +7,10 @@ export const TagCloud = () => {
   const { normalisedTags } = useData()
 
   return (
-    <div className="px-4 pb-4">
-      <h3 className="mb-4 flex gap-2">
+    <div className="pb-4">
+      <h3 className="bg-muted px-4 py-4 mb-4 flex items-center gap-2">
         <HammerIcon />
-        <span className="text-muted-foreground">Toolbox</span>
+        <span className="text-muted-foreground font-title text-xs">toolbox</span>
       </h3>
       <div className="-m-1">
         {normalisedTags.map(({ tag, size }) => {

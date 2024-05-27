@@ -27,7 +27,7 @@ type WorkHistoryProps = {
 export const WorkHistory = ({ mode }: WorkHistoryProps) => {
   const { data } = useData()
   const [filters, setFilters] = useState<FilterType>({
-    employment: mode === "print" ? "all" : "freelance",
+    employment: "all",
     minDuration: "all",
     stack: [],
   })

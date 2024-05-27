@@ -19,7 +19,8 @@ type AttributesProps = {
 
 const Attributes = ({ url, repoUrl, start, end }: AttributesProps) => {
   return (
-    <div className="mb-6 w-full items-center">
+    <div className="sm:flex gap-2 md:block xl:flex justify-between items-start mb-6 w-full">
+      <div>
       <div>
         {url && (
           <a href={url} target="_blank" className="flex items-center gap-2 mb-2">
@@ -32,14 +33,17 @@ const Attributes = ({ url, repoUrl, start, end }: AttributesProps) => {
         {repoUrl && (
           <a href={repoUrl} target="_blank" className="flex items-center gap-2 mb-2">
             <GithubIcon />
-            <span>repository</span>
+            <span>Repository</span>
           </a>
         )}
       </div>
+      </div>
+      <div>
       <p className="flex items-center gap-2 mb-2">
         <ClockIcon />
         <span>Duration: {formatDistance(getDate(start), getDate(end))}</span>
       </p>
+      </div>
     </div>
   )
 }
@@ -88,7 +92,7 @@ const ProjectItem = ({ mode, tech, project }: ProjectItemProps) => {
     <AccordionItem value={project.name}>
       <AccordionTrigger className="p-4">
         <div className="flex w-full items-center justify-between pr-4">
-          <h4 className="flex items-center gap-2">
+          <h4 className="flex items-center gap-2  text-left">
             <Avatar
               className={cn("flex items-center justify-center", {
                 "border-2": !project.icon,
@@ -109,9 +113,11 @@ const ProjectItem = ({ mode, tech, project }: ProjectItemProps) => {
       <AccordionContent className="p-4">
         <Attributes
           url={project.url}
+          repoUrl={project.repoUrl}
           start={project.start}
           end={project.end}
         />
+        {project?.image && <img src={project.image} />}
         <div
           className="prose prose-slate my-6 w-full dark:prose-invert"
         >
@@ -135,27 +141,30 @@ type FeaturedProjectsProps = {
 };
 
 export const FeaturedProjects = ({ mode }: FeaturedProjectsProps) => {
-  const { data } = useData()
-  const projects = useMemo(() => {
-    return Object.values(data.projects).filter(project => project.featured)
-  }, [data.projects])
+  const { data, featuredProjects } = useData()
+  const pk = Object.keys(featuredProjects).filter((k) => {
+    if (mode === 'print' && !featuredProjects[k].featuredPrint) {
+      return false
+    }
+    return true
+  })
 
-  if (projects.length === 0) {
+  if (pk.length === 0) {
     return null
   }
 
   return (
-    <div className={cn("pb-4", { 'border-t': mode !== 'print' })}>
-      <h3 className="px-4 pb-4 pt-4 mb-0 flex items-center gap-2">
+    <div className={cn({ 'border-t': mode !== 'print' })}>
+      <h3 className="bg-muted px-4 py-4 mb-0 flex items-center gap-2">
         <PresentationIcon />
-        <span className="text-muted-foreground">Featured projects</span>
+        <span className="text-muted-foreground font-title text-xs">featured projects</span>
       </h3>
 
       <Accordion type="single" collapsible className="w-full">
-        {projects.map((project, i) => (
-          <Fragment key={project.name}>
+        {pk.map((id, i) => (
+          <Fragment key={id}>
             {i > 0 && <Separator />}
-            <ProjectItem mode={mode} tech={data.skills.tech} project={project} />
+            <ProjectItem mode={mode} tech={data.skills.tech} project={featuredProjects[id]} />
           </Fragment>
         ))}
       </Accordion>

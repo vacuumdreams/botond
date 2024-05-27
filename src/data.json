@@ -26,18 +26,6 @@
   },
   "education": {
     "courses": {
-      "threejs:journey": {
-        "name": "ThreeJs Journey",
-        "description": "",
-        "tags": [
-          "ui",
-          "3d"
-        ],
-        "issuer": "threejs journey",
-        "date": "Started recently",
-        "icon": "/images/education/courses/threejs-journey.jpg",
-        "link": "https://threejs-journey.com"
-      },
       "tryhackme": {
         "name": "Try Hack Me",
         "description": "",
@@ -956,7 +944,7 @@
       "freelance:2022": {
         "id": "freelance:2022",
         "name": "Freelance",
-        "description": "- Worked with various clients to build web applications, websites, and other digital products\n- Lead product roadmaps, laid down strategies, managed deveopment teams",
+        "description": "- Designed and implemented infrastructures and code pipelines\n- Worked with various clients to build web applications, websites, and other digital products\n- Lead product roadmaps, laid down strategies, managed deveopment teams\n- ",
         "employment": "freelance",
         "start": "01/2022",
         "end": null,
@@ -968,17 +956,6 @@
             "phase": "startup",
             "employment": "freelance",
             "url": "https://engagespark.com",
-            "projects": [
-              {
-                "name": "engageSPARK Dashboard",
-                "featured": true,
-                "url": "https://app.engagespark.com",
-                "icon": "/images/work/engagespark.png",
-                "start": "03/2018",
-                "end": "09/2019",
-                "description": ""
-              }
-            ],
             "level": "consultant",
             "time": "part-time",
             "description": "- Redone the infrastructure for their web application, improving a lot on speed and developer experience\n- Migrated hundrests of javascript files to typescript.",
@@ -1063,34 +1040,36 @@
             "phase": "startup",
             "employment": "freelance",
             "url": "https://vega.xyz",
-            "projects": [
-              {
-                "name": "Desktop Wallet",
-                "featured": true,
+            "projects": {
+              "vega-desktop-wallet": {
+                "name": "Vega Desktop Wallet",
                 "url": "https://vega.xyz/wallet",
                 "start": "08/2022",
                 "end": "05/2023",
                 "description": ""
               },
-              {
-                "name": "Browser Wallet",
+              "vega-browser-wallet": {
+                "name": "Vega Browser Wallet",
                 "url": "https://vega.xyz/wallet",
                 "start": "11/2022",
                 "end": "04/2023",
                 "description": ""
               },
-              {
-                "name": "Node Discovery",
+              "vega-node-discovery": {
+                "name": "Vega Environment",
                 "featured": true,
+                "icon": "/images/work/vega.png",
+                "image": "/images/projects/vega-node-discovery.webp",
                 "url": "https://vegaprotocol.eth.limo",
+                "repoUrl": "https://github.com/vegaprotocol/frontend-monorepo/commits/main/libs/environment?author=notbot00",
                 "start": "06/2022",
-                "end": "07/2023",
-                "description": ""
+                "end": "09/2022",
+                "description": "Designed a generic node discovery and health status reporting feature for the frontend apps. We had a different list of graphql server URLs in different environments, and sometimes when the frontend application connected to one of these hosts, the server occasionally stopped transmitting data. This feature was implemented so that the users can have a real life status report about the available servers, and give them the ability to choose which one they want to connect to.\n\n Biggest challenges:\n - Figuring out a sensible way to interact with dozens of servers in the background without causing performance issues"
               }
-            ],
+            },
             "level": "lead",
             "time": "full-time",
-            "description": "- Designed a node discovery and health status reporter feature for their frontend apps\n- Worked on features for their wallet desktop application\n- Worked on a web wallet as browser extension for Chrome and Firefox",
+            "description": "- Designed a generic node discovery and health status reporting feature for the frontend apps\n- Migrated the whole repository from the deprecated apollo type generator to use graphql-codegen\n- Worked on features for their wallet desktop application\n- Worked on a web wallet as browser extension for Chrome and Firefox",
             "start": "05/2022",
             "end": "05/2023",
             "reasonEnd": "End of contract",
@@ -1140,8 +1119,8 @@
             "phase": "startup",
             "employment": "freelance",
             "url": "https://create.xyz",
-            "projects": [
-              {
+            "projects": {
+              "chainabuse": {
                 "name": "Chainabuse",
                 "industry": "blockchain",
                 "icon": "/images/work/chainabuse.png",
@@ -1150,7 +1129,7 @@
                 "end": "07/2022",
                 "description": ""
               }
-            ],
+            },
             "level": "senior",
             "time": "part-time",
             "description": "- Built a text editor for the company's internal UI library\n- Added features to their custom code generator\n- Implemented custom features for different client products (e.g., [Chainabuse](https://chainabuse.com))",
@@ -1197,8 +1176,8 @@
             "phase": "corporate",
             "employment": "freelance",
             "url": "https://nexum.com",
-            "projects": [
-              {
+            "projects": {
+              "ssklepios": {
                 "name": "Asklepios",
                 "industry": "healthcare",
                 "icon": "/images/work/asklepios.png",
@@ -1207,7 +1186,7 @@
                 "end": "05/2022",
                 "description": ""
               }
-            ],
+            },
             "level": "senior",
             "time": "full-time",
             "description": "- Planned the work for the user-facing website for [Asklepios](https://asklepios.com)",
@@ -1291,17 +1270,25 @@
         "phase": "corporate",
         "employment": "permanent",
         "url": "https://prezi.com",
-        "projects": [
-          {
+        "projects": {
+          "prezi-ogre": {
             "name": "Ogre",
             "featured": true,
-            "icon": "/images/work/prezi-orge.png",
+            "icon": "/images/work/prezi.png",
+            "image": "/images/projects/prezi-ogre.webp",
             "url": null,
             "start": "11/2020",
             "end": "04/2021",
-            "description": ""
+            "description": "During one of the company hackatons, I wrote a code generator to collect the openapi schemas from different backend microservices and generate typed frontend clients we can use to send requests. This soon grown to its own project and gradually got adapted by the frontend teams.\n\n Biggest challenges:\n - Convincing dozens of developers to use my idea",
+            "stack": [
+              "typescript",
+              "node",
+              "openapi",
+              "rest/http",
+              "github"
+            ]
           },
-          {
+          "prezi-dashboard": {
             "name": "Prezi Dashboard",
             "icon": "/images/work/prezi.png",
             "url": null,
@@ -1309,7 +1296,7 @@
             "end": "06/2021",
             "description": ""
           },
-          {
+          "prezi-video": {
             "name": "Prezi Video",
             "icon": "/images/work/prezi-video.png",
             "url": null,
@@ -1317,7 +1304,7 @@
             "end": "08/2021",
             "description": ""
           },
-          {
+          "prezi-health-dashboard": {
             "name": "Monorepo health dashboard",
             "icon": "/images/work/prezi.png",
             "url": null,
@@ -1325,7 +1312,7 @@
             "end": "05/2021",
             "description": ""
           }
-        ],
+        },
         "level": "senior",
         "time": "full-time",
         "description": "- Contributed to designing their internal UI library\n- Wrote a code generator to automate syncing the frontend with APIs\n- Designed storybook deployments for test environments\n- Contributed to creating an internal dashboard for displaying analytics for all the frontend packages within the company\n- Developed features and maintained their user dashboard\n- Integrated react components into the Prezi Video desktop app\n- Held knowledge sharing sessions",
@@ -1379,17 +1366,18 @@
             "employment": "freelance",
             "url": "https://dcmn.com",
             "icon": "/images/work/dcmn.png",
-            "projects": [
-              {
+            "projects": {
+              "dcmn": {
                 "name": "DCMN Website",
                 "featured": true,
                 "url": "https://dcmn.com",
                 "icon": "/images/work/dcmn.png",
+                "image": "/images/projects/dcmn.webp",
                 "start": "10/2019",
                 "end": "11/2019",
-                "description": ""
+                "description": "As part of a short one month freelance assignment, I've implemented this agency's website, working closely with their in-house designers, and deployed the site by the end of the assignment.\n\n Biggest challenges:\n - Had to fix some interesting bugs regarding one of the integrations, for which I had to do a deeper dive into three.js and vertex shaders."
               }
-            ],
+            },
             "level": "lead",
             "time": "part-time",
             "description": "- Created and deployed the company's new website",
@@ -1420,17 +1408,18 @@
             "phase": "startup",
             "employment": "freelance",
             "url": "https://engagespark.com",
-            "projects": [
-              {
+            "projects": {
+              "es-app": {
                 "name": "engageSPARK Dashboard",
                 "featured": true,
                 "url": "https://app.engagespark.com",
                 "icon": "/images/work/engagespark.png",
+                "image": "/images/projects/engagespark.webp",
                 "start": "03/2018",
                 "end": "09/2019",
-                "description": ""
+                "description": "Designed and implemented the architecture for a web application. I worked in a small team, we didn't have a designer, so I mainly implemented the layouts directly consulting with the CEO, sometimes following sketches from photos of napkins. This gave me a lot of freedom on how to implement features and UX, while I was building the app from the ground up. The end result was a dashboard where organizations can have their administrators create and manage various large scale SMS and voice call campaigns for a targeted user base, and see the results and analytics.\n\n Biggest challenges:\n - Designing the frontend so that it can accommodate displaying large amounts of data in tables, with thousands of pages, with custom filters and search."
               }
-            ],
+            },
             "level": "lead",
             "time": "full-time",
             "description": "- Designed the frontend architecture for a new webapp\n- Implemented various features enabling users to manage their campaigns online\n- Mentoring, knowledge sharing",
@@ -1702,13 +1691,15 @@
     "pencilheads": {
       "name": "Pencilheads",
       "featured": true,
+      "featuredPrint": true,
       "type": "personal",
       "url": "https://pencilheads.net",
       "repoUrl": "https://github.com/vacuumdreams/pencilheads",
       "start": "10/2023",
       "end": "11/2023",
-      "description": "I wanted to explore progressive web apps for a while, and since at that time Apple launched support for a lot of native features, like notifications, badges, and so on, I thought it might be a good time to try these out. I've decided to build a fun little project for the movie club we were running with some friends, and use it to manage our events here.",
+      "description": "I wanted to explore progressive web apps for a while, and since at that time Apple launched support for a lot of native features, like notifications, badges, and so on, I thought it might be a good time to try these out. I've decided to build a fun little project for the movie club we were running with some friends, and use it to manage our events here.\n\n Biggest challenges:\n - Implementing browser notifications so that they work in all platforms\n - Debugging service workers",
       "icon": "/images/work/pencilheads.png",
+      "image": "/images/projects/pencilheads.webp",
       "tags": [
         "pwa",
         "webapp",

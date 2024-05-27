@@ -65,6 +65,7 @@ export type ProcessedData = {
     };
   };
   normalisedTags: { tag: string; size: string }[];
+  featuredProjects: Data["projects"];
   intro: Data["skills"]["tech"][keyof Data["skills"]["tech"]][];
 };
 
@@ -178,11 +179,53 @@ const transformData = (raw: Data): ProcessedData => {
 
   processedData.work.history = workHistory
 
-  console.log(processedData.work.history)
+  const projects = Object.keys(processedData.projects).reduce<Data['projects']>((acc, id) => {
+    const project = processedData.projects[id]
+    if (project.featured) {
+      return { ...acc, [id]: project }
+    }
+    return acc
+  }, {})
+
+  const workProjects = Object.values(processedData.work.history).reduce<Data['projects']>((acc, entry) => {
+    if (entry.employment === "permanent" && entry.projects) {
+      Object.keys(entry.projects).forEach((id) => {
+        const project = entry.projects?.[id]
+        if (project?.featured) {
+          acc[id] = project
+          if (!project.stack) {
+            acc[id].stack = entry.stack
+          }
+        }
+      })
+    }
+
+    if (entry.employment === "freelance") {
+      Object.values(entry.clients).forEach((client) => {
+        if (client.projects) {
+          Object.keys(client.projects).forEach((id) => {
+            const project = client.projects?.[id]
+            if (project?.featured) {
+              acc[id] = project
+              if (!project.stack) {
+                acc[id].stack = client.stack
+              }
+            }
+          })
+        }
+      }, acc)
+    }
+
+    return acc
+  }, {})
 
   return {
     data: processedData,
     normalisedTags: normaliseTags(raw),
+    featuredProjects: {
+      ...projects,
+      ...workProjects,
+    },
     // @ts-ignore
     intro: shuffle(Object.values(data.skills.tech).filter((t) => t.featured)),
   }

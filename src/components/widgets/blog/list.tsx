@@ -84,7 +84,7 @@ export function BlogList() {
                 className="group relative flex flex-col space-y-2"
               >
                 <Image
-                  src={post.image || "/images/blog/default.png"}
+                  src={post.image || "/images/blog/default.webp"}
                   alt={post.title}
                   width={804}
                   height={452}

@@ -3,11 +3,13 @@ import { z } from "zod"
 export const projectSchema = z.object({
   name: z.string(),
   featured: z.boolean().or(z.undefined()),
+  featuredPrint: z.boolean().or(z.undefined()),
   hidden: z.boolean().or(z.undefined()),
   type: z.string().or(z.undefined()),
   url: z.string().url().or(z.null()),
   repoUrl: z.string().url().optional(),
   icon: z.string().or(z.undefined()),
+  image: z.string().or(z.undefined()),
   description: z.string(),
   start: z.string(),
   end: z.string().or(z.null()),
@@ -31,7 +33,7 @@ export const permanentSchema = z.object({
   reasonEnd: z.string().or(z.null()),
   location: z.string(),
   icon: z.string().or(z.undefined()),
-  projects: z.array(projectSchema).or(z.undefined()),
+  projects: z.record(z.string(), projectSchema).or(z.undefined()),
   tags: z.array(z.string()).or(z.undefined()),
   stack: z.array(z.string()),
 })
