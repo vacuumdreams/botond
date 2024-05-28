@@ -4,7 +4,6 @@ import { uniq } from "ramda"
 import Markdown from "react-markdown"
 import { Layers3Icon, BriefcaseIcon } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   AccordionContent,
@@ -21,6 +20,7 @@ import { Attributes } from "./attributes"
 import { Stack } from "./stack"
 import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
+import { ClientDescription } from "./client-description"
 
 type BaseWorkItemProps = {
   mode?: "normal" | "print";
@@ -232,28 +232,11 @@ export const FreelanceItem = ({
       </div>
       <div
         className={cn("my-2 mb-8", {
-          "flex items-center gap-4": mode !== "print",
+          "flex gap-4": mode !== "print",
         })}
       >
-        <p className={cn({ "mb-4": mode === "print" })}>Clients: </p>
-        <div className="flex flex-wrap gap-2">
-          {Object.values(work.clients).map((c, i) => (
-            <Badge key={c.id} variant="secondary">
-              <a
-                href={c.url || ""}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="flex items-center whitespace-nowrap"
-              >
-                <Avatar className="-ml-2 mr-2 size-6">
-                  <AvatarImage src={c.icon || ""} alt={c.name} />
-                  <AvatarFallback>{c.name[0]}</AvatarFallback>
-                </Avatar>
-                {c.name}
-              </a>
-            </Badge>
-          ))}
-        </div>
+        <p className={cn('pt-1', { "mb-4": mode === "print" })}>Clients: </p>
+        <ClientDescription work={work} />
       </div>
     </BaseWorkItem>
   )
