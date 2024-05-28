@@ -43,7 +43,7 @@ export const ClientDescription = ({ work }: ClientDescriptionProps) => {
             </a>
           )}
           <div
-            className="prose prose-slate mt-2 mb-4 w-full dark:prose-invert"
+            className="prose prose-slate dark:prose-invert mb-4 mt-2 w-full"
           >
             <Markdown>{activeClient.description}</Markdown>
           </div>
