@@ -9,26 +9,13 @@ authors:
   - botond
 ---
 
-I remember the rise of Typescript back in the days. The thing which always turned me off about it, specially for smaller frontend projects which interacted with a lot of services outside your control, that you had to manually type out and then maintain every single data type which was coming into your system from your all your APIs and some of the third party libraries which didn't provide you with it, which meant you were destined to get false positives whenever things changed outside your system, making it very non-intuitive to debug.
+I remember the rise of typescript back in the days. The thing which always turned me off about it, specially for smaller frontend projects which interacted with a lot of services outside your control, that you had to manually type out and then maintain every single data type which was coming into your system from your all your APIs and some of the third party libraries which didn't provide you with it, which meant you were destined to get false positives whenever things changed outside your system, making it very non-intuitive to debug.
 
-I believe for me the real boost for me was when I came across [OpenAPI](https://www.openapis.org/). There was a lot of tooling available, all sorts of code generators (for tests, mocks, type definitions for different languages). In case you're not familiar with it, OpenAPI is an initiative to standardize RESTful APIs, to provide a language agnostic way to precisely describe them. This was growingly useful in the microservice architectures, where you had dozens of APIs, the these specs were there to document interactions and data structures coming in and out from your APIs.
+I believe for me the real game changer was when I came across [OpenAPI](https://www.openapis.org/). There was a lot of tooling available, all sorts of code generators (for tests, mocks, type definitions for different languages). In case you're not familiar with it, OpenAPI is an initiative to standardize RESTful APIs, to provide a language agnostic way to precisely describe them. This was growingly useful in the microservice architectures, where you had dozens of APIs, the these specs were there to document interactions and data structures coming in and out from your APIs.
 
-<div className="[&>*]:inline">
-I dived into this at the time when I was working for [Prezi](https://prezi.com). Most of their services had OpenAPI specs or{' '}
-<Tooltip>
-<TooltipTrigger>
-<span className="flex gap-2 rounded bg-muted">Swagger files<InfoIcon size={12} /></span>
-</TooltipTrigger>
-<TooltipContent>
-<div className="max-w-80">Swagger was an umbrella term for tools implementing OpenAPI, and Swagger file was the term for the service spec files a while ago, which was based on the OpenAPI v1 and v2. Now, after v3 came out, the spec files are called "OpenAPI specification" officially. Not planning to go into more details about this here, you can read the whole story <a href="https://swagger.io/blog/api-strategy/difference-between-swagger-and-openapi/" taget="_blank" className="underline">here</a>.</div>
-</TooltipContent>
-</Tooltip>
-. I got really excited, and during a hackaton I prototyped a code generator which would combine the given open source tools (like [openapi-typescript-codegen](https://github.com/ferdikoomen/openapi-typescript-codegen)) and all the business logic we had and produce a type-safe client package into our frontend monorepo. This got slowly adopted afterwards, but there were still a lot of problems. Some services didn't have auto-generated OpenAPI specs, the information in them was outdated, so sometimes types vs. reality didn't quite match the expectations.
-</div>
+Shortly after I went through this enlightenment, [Orval](https://orval.dev/) came out and simplified things even more. It gave you a fully typed client library with a variety of outputs you could choose from, e.g. [React Query](https://react-query.tanstack.com/). I felt like REST APIs were finally just as pleasant to use on the frontend as GraphQL was with its schemas and client generators, but without the problems of GraphQL, about which I will gracefully shut up in this post.
 
-Shortly after I went through this enlightenment, [Orval](https://orval.dev/) came out and simplified things even more. It gave you a fully typed client library with a variety of outputs you could choose from, my favorite at the time obviously being [React Query](https://react-query.tanstack.com/). I felt like REST APIs were finally just as pleasant to use on the frontend as GraphQL was with its schemas and client generators.
-
-Some time last year I came across [trpc](https://trpc.io/), and quickly tried it out. Having Typescript code in all directions really does magic, code generation becomes obsolete. It's pretty neat that you get instant feedback on the changes in your data structure. What it essentially gives you is a router for your backend and one for your frontend, which would both feed on the same data source, and then you can use an adapter to hook it into pretty much any node based service (node, express, fastify, etc). It uses a lot of concepts borrowed from GraphQL clients, like naming conventions for requests (queries, mutations, subscriptions), using links to fetch data, and so on.
+So, we're iterating enlightenments, the next one I wanted to mention is [trpc](https://trpc.io/). I came across this last year, and quickly gave it a go. Having typescript code in all directions really does magic, code generation becomes obsolete. It's pretty neat that you get instant feedback on the changes in your data structure. What it essentially gives you is a router for your backend and one for your frontend, which would both feed on the same data source, and then you can use an adapter to hook it into pretty much any node based service (node, express, fastify, etc). It uses a lot of concepts borrowed from GraphQL clients, like naming conventions for requests (queries, mutations, subscriptions), using links to fetch data, and so on.
 
 Okay, we're finally arriving to the actual topic of the post.
 
@@ -40,7 +27,7 @@ I made two discoveries relatively recently, and as a result I officially entered
 
 ### The first discovery
 
-This is [Drizzle](https://orm.drizzle.team), which prides itself as a [Prisma](https://www.prisma.io/) alternative, but without the code generation and the special schema language, as it's all Typescript, baby! The ORM part of it also feels closer to actual SQL, which took a little to get used to again, but I think it's a great thing. It's definitely less rouboust than Prisma, which recently announced e.g. [Pulse](https://www.prisma.io/data-platform/pulse) which looks pretty awesome.
+This is [Drizzle](https://orm.drizzle.team), which prides itself as a [Prisma](https://www.prisma.io/) alternative, but without the code generation and the special schema language, as it's all typescript, baby! The ORM part of it also feels closer to actual SQL, which took a little to get used to again, but I think it's a great thing. It's definitely less rouboust than Prisma ( which btw just recently announced [Pulse](https://www.prisma.io/data-platform/pulse), which looks pretty awesome).
 
 ### The second discovery
 
