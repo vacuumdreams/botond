@@ -101,7 +101,7 @@ export function BlogList() {
                       {format(post.date, "dd/MM/yyyy")}
                     </p>
                   )}
-                  {post.tags.split(',').map(tag => (
+                  {post.tags.split(',').filter(v => !!v).map(tag => (
                     <Badge key={tag} className="ml-2">
                       {tag}
                     </Badge>

@@ -35,7 +35,7 @@ The second thing I stumbled upon was [Elysia](https://elysiajs.com), and I thoug
 
 On the front page you can see with big letters: "Ergonomic Framework for Humans". As a human, I was already intrigued.
 
-<p className="text-muted-foreground">(Fun fact: while writing this post, Elysia v1.0 was released 🎉)</p>
+<p className="text-muted-foreground bg-muted p-2 mt-8 border border-muted-foreground">Fun fact: while writing this post, Elysia v1.0 was released</p>
 
 ### Code, give me code. Now!
 
@@ -45,7 +45,7 @@ If you ever used [Fastify](https://fastify.dev), the route handlers in Elysia wi
 
 I'm not going to go into the details on how to set up a database, what to do with your connection URI, because it would make a ridiculously long post. Instead, I'll try to present the simplicity of passing around data in a few steps.
 
-_1. The database_
+**1. The database**
 
 Going with a simple initializer based on the [docs](https://orm.drizzle.team/docs/get-started-postgresql#postgresjs) for Drizzle's Postgres adapter:
 
@@ -78,7 +78,7 @@ export const resourceTable = pgTable("resource", {
 })
 ```
 
-_2. The service_
+**2. The service**
 
 So, a few things here: [drizzle-typebox](https://orm.drizzle.team/docs/typebox) is a handy library to grab the table definition and create a validation schema, which Elysia can just pick up. Going to create two endpoints, one for getting the list of resources, and one for inserting a new one.
 
@@ -124,7 +124,7 @@ export type Api = typeof api
 
 I'm sorry if I offend you with the lack of semicolons (translation: I'm not sorry, I'm being cynical). On semicolons, I totally agree with [Vonnegut](https://www.grammarbook.com/blog/commas/the-man-who-hated-semicolons/), even though I'd probably leave off the "transvestite hermaphrodites" part. Wtf Kurt?
 
-_3. The frontend_
+**3. The frontend**
 
 So, Im going to go back to use the good old [react-query](https://tanstack.com/query/v4/docs/framework/react/overview) for my example, combined with Elysia's [eden](https://elysiajs.com/eden/overview.html) library for the client, and [react-hook-form](https://www.react-hook-form.com) combined with a typebox resolver to process the validation schema we previously created for the backend above. For a very dummy CR~~UD~~ interface, to display the list of resources and be able to add new ones, I could do something like:
 
