@@ -949,7 +949,7 @@
         "start": "01/2022",
         "end": null,
         "clients": {
-          "engagespark": {
+          "engagespark:2": {
             "id": "engagespark",
             "name": "engageSPARK",
             "industry": "telecommunication",
