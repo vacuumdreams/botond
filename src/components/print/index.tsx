@@ -1,8 +1,9 @@
 "use client"
 
-import { useRef, useLayoutEffect } from "react"
-import { ScreenPrint } from "@/components/screen-print"
+import { useLayoutEffect, useRef } from "react"
+
 import { getHeightMm } from "@/lib/utils"
+import { ScreenPrint } from "@/components/screen-print"
 
 export function Print() {
   const ref = useRef<HTMLDivElement>(null)
@@ -11,7 +12,7 @@ export function Print() {
     const height = getHeightMm(ref.current)
     const style = document.createElement("style")
     // TODO: fix incorrect dynamic height later
-    style.innerHTML = "@page {size: 210mm " + 800 + "mm;}"
+    style.innerHTML = "@page {size: 210mm " + 685 + "mm;}"
     document.head.appendChild(style)
   }, [])
 

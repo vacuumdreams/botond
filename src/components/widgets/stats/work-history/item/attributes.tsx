@@ -1,29 +1,28 @@
 import { formatDistance } from "date-fns"
 import {
+  ActivityIcon,
+  AwardIcon,
   ClockIcon,
   ExternalLinkIcon,
-  TimerIcon,
-  MapPinIcon,
-  ActivityIcon,
   FactoryIcon,
-  AwardIcon,
+  MapPinIcon,
+  TimerIcon,
 } from "lucide-react"
 
+import { cn, getDate } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 
-import { cn, getDate } from "@/lib/utils"
-
 type AttributesProps = {
-  url?: string | null;
-  level?: string;
-  time?: string;
-  location?: string;
-  industry?: string;
-  phase?: string;
-  start: string;
-  end: string | null;
-  mode?: "print" | "normal";
-};
+  url?: string | null
+  level?: string
+  time?: string
+  location?: string
+  industry?: string
+  phase?: string
+  start: string
+  end: string | null
+  mode?: "print" | "normal"
+}
 
 export const Attributes = ({
   url,
@@ -72,13 +71,13 @@ export const Attributes = ({
             {time}
           </Badge>
         )}
-        {phase && (
+        {mode !== "print" && phase && (
           <Badge variant={"secondary"} className={badgeClass}>
             <ActivityIcon className="mr-2 size-6" />
             {phase}
           </Badge>
         )}
-        {industry && (
+        {mode !== "print" && industry && (
           <Badge variant={"secondary"} className={badgeClass}>
             <FactoryIcon className="mr-2 size-6" />
             {industry}

@@ -1,23 +1,29 @@
 import { ExternalLinkIcon } from "lucide-react"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+
+import { cn, getDate } from "@/lib/utils"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { useData } from "@/components/provider/data"
-import { cn, getDate } from "@/lib/utils"
+
+const PRINT_LIST_SIZE = 5
 
 type RoadmapProps = {
-  mode?: "normal" | "print";
-};
+  mode?: "normal" | "print"
+}
 
 export const Roadmap = ({ mode }: RoadmapProps) => {
   const { data } = useData()
 
-  const certs = Object.values(data.education.courses).sort((i1, i2) => {
-    const d1 = getDate(i1.date)
-    const d2 = getDate(i2.date)
-    if (d1 > d2) return -1
-    if (d1 < d2) return 1
-    return 0
-  })
+  const courseList = Object.values(data.education.courses)
+  const certs = courseList
+    .sort((i1, i2) => {
+      const d1 = getDate(i1.date)
+      const d2 = getDate(i2.date)
+      if (d1 > d2) return -1
+      if (d1 < d2) return 1
+      return 0
+    })
+    .slice(0, mode === "print" ? PRINT_LIST_SIZE : undefined)
 
   return (
     <div>
@@ -36,7 +42,7 @@ export const Roadmap = ({ mode }: RoadmapProps) => {
               "relative my-8 items-center justify-between gap-4 pr-4 first:mt-0 last:mb-0",
               {
                 "md:flex": mode !== "print",
-              },
+              }
             )}
           >
             <a
@@ -73,6 +79,23 @@ export const Roadmap = ({ mode }: RoadmapProps) => {
             </a>
           </li>
         ))}
+        {mode === "print" && courseList.length > PRINT_LIST_SIZE && (
+          <li className="relative my-8 items-center justify-between gap-4 pr-4">
+            <a
+              href={`${data.social.website}/profile`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <Avatar className="absolute -left-11 top-0 border-2">
+                <AvatarFallback>
+                  +{courseList.length - PRINT_LIST_SIZE}
+                </AvatarFallback>
+              </Avatar>
+              <p className="text-muted-foreground pt-3">(...)</p>
+            </a>
+          </li>
+        )}
       </ul>
     </div>
   )

@@ -1,21 +1,23 @@
 "use client"
 
 import {
-  PhoneIcon,
-  MailIcon,
   GithubIcon,
-  LinkedinIcon,
   GlobeIcon,
+  GraduationCapIcon,
+  LightbulbIcon,
+  LinkedinIcon,
+  MailIcon,
   MapPinIcon,
+  PhoneIcon,
 } from "lucide-react"
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { FeaturedProjects } from '@/components/widgets/stats/featured-projects'
-import { WorkHistory } from "@/components/widgets/stats/work-history"
-import { Roadmap } from "@/components/widgets/stats/studies"
 import { useData } from "@/components/provider/data"
+import { FeaturedProjects } from "@/components/widgets/stats/featured-projects"
+import { Roadmap } from "@/components/widgets/stats/studies"
+import { WorkHistory } from "@/components/widgets/stats/work-history"
 
 export function ScreenPrint() {
   const { data } = useData()
@@ -68,7 +70,7 @@ export function ScreenPrint() {
               <GithubIcon size={14} />{" "}
               {data.social.links["github"].url.replace(
                 "https://github.com",
-                "",
+                ""
               )}
             </a>
             <a
@@ -79,11 +81,17 @@ export function ScreenPrint() {
               <LinkedinIcon size={14} />{" "}
               {data.social.links["linkedin"].url.replace(
                 "https://linkedin.com",
-                "",
+                ""
               )}
             </a>
           </div>
         </div>
+        <h3 className="bg-muted flex items-center gap-2 p-4">
+          <LightbulbIcon />
+          <span className="text-muted-foreground font-title text-[0.55rem]">
+            skills
+          </span>
+        </h3>
         <div className="border-b-2 px-4 pb-8 pt-6">
           <p className="mb-[1.85rem]">{data.description}</p>
           <div className="flex flex-wrap gap-2">
@@ -114,6 +122,12 @@ export function ScreenPrint() {
           <FeaturedProjects mode="print" />
         </div>
         <div className="border-b-2 pb-1">
+          <h3 className="bg-muted flex items-center gap-2 p-4">
+            <GraduationCapIcon />
+            <span className="text-muted-foreground font-title text-[0.55rem]">
+              education
+            </span>
+          </h3>
           <Roadmap mode="print" />
         </div>
       </div>
