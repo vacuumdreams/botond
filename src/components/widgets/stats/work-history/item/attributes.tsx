@@ -9,8 +9,39 @@ import {
   TimerIcon,
 } from "lucide-react"
 
-import { cn, getDate } from "@/lib/utils"
+import { Avatar } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { cn, getDate } from "@/lib/utils"
+
+type CropIndustryProps = {
+  text: string
+}
+
+function CropIndustries({ text }: CropIndustryProps) {
+  const list = text.split(', ')
+  return (
+    <div>
+      {list.slice(0, 2).join(', ')}
+      {list.length > 2 && (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <Avatar className="ml-2 size-8">
+                <div className="flex size-full items-center justify-center overflow-hidden bg-black uppercase text-white">
+                  {list.length - 3}+
+                </div>
+              </Avatar>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{list.slice(2).join(', ')}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )}
+    </div>
+  )
+}
 
 type AttributesProps = {
   url?: string | null
@@ -80,7 +111,7 @@ export const Attributes = ({
         {mode !== "print" && industry && (
           <Badge variant={"secondary"} className={badgeClass}>
             <FactoryIcon className="mr-2 size-6" />
-            {industry}
+            <CropIndustries text={industry} />
           </Badge>
         )}
       </div>

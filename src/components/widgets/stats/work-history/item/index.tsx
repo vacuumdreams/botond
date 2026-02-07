@@ -1,26 +1,26 @@
-import { z } from "zod"
-import { ReactNode, useMemo } from "react"
+import { BriefcaseIcon, Layers3Icon } from "lucide-react"
 import { uniq } from "ramda"
+import { ReactNode, useMemo } from "react"
 import Markdown from "react-markdown"
-import { Layers3Icon, BriefcaseIcon } from "lucide-react"
+import { z } from "zod"
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Separator } from "@/components/ui/separator"
 import {
   ProcessedData,
   TechItem,
   freelanceSchema,
   permanentSchema,
 } from "@/lib/data"
-import { Attributes } from "./attributes"
-import { Stack } from "./stack"
-import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
+import { Attributes } from "./attributes"
 import { ClientDescription } from "./client-description"
+import { Stack } from "./stack"
 
 type BaseWorkItemProps = {
   mode?: "normal" | "print";

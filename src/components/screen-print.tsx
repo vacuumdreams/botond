@@ -10,17 +10,27 @@ import {
   MapPinIcon,
   PhoneIcon,
 } from "lucide-react"
+import { useMemo } from 'react'
 
+import { useData } from "@/components/provider/data"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { useData } from "@/components/provider/data"
 import { FeaturedProjects } from "@/components/widgets/stats/featured-projects"
 import { Roadmap } from "@/components/widgets/stats/studies"
 import { WorkHistory } from "@/components/widgets/stats/work-history"
+import { compareAsc, formatDistance, parse } from "date-fns"
 
 export function ScreenPrint() {
   const { data } = useData()
+
+  const nonFeaturedLength = Object.values(data.skills.tech).filter(t => !t.featured).length
+  const xp = useMemo(() => {
+    const sorted = Object.values(data.work.history).sort((w1, w2) => {
+      return compareAsc(parse(w1.start, 'MM/yyyy', new Date), parse(w2.start, 'MM/yyyy', new Date))
+    })
+    return formatDistance(parse(sorted[0].start, 'MM/yyyy', new Date()), Date.now())
+  }, [data])
 
   return (
     <div className="grid grid-cols-12 overflow-y-scroll">
@@ -116,6 +126,7 @@ export function ScreenPrint() {
                   <span>{t.name}</span>
                 </Badge>
               ))}
+            {nonFeaturedLength > 0 && (<Badge>{nonFeaturedLength}+</Badge>)}
           </div>
         </div>
         <div className="border-b-2">
@@ -132,9 +143,15 @@ export function ScreenPrint() {
         </div>
       </div>
       <div className="col-span-8 pt-4">
-        <h2 className="font-title font-effect-anaglyph mb-4 border-b-2 border-slate-200 px-4 pb-4 text-xl">
-          work history
-        </h2>
+        <div className="mb-4 flex items-center justify-between gap-2 border-b-2 border-slate-200 px-4 pb-4 text-xl">
+          <h2 className="font-title font-effect-anaglyph">work history</h2>
+          <div className="flex items-center gap-2">
+            <Avatar>
+              <AvatarFallback>X P</AvatarFallback>
+            </Avatar>
+            <span className="text-xs">{xp}</span>
+          </div>
+        </div>
         <div className="px-4">
           <WorkHistory mode="print" />
         </div>

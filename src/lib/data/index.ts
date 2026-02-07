@@ -1,19 +1,19 @@
-import { z } from "zod"
-import { uniq } from "ramda"
 import data from "@/data.json"
 import {
-  schema,
+  getEndDate,
+  getStartDate,
+  mergeOverlappingRanges,
+  shuffle,
+} from "@/lib/utils"
+import { uniq } from "ramda"
+import { z } from "zod"
+import {
   Data,
   freelanceSchema,
   permanentSchema,
   projectSchema,
+  schema,
 } from "./schema"
-import {
-  getStartDate,
-  getEndDate,
-  mergeOverlappingRanges,
-  shuffle,
-} from "@/lib/utils"
 
 export { freelanceSchema, permanentSchema, schema } from "./schema"
 
@@ -70,8 +70,8 @@ export type ProcessedData = {
 };
 
 export type TechItem = Data["skills"]["tech"][keyof Data["skills"]["tech"]] & {
-  xp: number;
-  lastUsed: Date;
+  xp?: number;
+  lastUsed?: Date;
 };
 
 export type WorkItem =

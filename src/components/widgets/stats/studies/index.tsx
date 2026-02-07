@@ -1,11 +1,11 @@
 import { ExternalLinkIcon } from "lucide-react"
 
-import { cn, getDate } from "@/lib/utils"
+import { useData } from "@/components/provider/data"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import { useData } from "@/components/provider/data"
+import { cn, getDate } from "@/lib/utils"
 
-const PRINT_LIST_SIZE = 5
+const PRINT_LIST_SIZE = 6
 
 type RoadmapProps = {
   mode?: "normal" | "print"

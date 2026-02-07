@@ -1,17 +1,16 @@
-import { useLayoutEffect, useRef, useState, useMemo } from 'react'
 import { splitAt } from "ramda"
+import { useLayoutEffect, useRef, useState } from 'react'
 
-import { Badge } from "@/components/ui/badge"
+import { useData } from '@/components/provider/data'
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { TechItem, ProcessedData } from "@/lib/data"
-import { shuffle } from "@/lib/utils"
-import { useData } from '@/components/provider/data'
+import { ProcessedData, TechItem } from "@/lib/data"
 
 type StackProps = {
   mode?: 'normal' | 'print'
@@ -19,8 +18,8 @@ type StackProps = {
 };
 
 function getPrintStack(data: ProcessedData['data'], stack: TechItem[]) {
-  const featuredTech = Object.values(data.skills.tech).filter(t => t.featured)
-  const list = stack.filter(t => featuredTech.includes(t))
+  const featuredTech = Object.values(data.skills.tech).filter(t => t.featured).map(t => t.name)
+  const list = stack.filter(t => featuredTech.includes(t.name))
   return {
     list,
     rest: stack.length - list.length

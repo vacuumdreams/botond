@@ -2,8 +2,11 @@
   "name": "Botond Fekete",
   "location": "Lisbon, PT",
   "picture": "/images/botond.jpg",
-  "headline": ["eater of pineapples.", "(also) engineer of software."],
-  "description": "Contributed to dozens of successful projgects, some of which had millions of daily users. Got insights from various industries. Lead projects and designed architectures, made impact by introducing technologies or tools to companies to increase productivity and developer experience. I learned how to sound like chatGPT.",
+  "headline": [
+    "eater of pineapples.",
+    "(also) engineer of software."
+  ],
+  "description": "Contributed to dozens of successful projgects, some of which had millions of daily users. Got insights from various industries. Lead projects and designed architectures, made impact by introducing technologies or tools to companies to increase productivity and developer experience. I also learned how to sound like chatGPT.",
   "social": {
     "website": "https://botond.space",
     "phone": "+351926451663",
@@ -23,18 +26,12 @@
   },
   "education": {
     "courses": {
-      "tryhackme": {
-        "name": "Try Hack Me",
-        "description": "",
-        "tags": ["cybersecurity"],
-        "issuer": "edX",
-        "date": "Ongoing",
-        "icon": "/images/education/courses/tryhackme.jpeg",
-        "link": "https://tryhackme.com"
-      },
       "intro-psych": {
         "name": "Introduction to Psychology",
-        "tags": ["non-tech", "psychology"],
+        "tags": [
+          "non-tech",
+          "psychology"
+        ],
         "description": "",
         "issuer": "Coursera",
         "date": "06/2024",
@@ -43,7 +40,10 @@
       },
       "+:psych": {
         "name": "Positive Psychology",
-        "tags": ["non-tech", "psychology"],
+        "tags": [
+          "non-tech",
+          "psychology"
+        ],
         "description": "",
         "issuer": "Coursera",
         "date": "01/2022",
@@ -53,7 +53,10 @@
       "data:visualization:python": {
         "name": "Data Visualization with Python",
         "description": "",
-        "tags": ["machine learning", "python"],
+        "tags": [
+          "machine learning",
+          "python"
+        ],
         "issuer": "Coursera",
         "date": "05/2020",
         "icon": "/images/education/courses/coursera.jpeg",
@@ -62,7 +65,10 @@
       "data:science:db": {
         "name": "Databases and SQL for Data Science with Python",
         "description": "",
-        "tags": ["machine learning", "sql"],
+        "tags": [
+          "machine learning",
+          "sql"
+        ],
         "issuer": "Coursera",
         "date": "06/2019",
         "icon": "/images/education/courses/coursera.jpeg",
@@ -71,7 +77,10 @@
       "data:analysis:python": {
         "name": "Data Analysis with Python",
         "description": "",
-        "tags": ["machine learning", "python"],
+        "tags": [
+          "machine learning",
+          "python"
+        ],
         "issuer": "Coursera",
         "date": "05/2019",
         "icon": "/images/education/courses/coursera.jpeg",
@@ -80,7 +89,10 @@
       "data:science:python": {
         "name": "Python for Data Science, AI & Development",
         "description": "",
-        "tags": ["ai", "python"],
+        "tags": [
+          "ai",
+          "python"
+        ],
         "issuer": "Coursera",
         "date": "05/2019",
         "icon": "/images/education/courses/coursera.jpeg",
@@ -89,7 +101,9 @@
       "neural:networks": {
         "name": "Neural Networks and Deep Learning",
         "description": "",
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "issuer": "Coursera",
         "date": "11/2017",
         "icon": "/images/education/courses/coursera.jpeg",
@@ -98,7 +112,9 @@
       "angular": {
         "name": "Learn and Understand AngularJS",
         "description": "",
-        "tags": ["angular"],
+        "tags": [
+          "angular"
+        ],
         "issuer": "Udemy",
         "date": "11/2015",
         "icon": "/images/education/courses/udemy.jpeg",
@@ -107,7 +123,9 @@
       "nodejs": {
         "name": "Learn and Understand NodeJS",
         "description": "",
-        "tags": ["node"],
+        "tags": [
+          "node"
+        ],
         "issuer": "Udemy",
         "date": "12/2015",
         "icon": "/images/education/courses/udemy.jpeg",
@@ -116,7 +134,9 @@
       "web:app:architecture": {
         "name": "Web Application Architectures",
         "description": "",
-        "tags": ["ruby"],
+        "tags": [
+          "ruby"
+        ],
         "issuer": "Coursera",
         "date": "05/2015",
         "icon": "/images/education/courses/coursera.jpeg",
@@ -125,7 +145,9 @@
       "cs:intro:python": {
         "name": "Introduction to Computer Science and Programming Using Python",
         "description": "",
-        "tags": ["python"],
+        "tags": [
+          "python"
+        ],
         "issuer": "edX",
         "date": "02/2015",
         "icon": "/images/education/courses/edx.jpeg",
@@ -183,460 +205,739 @@
     "tech": {
       "python": {
         "name": "python",
-        "tags": ["language"],
+        "tags": [
+          "language"
+        ],
         "icon": "python"
       },
       "javascript": {
         "name": "javascript",
         "featured": true,
-        "tags": ["language"],
+        "tags": [
+          "language"
+        ],
         "icon": "javascript"
       },
       "typescript": {
         "name": "typescript",
         "featured": true,
-        "tags": ["language", "javascript"],
+        "tags": [
+          "language",
+          "javascript"
+        ],
         "icon": "typescript"
       },
       "html": {
         "name": "html",
-        "tags": ["language"],
+        "tags": [
+          "language"
+        ],
         "icon": "html5"
       },
       "css": {
         "name": "css",
-        "tags": ["language"],
+        "tags": [
+          "language"
+        ],
         "icon": "css3"
       },
       "sql": {
         "name": "sql",
-        "tags": ["language"],
+        "tags": [
+          "language"
+        ],
         "icon": "azuresqldatabase"
       },
       "go": {
         "name": "go",
         "featured": true,
-        "tags": ["language"],
+        "tags": [
+          "language"
+        ],
         "icon": "go"
       },
       "ruby": {
         "name": "ruby",
-        "tags": ["language"],
+        "tags": [
+          "language"
+        ],
         "icon": "ruby"
       },
       "php": {
         "name": "php",
-        "tags": ["language"],
+        "tags": [
+          "language"
+        ],
         "icon": "php"
       },
       "postgres": {
         "name": "postgres",
         "featured": true,
-        "tags": ["database"],
+        "tags": [
+          "database"
+        ],
         "icon": "postgresql"
       },
       "postgis": {
         "name": "postgis",
-        "tags": ["database"],
+        "tags": [
+          "database"
+        ],
         "icon": "postgresql"
       },
       "mysql": {
         "name": "mysql",
-        "tags": ["database"],
+        "tags": [
+          "database"
+        ],
         "icon": "mysql"
       },
       "mongodb": {
         "name": "mongodb",
-        "tags": ["database"],
+        "tags": [
+          "database"
+        ],
         "icon": "mongodb"
       },
       "cassandra": {
         "name": "cassandra",
-        "tags": ["database"],
+        "tags": [
+          "database"
+        ],
         "icon": "cassandra"
       },
       "dynamodb": {
         "name": "dynamodb",
-        "tags": ["database", "cloud"],
+        "tags": [
+          "database",
+          "cloud"
+        ],
         "icon": "dynamodb"
       },
       "firebase": {
         "name": "firebase",
-        "tags": ["cloud", "hosting", "database"],
+        "tags": [
+          "cloud",
+          "hosting",
+          "database"
+        ],
         "icon": "firebase"
       },
       "aws": {
         "name": "aws",
-        "tags": ["cloud", "hosting"],
+        "tags": [
+          "cloud",
+          "hosting"
+        ],
         "icon": "amazonwebservices"
       },
       "netlify": {
         "name": "netlify",
-        "tags": ["cloud", "hosting"],
+        "tags": [
+          "cloud",
+          "hosting"
+        ],
         "icon": "netlify"
       },
       "vercel": {
         "name": "vercel",
-        "tags": ["cloud", "hosting"],
+        "tags": [
+          "cloud",
+          "hosting"
+        ],
         "icon": "vercel"
       },
       "gcloud": {
         "name": "gcloud",
-        "tags": ["cloud", "hosting"],
+        "tags": [
+          "cloud",
+          "hosting"
+        ],
         "icon": "googlecloud"
       },
       "algolia": {
         "name": "algolia",
-        "tags": ["cloud", "search"],
+        "tags": [
+          "cloud",
+          "search"
+        ],
         "icon": "algolia"
       },
       "elasticsearch": {
         "name": "elasticsearch",
-        "tags": ["search"],
+        "tags": [
+          "search"
+        ],
         "icon": "elasticsearch"
       },
       "google-analytics": {
         "name": "google-analytics",
-        "tags": ["monitoring"],
+        "tags": [
+          "monitoring"
+        ],
         "icon": "google"
       },
       "sentry": {
         "name": "sentry",
-        "tags": ["monitoring"],
+        "tags": [
+          "monitoring"
+        ],
         "icon": "sentry"
       },
       "grafana": {
         "name": "grafana",
-        "tags": ["monitoring"],
+        "tags": [
+          "monitoring"
+        ],
         "icon": "grafana"
       },
       "kibana": {
         "name": "kibana",
-        "tags": ["monitoring"],
+        "tags": [
+          "monitoring"
+        ],
         "icon": "kibana"
       },
       "docker": {
         "name": "docker",
         "featured": true,
-        "tags": ["ops"],
+        "tags": [
+          "ops"
+        ],
         "icon": "docker"
       },
       "kubernetes": {
         "name": "kubernetes",
-        "tags": ["ops"],
+        "tags": [
+          "ops"
+        ],
         "icon": "kubernetes"
       },
       "terraform": {
         "name": "terraform",
-        "tags": ["ops"],
+        "tags": [
+          "ops"
+        ],
         "icon": "terraform"
       },
       "okta": {
         "name": "okta",
-        "tags": ["auth", "api", "cloud"],
+        "tags": [
+          "auth",
+          "api",
+          "cloud"
+        ],
         "icon": "okta"
       },
       "keycloak": {
         "name": "keycloak",
-        "tags": ["auth", "api"],
+        "tags": [
+          "auth",
+          "api"
+        ],
         "icon": "oauth"
       },
       "firebase-auth": {
         "name": "firebase-auth",
-        "tags": ["cloud", "auth"],
+        "tags": [
+          "cloud",
+          "auth"
+        ],
         "icon": "firebase"
       },
       "lucia": {
         "name": "lucia",
-        "tags": ["javascript", "auth", "backend"]
+        "tags": [
+          "javascript",
+          "auth",
+          "backend"
+        ]
       },
       "openapi": {
         "name": "openapi",
         "featured": true,
-        "tags": ["api", "backend"],
+        "tags": [
+          "api",
+          "backend"
+        ],
         "icon": "openapi"
       },
       "rest/http": {
         "name": "rest/http",
-        "tags": ["architecture", "backend"],
+        "tags": [
+          "architecture",
+          "backend"
+        ],
         "icon": "firefox"
       },
       "grpc": {
         "name": "grpc",
-        "tags": ["architecture", "backend"],
+        "tags": [
+          "architecture",
+          "backend"
+        ],
         "icon": "grpc"
       },
       "graphql": {
         "name": "graphql",
         "featured": true,
-        "tags": ["architecture", "backend", "frontend"],
+        "tags": [
+          "architecture",
+          "backend",
+          "frontend"
+        ],
         "icon": "graphql"
       },
       "websockets": {
         "name": "websockets",
-        "tags": ["architecture", "backend", "frontend"]
+        "tags": [
+          "architecture",
+          "backend",
+          "frontend"
+        ]
       },
       "react": {
         "name": "react",
         "featured": true,
-        "tags": ["javascript", "frontend"],
+        "tags": [
+          "javascript",
+          "frontend"
+        ],
         "icon": "react"
       },
       "redux": {
         "name": "redux",
-        "tags": ["javascript", "frontend"],
+        "tags": [
+          "javascript",
+          "frontend"
+        ],
         "icon": "redux"
       },
       "react-query": {
         "name": "react-query",
-        "tags": ["javascript", "frontend"]
+        "tags": [
+          "javascript",
+          "frontend"
+        ]
       },
       "threejs": {
         "name": "threejs",
-        "tags": ["javascript", "frontend"],
+        "tags": [
+          "javascript",
+          "frontend"
+        ],
         "icon": "threejs"
       },
       "node": {
         "name": "node",
         "featured": true,
-        "tags": ["javascript", "runtime", "backend"],
+        "tags": [
+          "javascript",
+          "runtime",
+          "backend"
+        ],
         "icon": "nodejs"
       },
       "bun": {
         "name": "bun",
         "featured": true,
-        "tags": ["javascript", "typescript", "runtime", "backend"],
+        "tags": [
+          "javascript",
+          "typescript",
+          "runtime",
+          "backend"
+        ],
         "icon": "bun"
       },
       "npm": {
         "name": "npm",
-        "tags": ["javascript", "tooling"],
+        "tags": [
+          "javascript",
+          "tooling"
+        ],
         "icon": "npm"
       },
       "yarn": {
         "name": "yarn",
-        "tags": ["javascript", "tooling"],
+        "tags": [
+          "javascript",
+          "tooling"
+        ],
         "icon": "yarn"
       },
       "pnpm": {
         "name": "pnpm",
-        "tags": ["javascript", "tooling"],
+        "tags": [
+          "javascript",
+          "tooling"
+        ],
         "icon": "pnpm"
       },
       "express": {
         "name": "express",
-        "tags": ["javascript", "api", "backend"],
+        "tags": [
+          "javascript",
+          "api",
+          "backend"
+        ],
         "icon": "express"
       },
       "fastify": {
         "name": "fastify",
-        "tags": ["javascript", "api", "backend"],
+        "tags": [
+          "javascript",
+          "api",
+          "backend"
+        ],
         "icon": "fastify"
       },
       "hapi": {
         "name": "hapi",
-        "tags": ["javascript", "api", "backend"]
+        "tags": [
+          "javascript",
+          "api",
+          "backend"
+        ]
       },
       "elysia": {
         "name": "elysia",
-        "tags": ["javascript", "bun", "api", "backend"]
+        "tags": [
+          "javascript",
+          "bun",
+          "api",
+          "backend"
+        ]
       },
       "nextjs": {
         "name": "nextjs",
         "featured": true,
-        "tags": ["javascript", "frontend", "backend"],
+        "tags": [
+          "javascript",
+          "frontend",
+          "backend"
+        ],
         "icon": "nextjs"
       },
       "gatsby": {
         "name": "gatsby",
-        "tags": ["javascript", "frontend", "backend"],
+        "tags": [
+          "javascript",
+          "frontend",
+          "backend"
+        ],
         "icon": "gatsby"
       },
       "prisma": {
         "name": "prisma",
         "featured": true,
-        "tags": ["javascript", "database", "orm", "backend"],
+        "tags": [
+          "javascript",
+          "database",
+          "orm",
+          "backend"
+        ],
         "icon": "prisma"
       },
       "drizzle": {
         "name": "drizzle",
-        "tags": ["javascript", "database", "orm", "backend"]
+        "tags": [
+          "javascript",
+          "database",
+          "orm",
+          "backend"
+        ]
       },
       "webpack": {
         "name": "webpack",
-        "tags": ["javascript", "tooling"],
+        "tags": [
+          "javascript",
+          "tooling"
+        ],
         "icon": "webpack"
       },
       "vite": {
         "name": "vite",
-        "tags": ["javascript", "tooling"],
+        "tags": [
+          "javascript",
+          "tooling"
+        ],
         "icon": "vite"
       },
       "rollup": {
         "name": "rollup",
-        "tags": ["javascript", "tooling"],
+        "tags": [
+          "javascript",
+          "tooling"
+        ],
         "icon": "rollup"
       },
       "esbuild": {
         "name": "esbuild",
-        "tags": ["javascript", "tooling"]
+        "tags": [
+          "javascript",
+          "tooling"
+        ]
       },
       "browserify": {
         "name": "browserify",
-        "tags": ["javascript", "tooling", "frontend"]
+        "tags": [
+          "javascript",
+          "tooling",
+          "frontend"
+        ]
       },
       "gulp": {
         "name": "gulp",
-        "tags": ["javascript", "tooling"],
+        "tags": [
+          "javascript",
+          "tooling"
+        ],
         "icon": "gulp"
       },
       "jest": {
         "name": "jest",
-        "tags": ["javascript", "testing"],
+        "tags": [
+          "javascript",
+          "testing"
+        ],
         "icon": "jest"
       },
       "mocha": {
         "name": "mocha",
-        "tags": ["javascript", "testing"],
+        "tags": [
+          "javascript",
+          "testing"
+        ],
         "icon": "mocha"
       },
       "chai": {
         "name": "chai",
-        "tags": ["javascript", "testing"]
+        "tags": [
+          "javascript",
+          "testing"
+        ]
       },
       "playwright": {
         "name": "playwright",
         "featured": true,
-        "tags": ["javascript", "testing"],
+        "tags": [
+          "javascript",
+          "testing"
+        ],
         "icon": "playwright"
       },
       "cypress": {
         "name": "cypress",
-        "tags": ["javascript", "testing"],
+        "tags": [
+          "javascript",
+          "testing"
+        ],
         "icon": "cypressio"
       },
       "gradle": {
         "name": "gradle",
-        "tags": ["testing"],
+        "tags": [
+          "testing"
+        ],
         "icon": "gradle"
       },
       "storybook": {
         "name": "storybook",
-        "tags": ["javascript", "react", "testing"],
+        "tags": [
+          "javascript",
+          "react",
+          "testing"
+        ],
         "icon": "storybook"
       },
       "tailwind": {
         "name": "tailwind",
         "featured": true,
-        "tags": ["ui", "css", "frontend"],
+        "tags": [
+          "ui",
+          "css",
+          "frontend"
+        ],
         "icon": "tailwindcss"
       },
       "shadcn": {
         "name": "shadcn",
-        "tags": ["javascript", "react", "frontend", "ui"]
+        "tags": [
+          "javascript",
+          "react",
+          "frontend",
+          "ui"
+        ]
       },
       "material-ui": {
         "name": "material-ui",
-        "tags": ["javascript", "ui", "frontend"],
+        "tags": [
+          "javascript",
+          "ui",
+          "frontend"
+        ],
         "icon": "materialui"
       },
       "radix-ui": {
         "name": "radix-ui",
-        "tags": ["javascript", "ui", "frontend"]
+        "tags": [
+          "javascript",
+          "ui",
+          "frontend"
+        ]
       },
       "bulma": {
         "name": "bulma",
-        "tags": ["ui", "css", "frontend"],
+        "tags": [
+          "ui",
+          "css",
+          "frontend"
+        ],
         "icon": "bulma"
       },
       "bootstrap": {
         "name": "bootstrap",
-        "tags": ["ui", "css", "frontend"],
+        "tags": [
+          "ui",
+          "css",
+          "frontend"
+        ],
         "icon": "bootstrap"
       },
       "jquery": {
         "name": "jquery",
-        "tags": ["javascript", "frontend"],
+        "tags": [
+          "javascript",
+          "frontend"
+        ],
         "icon": "jquery"
       },
       "nx": {
         "name": "nx",
-        "tags": ["tooling", "monorepo", "javascript"]
+        "tags": [
+          "tooling",
+          "monorepo",
+          "javascript"
+        ]
       },
       "lerna": {
         "name": "lerna",
-        "tags": ["tooling", "monorepo", "javascript"]
+        "tags": [
+          "tooling",
+          "monorepo",
+          "javascript"
+        ]
       },
       "turborepo": {
         "name": "turborepo",
-        "tags": ["tooling", "monorepo", "javascript"]
+        "tags": [
+          "tooling",
+          "monorepo",
+          "javascript"
+        ]
       },
       "django": {
         "name": "django",
-        "tags": ["python", "api", "backend"],
+        "tags": [
+          "python",
+          "api",
+          "backend"
+        ],
         "icon": "django"
       },
       "fastapi": {
         "name": "fastapi",
-        "tags": ["python", "api", "backend"],
+        "tags": [
+          "python",
+          "api",
+          "backend"
+        ],
         "icon": "fastapi"
       },
       "wails": {
         "name": "wails",
-        "tags": ["go", "app"]
+        "tags": [
+          "go",
+          "app"
+        ]
       },
       "github": {
         "name": "github",
         "featured": true,
-        "tags": ["repo", "ci"],
+        "tags": [
+          "repo",
+          "ci"
+        ],
         "icon": "github"
       },
       "gitlab": {
         "name": "gitlab",
-        "tags": ["repo", "ci"],
+        "tags": [
+          "repo",
+          "ci"
+        ],
         "icon": "gitlab"
       },
       "bitbucket": {
         "name": "bitbucket",
-        "tags": ["repo"],
+        "tags": [
+          "repo"
+        ],
         "icon": "bitbucket"
       },
       "jenkins": {
         "name": "jenkins",
-        "tags": ["ci"],
+        "tags": [
+          "ci"
+        ],
         "icon": "jenkins"
       },
       "git": {
         "name": "git",
-        "tags": ["version-control"],
+        "tags": [
+          "version-control"
+        ],
         "icon": "git"
       },
       "svn": {
         "name": "svn",
-        "tags": ["version-control"]
+        "tags": [
+          "version-control"
+        ]
       },
       "contentful": {
         "name": "contentful",
-        "tags": ["cms", "graphql"]
+        "tags": [
+          "cms",
+          "graphql"
+        ]
       },
       "wordpress": {
         "name": "wordpress",
-        "tags": ["cms"],
+        "tags": [
+          "cms"
+        ],
         "icon": "wordpress"
       },
       "drupal": {
         "name": "drupal",
-        "tags": ["cms"],
+        "tags": [
+          "cms"
+        ],
         "icon": "drupal"
       },
       "magento": {
         "name": "magento",
-        "tags": ["cms"],
+        "tags": [
+          "cms"
+        ],
         "icon": "magento"
       },
       "shopify": {
         "name": "shopify",
-        "tags": ["cms"]
+        "tags": [
+          "cms"
+        ]
       }
     }
   },
@@ -645,7 +946,7 @@
       "freelance:2022": {
         "id": "freelance:2022",
         "name": "Freelance",
-        "description": "- Rewrote an integration pipeline for a frontend application, speeding it up by up to 90% while adding features to it\n- Created a strategy to move features from a desktop application into a browser extension by creating common interfaces for APIs and user interactions\n- Lead product roadmaps, laid down strategies, managed deveopment teams\n",
+        "description": "- Implemented an admin interface from the ground up for customers to manage their system policies and various integrations \n- Rewrote an integration pipeline for a frontend application, speeding it up by up to 90% while adding features to it\n- Created a strategy to move features from a desktop application into a browser extension by creating common interfaces for APIs and user interactions\n- Lead product roadmaps, laid down strategies, managed deveopment teams\n",
         "employment": "freelance",
         "start": "01/2022",
         "end": null,
@@ -665,7 +966,12 @@
             "reasonEnd": "End of contract",
             "location": "remote",
             "icon": "/images/work/engagespark.png",
-            "tags": ["webapp", "architecture", "infrastructure", "performance"],
+            "tags": [
+              "webapp",
+              "architecture",
+              "infrastructure",
+              "performance optimization"
+            ],
             "stack": [
               "html",
               "css",
@@ -739,6 +1045,8 @@
             "projects": {
               "vega-desktop-wallet": {
                 "name": "Vega Desktop Wallet",
+                "featured": true,
+                "icon": "/images/work/vega.png",
                 "url": "https://vega.xyz/wallet",
                 "start": "08/2022",
                 "end": "05/2023",
@@ -753,8 +1061,6 @@
               },
               "vega-node-discovery": {
                 "name": "Vega Environment",
-                "featured": true,
-                "icon": "/images/work/vega.png",
                 "image": "/images/projects/vega-node-discovery.webp",
                 "url": "https://vegaprotocol.eth.limo",
                 "repoUrl": "https://github.com/vegaprotocol/frontend-monorepo/commits/main/libs/environment?author=notbot00",
@@ -873,7 +1179,7 @@
             "employment": "freelance",
             "url": "https://nexum.com",
             "projects": {
-              "ssklepios": {
+              "asklepios": {
                 "name": "Asklepios",
                 "industry": "healthcare",
                 "icon": "/images/work/asklepios.png",
@@ -888,10 +1194,13 @@
             "description": "- Planned the work for the user-facing website for [Asklepios](https://asklepios.com)",
             "start": "01/2022",
             "end": "05/2022",
-            "reasonEnd": "I had not written any code for five month while 'working' for them which made me look for other opportunities where I could actually work on something",
+            "reasonEnd": "They seem to have hired me for standby, and while being hired for 5 months I have not been able to write a single line of code which made me look for other opportunities",
             "location": "remote",
             "icon": "/images/work/nexum.png",
-            "tags": ["website", "design system"],
+            "tags": [
+              "website",
+              "design system"
+            ],
             "stack": [
               "html",
               "css",
@@ -904,6 +1213,62 @@
               "jest",
               "npm",
               "github"
+            ]
+          },
+          "nroc": {
+            "id": "nroc",
+            "name": "NROC Security",
+            "industry": "AI",
+            "phase": "startup",
+            "employment": "freelance",
+            "url": "https://nrocsecurity.com",
+            "projects": {
+              "asklepios": {
+                "name": "Asklepios",
+                "industry": "healthcare",
+                "icon": "/images/work/asklepios.png",
+                "url": "https://asklepios.com",
+                "start": "01/2022",
+                "end": "05/2022",
+                "description": ""
+              }
+            },
+            "level": "lead",
+            "time": "full-time",
+            "description": "- Built an admin webapp to enable customers to set up restrictions and policies for our AI guardrails proxy\n- Took part in designing and architecting the company software \n- Implemented various data visualization objects for reporting \n- Designed and integrated SSO and RBAC into our systems \n- Conducted regular testing of our systems, wrote an automated test stack for our frontend, documented changes",
+            "start": "08/2024",
+            "end": null,
+            "reasonEnd": null,
+            "location": "remote",
+            "icon": "/images/work/nroc.png",
+            "tags": [
+              "webapp",
+              "design system",
+              "code generation",
+              "testing",
+              "integration",
+              "data visualization",
+              "performance optimization",
+              "architecture",
+              "databases"
+            ],
+            "stack": [
+              "html",
+              "css",
+              "typescript",
+              "javascript",
+              "go",
+              "react",
+              "react-query",
+              "rest/http",
+              "mantine",
+              "orval",
+              "bun",
+              "docker",
+              "postgres",
+              "openapi",
+              "github",
+              "aws"
             ]
           }
         }
@@ -974,7 +1339,13 @@
             "start": "11/2020",
             "end": "04/2021",
             "description": "During one of the company hackatons, I wrote a code generator to collect the openapi schemas from different backend microservices and generate typed frontend clients we can use to send requests. This soon grown to its own project and gradually got adapted by the frontend teams.\n\n Biggest challenges:\n - Convincing dozens of developers to use my idea",
-            "stack": ["typescript", "node", "openapi", "rest/http", "github"]
+            "stack": [
+              "typescript",
+              "node",
+              "openapi",
+              "rest/http",
+              "github"
+            ]
           },
           "prezi-dashboard": {
             "name": "Prezi Dashboard",
@@ -1073,7 +1444,10 @@
             "end": "11/2019",
             "reasonEnd": "End of project",
             "location": "remote",
-            "tags": ["website", "cms"],
+            "tags": [
+              "website",
+              "cms"
+            ],
             "stack": [
               "html",
               "css",
@@ -1113,7 +1487,12 @@
             "reasonEnd": "Lack of professional growth",
             "location": "remote",
             "icon": "/images/work/engagespark.png",
-            "tags": ["webapp", "design system", "greenfield", "architecture"],
+            "tags": [
+              "webapp",
+              "design system",
+              "greenfield",
+              "architecture"
+            ],
             "stack": [
               "html",
               "css",
@@ -1148,7 +1527,12 @@
             "end": "11/2017",
             "reasonEnd": "End of contract",
             "location": "Gibraltar",
-            "tags": ["website", "microservices", "ssr", "testing"],
+            "tags": [
+              "website",
+              "microservices",
+              "ssr",
+              "testing"
+            ],
             "stack": [
               "html",
               "css",
@@ -1182,7 +1566,12 @@
             "reasonEnd": "End of contract",
             "location": "York, UK",
             "icon": "/images/work/piksel.png",
-            "tags": ["microservices", "databases", "serverless", "testing"],
+            "tags": [
+              "microservices",
+              "databases",
+              "serverless",
+              "testing"
+            ],
             "stack": [
               "javascript",
               "node",
@@ -1294,7 +1683,11 @@
         "end": "04/2015",
         "reasonEnd": "Lack of professional growth",
         "location": "Warrington, UK",
-        "tags": ["website", "cms", "ecommerce"],
+        "tags": [
+          "website",
+          "cms",
+          "ecommerce"
+        ],
         "stack": [
           "photoshop",
           "html",
@@ -1333,7 +1726,11 @@
             "end": "06/2014",
             "reasonEnd": "This was a friend's project who decided to abandon it.",
             "location": "remote",
-            "tags": ["website", "cms", "ecommerce"],
+            "tags": [
+              "website",
+              "cms",
+              "ecommerce"
+            ],
             "stack": [
               "photoshop",
               "html",
@@ -1359,10 +1756,15 @@
       "repoUrl": "https://github.com/vacuumdreams/pencilheads",
       "start": "10/2023",
       "end": "11/2023",
-      "description": "I wanted to explore progressive web apps for a while, and since at that time Apple launched support for a lot of native features, like notifications, badges, and so on, I thought it might be a good time to try these out. I've decided to build a fun little project for the movie club we were running with some friends, and use it to manage our events here.\n\n Biggest challenges:\n - Implementing browser notifications so that they work in all platforms\n - Debugging service workers",
+      "description": "I wanted to explore progressive web apps for a while, and since at that time Apple launched support for a lot of native features, like notifications, badges, and so on, I thought it might be a good time to try these out. I've decided to build a fun little project for the movie club we were running with some friends, and use it to manage our events here.\n\n Biggest challenges:\n - Browser notifications which work cross-platform\n - Debugging service workers",
       "icon": "/images/work/pencilheads.png",
       "image": "/images/projects/pencilheads.webp",
-      "tags": ["pwa", "webapp", "serverless", "cloud"],
+      "tags": [
+        "pwa",
+        "webapp",
+        "serverless",
+        "cloud"
+      ],
       "stack": [
         "html",
         "css",
@@ -1387,7 +1789,10 @@
       "start": "09/2018",
       "end": "11/2018",
       "description": "",
-      "tags": ["webapp", "databases"],
+      "tags": [
+        "webapp",
+        "databases"
+      ],
       "stack": [
         "javascript",
         "postgres",
@@ -1407,8 +1812,18 @@
       "start": "11/2017",
       "end": "03/2018",
       "description": "",
-      "tags": ["website"],
-      "stack": ["html", "css", "javascript", "jquery", "php", "git", "github"]
+      "tags": [
+        "website"
+      ],
+      "stack": [
+        "html",
+        "css",
+        "javascript",
+        "jquery",
+        "php",
+        "git",
+        "github"
+      ]
     }
   }
 }
