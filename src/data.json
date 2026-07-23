@@ -943,6 +943,63 @@
   },
   "work": {
     "history": {
+      "nroc": {
+        "id": "nroc",
+        "name": "NROC Security",
+        "industry": "AI",
+        "phase": "startup",
+        "employment": "contract",
+        "url": "https://nrocsecurity.com",
+        "projects": {
+          "nroc": {
+            "name": "NROC Security",
+            "industry": "AI",
+            "icon": "/images/work/nroc.png",
+            "url": "https://nroc.com",
+            "start": "08/2024",
+            "end": null,
+            "description": ""
+          }
+        },
+        "level": "lead",
+        "time": "full-time",
+        "description": "- Built an admin web application to enable customers to set up restrictions and policies for our AI guardrails\n - Implemented various data visualization UIs for reporting \n- Integrated SSO and RBAC features into our systems\n- Created complex CI/CD pipelines for architectural and code quality validation\n - Designed and implemented a whole scale end to end testing pipeline to our product with Playwright and Claude\n- Wired in code auditing tools into different repositories\n- Conducted regular manual testing of our systems, maintenance, and bugfixes\n - Took part in designing and architecting the company software",
+        "start": "08/2024",
+        "end": null,
+        "reasonEnd": null,
+        "location": "remote",
+        "icon": "/images/work/nroc.png",
+        "tags": [
+          "webapp",
+          "design system",
+          "code generation",
+          "testing",
+          "integration",
+          "data visualization",
+          "performance optimization",
+          "architecture",
+          "databases"
+        ],
+        "stack": [
+          "html",
+          "css",
+          "typescript",
+          "javascript",
+          "go",
+          "react",
+          "react-query",
+          "rest/http",
+          "mantine",
+          "orval",
+          "bun",
+          "docker",
+          "postgres",
+          "openapi",
+          "github",
+          "aws",
+          "playwright"
+        ]
+      },
       "freelance:2022": {
         "id": "freelance:2022",
         "name": "Freelance",
@@ -1213,62 +1270,6 @@
               "jest",
               "npm",
               "github"
-            ]
-          },
-          "nroc": {
-            "id": "nroc",
-            "name": "NROC Security",
-            "industry": "AI",
-            "phase": "startup",
-            "employment": "freelance",
-            "url": "https://nrocsecurity.com",
-            "projects": {
-              "asklepios": {
-                "name": "Asklepios",
-                "industry": "healthcare",
-                "icon": "/images/work/asklepios.png",
-                "url": "https://asklepios.com",
-                "start": "01/2022",
-                "end": "05/2022",
-                "description": ""
-              }
-            },
-            "level": "lead",
-            "time": "full-time",
-            "description": "- Built an admin webapp to enable customers to set up restrictions and policies for our AI guardrails proxy\n- Took part in designing and architecting the company software \n- Implemented various data visualization objects for reporting \n- Designed and integrated SSO and RBAC into our systems \n- Conducted regular testing of our systems, wrote an automated test stack for our frontend, documented changes",
-            "start": "08/2024",
-            "end": null,
-            "reasonEnd": null,
-            "location": "remote",
-            "icon": "/images/work/nroc.png",
-            "tags": [
-              "webapp",
-              "design system",
-              "code generation",
-              "testing",
-              "integration",
-              "data visualization",
-              "performance optimization",
-              "architecture",
-              "databases"
-            ],
-            "stack": [
-              "html",
-              "css",
-              "typescript",
-              "javascript",
-              "go",
-              "react",
-              "react-query",
-              "rest/http",
-              "mantine",
-              "orval",
-              "bun",
-              "docker",
-              "postgres",
-              "openapi",
-              "github",
-              "aws"
             ]
           }
         }

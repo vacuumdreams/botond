@@ -23,7 +23,7 @@ export const permanentSchema = z.object({
   hidden: z.boolean().or(z.undefined()),
   industry: z.string(),
   phase: z.string().or(z.undefined()),
-  employment: z.literal("permanent"),
+  employment: z.union([z.literal("permanent"), z.literal("contract")]),
   url: z.string().url().or(z.null()),
   level: z.string(),
   time: z.string(),

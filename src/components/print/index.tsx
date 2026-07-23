@@ -12,7 +12,7 @@ export function Print() {
     const height = getHeightMm(ref.current)
     const style = document.createElement("style")
     // TODO: fix incorrect dynamic height later
-    style.innerHTML = "@page {size: 210mm " + 716 + "mm;}"
+    style.innerHTML = "@page {size: 210mm " + 855 + "mm;}"
     document.head.appendChild(style)
   }, [])
 

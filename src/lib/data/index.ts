@@ -30,7 +30,7 @@ function normaliseTags(data: Data) {
   return shuffle(
     uniq(
       Object.values(data.work.history).reduce<string[]>((acc, work) => {
-        if (work.employment === "permanent") {
+        if (['permanent', 'contract'].includes(work.employment)) {
           return [...acc, ...(work.tags || [])]
         }
 
@@ -103,7 +103,7 @@ const transformData = (raw: Data): ProcessedData => {
   const xp: Record<string, Array<[Date, Date]>> = {}
 
   Object.values(raw.work.history).forEach((entry) => {
-    if (entry.employment === "permanent") {
+    if (['permanent', 'contract'].includes(entry.employment)) {
       entry.stack.forEach((stack) => {
         if (processedData.skills.tech[stack]) {
           const rangeItem: [Date, Date] = [
@@ -157,7 +157,7 @@ const transformData = (raw: Data): ProcessedData => {
   })
 
   const workHistory = Object.values(processedData.work.history).reduce((acc, entry) => {
-    if (entry.employment === "permanent" && entry.hidden !== true) {
+    if (['permanent', 'contract'].includes(entry.employment) && entry.hidden !== true) {
       return { ...acc, [entry.id]: entry }
     }
     if (entry.employment === "freelance" && entry.hidden !== true) {
@@ -188,7 +188,7 @@ const transformData = (raw: Data): ProcessedData => {
   }, {})
 
   const workProjects = Object.values(processedData.work.history).reduce<Data['projects']>((acc, entry) => {
-    if (entry.employment === "permanent" && entry.projects) {
+    if (['permanent', 'contract'].includes(entry.employment) && entry.projects) {
       Object.keys(entry.projects).forEach((id) => {
         const project = entry.projects?.[id]
         if (project?.featured) {

@@ -1,6 +1,5 @@
-import { Dispatch, SetStateAction, useMemo } from "react"
-import { differenceInMonths } from "date-fns"
-import { capitalCase } from "change-case"
+import { useData } from "@/components/provider/data"
+import { MultiSelect } from "@/components/ui/multi-select"
 import {
   Select,
   SelectContent,
@@ -8,10 +7,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { MultiSelect } from "@/components/ui/multi-select"
-import { useData } from "@/components/provider/data"
-import { WorkItem, FreelanceItem } from "@/lib/data"
+import { FreelanceItem, WorkItem } from "@/lib/data"
 import { getDate } from "@/lib/utils"
+import { capitalCase } from "change-case"
+import { differenceInMonths } from "date-fns"
+import { Dispatch, SetStateAction, useMemo } from "react"
 
 export type FilterType = {
   employment: "all" | "freelance" | "permanent";
@@ -20,7 +20,7 @@ export type FilterType = {
 };
 
 const getStack = (w: WorkItem) => {
-  if (w.employment === "permanent") {
+  if (w.employment === "permanent" || w.employment === 'contract') {
     return w.stack
   }
   return Object.values(w.clients).reduce<string[]>((acc, c) => {
